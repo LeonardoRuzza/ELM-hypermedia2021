@@ -1,4 +1,8 @@
 # ELM-hypermedia2021
+Group Name: ELM
+Edoardo Venir 10570524 edoardo.venir@mail.polimi.it
+Leonardo Ruzza 10608001 leonardo.ruzza@mail.polimi.it
+Matteo Plona 10533085 matteo.plona@mail.polimi.it
 
 ## Build Setup
 
