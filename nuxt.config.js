@@ -1,4 +1,16 @@
 export default {
+  ssr: true,
+  target: 'server',
+  env: {
+    //BASE_URL: 'https://test-polimi.herokuapp.com', // Production URL
+    BASE_URL: '', // Development URL
+  },
+  serverMiddleware: [
+    {
+      path: '/api',
+      handler: '~/server/rest/api.js',
+    },
+  ],
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'ELM-hypermedia2021',
