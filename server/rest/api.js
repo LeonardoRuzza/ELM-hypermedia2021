@@ -51,7 +51,11 @@ app.get('/news/:id', async (req, res) => {
 
 /********  Areas *********/
   app.get('/areas', async (req, res) => {
-    const areas = await Area.findAll()
+    const areas = await Area.findAll({
+      order: [
+        ['id', 'ASC']
+      ]
+    })
     return res.json(areas)
   })
 
@@ -103,7 +107,11 @@ app.get('/news/:id', async (req, res) => {
 
  /********  Employees *********/ 
   app.get('/employees', async (req, res) => {
-    const employees = await Employee.findAll()
+    const employees = await Employee.findAll({
+      order: [
+        ['id', 'ASC']
+      ]
+    })
     return res.json(employees)
   })
 
@@ -146,7 +154,11 @@ app.get('/news/:id', async (req, res) => {
 
   /********  Products *********/
   app.get('/products', async (req, res) => {
-    const products = await Product.findAll()
+    const products = await Product.findAll({
+      order: [
+        ['id', 'ASC']
+      ]
+    })
     return res.json(products)
   })
 
