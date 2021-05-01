@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require('sequelize')
 
 // Development
 const db = new Sequelize(
-  'postgres://postgres:Sql1080@localhost:5432/test'
+  'postgres://postgres:fuckpg98@localhost:5432/test'
 )  
 // Production
 /*  const pg = require('pg')
@@ -153,7 +153,7 @@ async function insertData(){
 
   /******** 4 Areas *********/
   const Area1_PerformanceEngineering = await Area.create({
-    name: 'Performance Enginnering',
+    name: 'Performance Engineering',
     description: 'Area1 description',
     image: '...'
   })
@@ -171,6 +171,11 @@ async function insertData(){
     name: 'Internet of Things',
     description: 'Area4 description',
     image: '...'
+  })
+  const Area5_AiMl = await Area.create({
+    name: 'Artificial Intelligence and Machine Learning',
+    description: 'Area5 description',
+    image:'...'
   })
 
   /******** 20 Employees *********/

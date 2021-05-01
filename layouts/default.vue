@@ -32,8 +32,7 @@ html {
 }
 .container {
   padding: 10px;
-  margin: 40px auto;
-  max-width: 800px;
+  margin: 40px 40px;
   text-align: center;
 }
 img {
