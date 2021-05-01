@@ -26,6 +26,7 @@ function defineDatabaseStructure() {
       content: DataTypes.TEXT,
       introduction: DataTypes.TEXT,
       image: DataTypes.STRING,
+      isLatest: DataTypes.BOOLEAN
     },
     {
       underscored: true,
@@ -102,7 +103,7 @@ function defineDatabaseStructure() {
 
 /*********** Relationship *///////////////////
 
-  // A.belongsTo(B) // Foreign key is placed in source model: A
+// A.belongsTo(B) // Foreign key is placed in source model: A
 
   // A.hasOne(B) // Foreign key is placed in target model: B
   // A.hasMany(B) 
@@ -110,7 +111,7 @@ function defineDatabaseStructure() {
 
   // Creating the 1 -> N association (WorkIn) between Area and Employee
   Area.hasMany(Employee, { as: 'WorkIn', foreignKey: 'area_of_work_id', constraints: false }) // ForeignKey = AreaOfWorkID is in the Employee table
-  //Employee.belongsTo(Area, {constraints: false})
+  Employee.belongsTo(Area, {as: 'WorkIn', foreignKey: 'area_of_work_id',constraints: false})
 
   // Creating the 1 -> 1 association (IsResponsible) between Area and Employee
   Area.belongsTo(Employee, {as: 'IsResponsible', foreignKey: 'responsible_id', constraints: false}) // ForeignKey = ResponsibleID, is in the Area table
@@ -119,14 +120,14 @@ function defineDatabaseStructure() {
 
 
   // Creating the 1 -> N association (BelongsTo) between Area and Product
-  Area.hasMany(Product, {as: 'BelongsTo', foreignKey: 'area_of_belonging_id'}) // ForeignKey = AreaOfBelongingID, is in the Product table
-  //Product.belongsTo(Area)
+  Area.hasMany(Product, {as: 'BelongsTo', foreignKey: 'area_of_belonging_id', constraints: false}) // ForeignKey = AreaOfBelongingID, is in the Product table
+  Product.belongsTo(Area, {as: 'BelongsTo', foreignKey: 'area_of_belonging_id', constraints: false})
 
 
 
   // Creating the 1 -> N association (Manage) between Employee and Product
-  Employee.hasMany(Product, {as: 'Manage', foreignKey: 'manager_id'}) // ForeignKey = ManagerID, is in the Product table
-  //Product.belongsTo(Employee)
+  Employee.hasMany(Product, {as: 'Manage', foreignKey: 'manager_id', constraints: false}) // ForeignKey = ManagerID, is in the Product table
+  Product.belongsTo(Employee, {as: 'Manage', foreignKey: 'manager_id', constraints: false})
 
   // Creating the N -> N association (Develop) between Employee and Product, using a bridge table (Develop) with 2 keys: employee_id and product_id
   Employee.belongsToMany(Product, { as: 'Develop', through: 'develop'});
@@ -135,24 +136,44 @@ function defineDatabaseStructure() {
 
 
 /**
- * Function to insert data in the database
+ * Function to create and insert data in the database
  */
 async function insertData(){
   const { News, Area, Employee, Product,Develop} = db._tables;
 
+  /******** 15 News *********/
   const firstNews = await News.create({
     title: 'Machine Learning',
     content: 'ML content',
     introduction: 'ML introduction',
-    image: 'https://www.meme-arsenal.com/memes/925f3e6e213ebe0bc196d379a7281ee8.jpg'
+    image: 'https://www.meme-arsenal.com/memes/925f3e6e213ebe0bc196d379a7281ee8.jpg',
+    isLatest: true
   })
 
-  const firstArea = await Area.create({
-    name: 'Area1',
+
+  /******** 4 Areas *********/
+  const Area1_PerformanceEngineering = await Area.create({
+    name: 'Performance Enginnering',
     description: 'Area1 description',
     image: '...'
   })
+  const Area2_Analytics = await Area.create({
+    name: 'Analytics',
+    description: 'Area2 description',
+    image: '...'
+  })
+  const Area3_Security = await Area.create({
+    name: 'Security',
+    description: 'Area3 description',
+    image: '...'
+  })
+  const Area4_IoT = await Area.create({
+    name: 'Internet of Things',
+    description: 'Area4 description',
+    image: '...'
+  })
 
+  /******** 20 Employees *********/
   const firstEmployee = await Employee.create({
     name: 'Employee1 name',
     surname: 'Employee1 surname',
@@ -161,29 +182,46 @@ async function insertData(){
     image: '...'
   })
 
+  const secondEmployee = await Employee.create({
+    name: 'Employee2 name',
+    surname: 'Employee2 surname',
+    role: 'Employee2 role',
+    email: 'Employee2 mail',
+    image: '...'
+  })
+
+  /******** 30 Products *********/
   const firstProduct = await Product.create({
     name: 'Product1',
     description: 'Product1 description',
     isTop: true,
     image: '...',
-
   })
 
-  await firstArea.addWorkIn(firstEmployee) // Employee work in area
-  await firstArea.setIsResponsible(firstEmployee) // Add Responsible to the area
+  const secondProduct = await Product.create({
+    name: 'Product2',
+    description: 'Product2 description',
+    isTop: false,
+    image: '...',
+  })
+
+
+
+  await Area1_PerformanceEngineering.addWorkIn(firstEmployee) // Employee work in area
+  await Area2_Analytics.addWorkIn(secondEmployee)
+  await Area1_PerformanceEngineering.setIsResponsible(firstEmployee) // Add Responsible to the area
+  await Area2_Analytics.setIsResponsible(secondEmployee)
   
-  await firstArea.addBelongsTo(firstProduct) // Add product to the area
+  await Area2_Analytics.addBelongsTo(firstProduct) // Add product to the area
+  await Area2_Analytics.addBelongsTo(secondProduct) 
 
   await firstEmployee.addManage(firstProduct) // Add product to the managed ones by employee
+  await firstEmployee.addManage(secondProduct) 
 
   await firstEmployee.addDevelop(firstProduct) // Add product to the developed ones by employee
+  await firstEmployee.addDevelop(secondProduct) 
+
 }
-
-
-
-
-
-
 
 
 
