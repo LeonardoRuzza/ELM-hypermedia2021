@@ -89,6 +89,16 @@ app.get('/news/:id', async (req, res) => {
     })
     return res.json(AllProducts)
   })
+  // Get working team of a certain area
+  app.get('/areas/:id/WorkingTeam', async (req, res) => {
+    const { id } = req.params
+    const WorkingTeam = await Employee.findAll({
+      where: { 
+        area_of_work_id: id,
+      },
+    })
+    return res.json(WorkingTeam)
+  })
 
 
  /********  Employees *********/ 
@@ -158,7 +168,7 @@ app.get('/news/:id', async (req, res) => {
     return res.json(product)
   })
 
-  // Get working team of a product
+  // Get developing team of a product
   app.get('/products/:id/DevelopingTeam', async (req, res) => {
     const { id } = req.params
     const { QueryTypes } = require('sequelize');
