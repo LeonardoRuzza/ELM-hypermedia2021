@@ -36,9 +36,6 @@ html {
   max-width: 800px;
   text-align: center;
 }
-a {
-  color: white;
-}
 img {
   width: 100%;
 }

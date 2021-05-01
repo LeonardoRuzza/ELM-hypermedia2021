@@ -5,11 +5,33 @@
         <span
           v-for="(item, itemIndex) of menuOptions.left"
           :key="'menu-item-' + itemIndex"
-          :class="getClass(item.path)"
+          class="menu-item"
         >
-          <nuxt-link :to="item.path">
+          <nuxt-link v-if="!item.hasDropdown" :to="item.path" class="underline">
             {{ item.name }}
           </nuxt-link>
+          <span
+            v-else
+            :class="'underline menu-item-a ' + childSelected()"
+            @mouseover="openDropdown(item)"
+          >
+            {{ item.name }}
+          </span>
+          <div
+            v-if="item.hasDropdown"
+            class="dropdown"
+            @mouseleave="closeAllDropdown"
+          >
+            <div
+              v-for="(subItem, subIndex) of item.dropdown"
+              :key="'dropdown-item-' + subIndex"
+              class="dropdown-item"
+            >
+              <nuxt-link :to="subItem.path" class="underline-small">
+                {{ subItem.name }}
+              </nuxt-link>
+            </div>
+          </div>
         </span>
       </div>
       <nuxt-link to="/">
@@ -25,9 +47,9 @@
         <span
           v-for="(item, itemIndex) of menuOptions.right"
           :key="'menu-item-' + itemIndex"
-          :class="getClass(item.path)"
+          class="menu-item"
         >
-          <nuxt-link :to="item.path">
+          <nuxt-link :to="item.path" class="underline">
             {{ item.name }}
           </nuxt-link>
         </span>
@@ -45,41 +67,80 @@ export default {
           {
             name: 'Products',
             path: '/products',
+            hasDropdown: false,
           },
           {
             name: 'Areas',
-            path: '/areas',
+            hasDropdown: true,
+            dropdown: [
+              {
+                name: 'Area 1',
+                path: '/area1',
+              },
+              {
+                name: 'Area 2',
+                path: '/area2',
+              },
+              {
+                name: 'Area 3',
+                path: '/area3',
+              },
+              {
+                name: 'Area 4',
+                path: '/area4',
+              },
+              {
+                name: 'Area 5',
+                path: '/area5',
+              },
+            ],
           },
           {
             name: 'Our Team',
             path: '/team',
+            hasDropdown: false,
           },
         ],
         right: [
           {
             name: 'News',
             path: '/news',
+            hasDropdown: false,
           },
           {
             name: 'Contact Us',
             path: '/contacts',
+            hasDropdown: false,
           },
           {
             name: 'About Us',
             path: '/about',
+            hasDropdown: false,
           },
         ],
       },
     }
   },
   methods: {
-    getClass(item) {
-      // alert('good')
-      const path = 'about' // window.location.pathname.split('/')[1]
-      if ('/' + path === item) {
-        return 'menu-item active'
+    openDropdown(item) {
+      if (item.hasDropdown) {
+        document.querySelector('.dropdown').style.visibility = 'visible'
+        document.querySelector('.dropdown').style.opacity = '1'
+        document.querySelector('.dropdown').style.top = '50px'
       }
-      return 'menu-item'
+    },
+    closeAllDropdown() {
+      console.log('close')
+      document.querySelector('.dropdown').style.visibility = ''
+      document.querySelector('.dropdown').style.opacity = ''
+      document.querySelector('.dropdown').style.top = ''
+    },
+    childSelected() {
+      const child = ['area1', 'area2', 'area3', 'area4', 'area5']
+      if (child.includes(this.$route.name)) {
+        console.log('it is active')
+        return 'nuxt-link-exact-active nuxt-link-active'
+      } else return ''
     },
   },
 }
@@ -112,20 +173,41 @@ export default {
   justify-content: space-between;
 }
 .menu-item {
+  position: relative;
+}
+a,
+.menu-item-a {
   font-size: 1.3rem;
   color: rgb(41, 44, 53);
+  text-decoration: none;
 }
-.menu-item.active,
-.menu-item > a:hover {
-  color: rgb(100, 187, 122);
-  text-decoration: underline;
+.nuxt-link-exact-active.nuxt-link-active {
+  color: black;
 }
-.menu-item a,
-.menu-item a:visited {
+.menu-item .nuxt-link-exact-active.nuxt-link-active:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: auto;
+  bottom: -5px;
+  background: rgb(100, 187, 122);
+  height: 4px;
+}
+.dropdown-item .nuxt-link-exact-active.nuxt-link-active:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: auto;
+  bottom: -5px;
+  background: rgb(41, 44, 53);
+  height: 2px;
+}
+a:visited {
   color: inherit;
   text-decoration: none;
 }
-
 .logo {
   width: 38px;
   height: 60px;
@@ -140,5 +222,63 @@ export default {
 .title {
   font-size: 1.3rem;
   margin-bottom: 5px;
+}
+.dropdown {
+  position: absolute;
+  left: 0;
+  top: 70px;
+  visibility: hidden;
+  opacity: 0;
+  width: 150px;
+  background: rgb(225, 232, 242);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  transition: opacity 0.2s ease-out, top 0.2s ease-in-out;
+}
+.dropdown-item {
+  position: relative;
+  background: rgb(225, 232, 242);
+  padding: 10px;
+  border: solid 1px rgb(200, 200, 200);
+}
+.underline,
+.underline-small {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+.underline:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 0;
+  bottom: -5px;
+  background: rgb(100, 187, 122);
+  height: 4px;
+  transition-property: width;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+.underline-small:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 0;
+  bottom: -5px;
+  background: rgb(41, 44, 53);
+  height: 2px;
+  transition-property: width;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+.underline:hover:after,
+.underline:focus:after,
+.underline:active:after,
+.underline-small:hover:after,
+.underline-small:focus:after,
+.underline-small:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
 }
 </style>
