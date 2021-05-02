@@ -36,6 +36,7 @@ article {
 .news-text {
   display: inline-block;
   font-size: 150%;
+  font-weight: 100;
 }
 .news-intro {
   display: inline-block;
@@ -46,7 +47,7 @@ article {
 .single-news {
   padding: 1%;
   border-radius: 25px;
-  margin: 2% 2% 2% 2%;
+  margin: 0.5% 2% 2% 2%;
   display: block;
   text-align: left;
   overflow: auto;
