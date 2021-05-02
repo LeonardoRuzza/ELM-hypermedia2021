@@ -1,6 +1,7 @@
 <template>
   <main class="container">
     <header>
+      <!-- non è meglio un section? giè presente un header nella pagina -->
       <h1>Transforming business</h1>
       <h4>
         ELM is a multinational consulting and software group of companies,
