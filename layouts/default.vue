@@ -32,8 +32,8 @@ html {
   margin: 0;
 }
 .container {
-  padding: 10px;
-  margin: 20px 20px;
+  padding: 0.2%;
+  margin: 1% 0.1% 0.1% 0.1%;
   text-align: center;
 }
 

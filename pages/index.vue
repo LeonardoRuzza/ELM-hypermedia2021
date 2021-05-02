@@ -19,8 +19,10 @@
         class="area"
         @click="goToArea(`/areas/${area.id}`)"
       >
-        <div class="area-title">{{ area.name }}</div>
-        <div class="area-shortDesc">{{ area.shortDesc }}</div>
+        <div class="area-text">
+          <div class="area-title">{{ area.name }}</div>
+          <div class="area-shortDesc">{{ area.shortDesc }}</div>
+        </div>
         <img
           class="icon"
           alt="Icon of  an area"
@@ -55,26 +57,36 @@ export default {
 </script>
 
 <style scoped>
+.area-text {
+  display: inline-block;
+}
 .area-title {
-  top: -350px;
-  font-size: 150%;
+  font-size: 180%;
   font-weight: bold;
+  margin: 0.5%;
 }
 .area-shortDesc {
-  font-size: 110%;
+  font-size: 150%;
+  display: inline-block;
+  margin: 5%;
 }
 .areas-intro {
   text-align: center;
   margin-bottom: 30px;
+  font-size: 110%;
 }
 .areas-grid {
   border-color: lightgreen;
   margin-bottom: 40px;
 }
 .area {
-  margin: 20px 20px 20px 20px;
+  padding: 1%;
+  border-radius: 25px;
+  margin: 5% 5% 5% 5%;
   display: block;
   text-align: left;
+  overflow: auto;
+  background-color: lightgreen;
 }
 h2 {
   margin-bottom: 30px;
@@ -83,18 +95,14 @@ h4 {
   margin-top: 20px;
   margin-bottom: 70px;
 }
-p {
-  text-align: left;
-}
 #globalFootprint {
   max-height: 100%;
   max-width: 100%;
+  border-radius: 10px;
 }
 .icon {
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 15%;
-  position: relative;
-  right: -80%;
+  margin: 0% 5% 0% 10%;
+  width: 10%;
+  float: right;
 }
 </style>
