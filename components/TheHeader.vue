@@ -65,12 +65,12 @@ export default {
       menuOptions: {
         left: [
           {
-            name: 'Products',
+            name: 'PRODUCTS',
             path: '/products',
             hasDropdown: false,
           },
           {
-            name: 'Areas',
+            name: 'AREAS',
             hasDropdown: true,
             dropdown: [
               {
@@ -96,24 +96,24 @@ export default {
             ],
           },
           {
-            name: 'Our Team',
+            name: 'OUR TEAM',
             path: '/team',
             hasDropdown: false,
           },
         ],
         right: [
           {
-            name: 'News',
+            name: 'NEWS',
             path: '/news',
             hasDropdown: false,
           },
           {
-            name: 'Contact Us',
+            name: 'CONTACT US',
             path: '/contacts',
             hasDropdown: false,
           },
           {
-            name: 'About Us',
+            name: 'ABOUT US',
             path: '/about',
             hasDropdown: false,
           },
@@ -130,7 +130,7 @@ export default {
       }
     },
     closeAllDropdown() {
-      console.log('close')
+      // console.log('close')
       document.querySelector('.dropdown').style.visibility = ''
       document.querySelector('.dropdown').style.opacity = ''
       document.querySelector('.dropdown').style.top = ''
@@ -138,7 +138,7 @@ export default {
     childSelected() {
       const child = ['area1', 'area2', 'area3', 'area4', 'area5']
       if (child.includes(this.$route.name)) {
-        console.log('it is active')
+        // console.log('it is active')
         return 'nuxt-link-exact-active nuxt-link-active'
       } else return ''
     },
@@ -150,8 +150,8 @@ export default {
 .header {
   width: 100%;
   height: 70px;
-  background: rgb(225, 232, 242);
-  color: rgb(41, 44, 53);
+  background: #26272b;
+  color: rgb(244, 245, 248);
   display: flex;
   justify-content: space-between;
   text-align: center;

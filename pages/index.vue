@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <header>
-      <h1>Transforming business</h1>
+      <h1>TRANSFORMING BUSINESS</h1>
       <h4>
         ELM is a multinational consulting and software group of companies,
         helping customers harness the power of transformative technologies.
