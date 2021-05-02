@@ -156,31 +156,31 @@ async function insertData(){
   const Area1_PerformanceEngineering = await Area.create({
     name: 'Performance Engineering',
     description: 'Area1 description',
-    shortDesc: 'Area1 short description',
+    shortDesc: 'Making IT more reliable, responsive and resilient.',
     image: '...'
   })
   const Area2_Analytics = await Area.create({
     name: 'Analytics',
     description: 'Area2 description',
-    shortDesc: 'Area2 short description',
+    shortDesc: 'Understanding data. Generating insights. Augmenting decisions.',
     image: '...'
   })
   const Area3_Security = await Area.create({
     name: 'Security',
     description: 'Area3 description',
-    shortDesc: 'Area3 short description',
+    shortDesc: 'Partnering with customers to manage digital risk.',
     image: '...'
   })
   const Area4_IoT = await Area.create({
     name: 'Internet of Things',
     description: 'Area4 description',
-    shortDesc: 'Area4 short description',
+    shortDesc: 'Full-stack IoT solutions. New business insights.',
     image: '...'
   })
   const Area5_Ml = await Area.create({
     name: 'Machine Learning',
     description: 'Area5 description',
-    shortDesc: 'Area5 short description',
+    shortDesc: 'Automates analytical model building and gives computers the ability to learn.',
     image:'...'
   })
 
