@@ -13,20 +13,26 @@
         focus on the innovation in the ICT field for companies which want to be
         always on top.
       </p>
-      <span
+      <div
         v-for="(area, areaIndex) of areas"
         :key="'area-' + areaIndex"
         class="area"
         @click="goToArea(`/areas/${area.id}`)"
       >
-        {{ area.name }}
-
+        <div class="area-title">{{ area.name }}</div>
+        <div class="area-shortDesc">{{ area.shortDesc }}</div>
         <img
-          alt="Icon of  and area"
+          class="icon"
+          alt="Icon of  an area"
           :src="'/areas/icons/icon-' + area.id + '.png'"
         />
-      </span>
+      </div>
     </section>
+    <img
+      id="globalFootprint"
+      alt="Presence of the ELM in the world"
+      src="/world_presence.jpg"
+    />
   </main>
 </template>
 
@@ -49,17 +55,26 @@ export default {
 </script>
 
 <style scoped>
+.area-title {
+  top: -350px;
+  font-size: 150%;
+  font-weight: bold;
+}
+.area-shortDesc {
+  font-size: 110%;
+}
 .areas-intro {
   text-align: center;
   margin-bottom: 30px;
 }
 .areas-grid {
   border-color: lightgreen;
+  margin-bottom: 40px;
 }
 .area {
-  display: inline;
-  height: 50px;
-  margin-inline: 30px;
+  margin: 20px 20px 20px 20px;
+  display: block;
+  text-align: left;
 }
 h2 {
   margin-bottom: 30px;
@@ -68,10 +83,18 @@ h4 {
   margin-top: 20px;
   margin-bottom: 70px;
 }
-img {
-  max-width: 190px;
-}
 p {
   text-align: left;
+}
+#globalFootprint {
+  max-height: 100%;
+  max-width: 100%;
+}
+.icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 15%;
+  position: relative;
+  right: -80%;
 }
 </style>

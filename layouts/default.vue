@@ -32,10 +32,7 @@ html {
 }
 .container {
   padding: 10px;
-  margin: 40px 40px;
+  margin: 20px 20px;
   text-align: center;
-}
-img {
-  width: 100%;
 }
 </style>
