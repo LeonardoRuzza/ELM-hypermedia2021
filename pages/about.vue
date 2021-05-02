@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <header>
-      <h1>About what?</h1>
+      <h1>ABOUT US</h1>
       <h4>About this website.</h4>
       <img
         src="https://pbs.twimg.com/profile_images/1090208956440633345/Okg4uYbh_400x400.jpg"
