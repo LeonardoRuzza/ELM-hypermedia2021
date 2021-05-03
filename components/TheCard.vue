@@ -4,7 +4,7 @@
       {{ title }}
     </div>
     <div class="card-img">
-      <img :src="require(`~/assets/${image}`)" :alt="image" />
+      <img :src="`${image}`" alt="Image of the news" />
     </div>
     <div class="card-description">
       {{ description }}
