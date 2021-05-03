@@ -178,11 +178,11 @@ export default {
 a,
 .menu-item-a {
   font-size: 1.3rem;
-  color: rgb(41, 44, 53);
+  color: white;
   text-decoration: none;
 }
 .nuxt-link-exact-active.nuxt-link-active {
-  color: black;
+  color: white;
 }
 .menu-item .nuxt-link-exact-active.nuxt-link-active:after {
   content: '';
@@ -201,7 +201,7 @@ a,
   right: 0;
   width: auto;
   bottom: -5px;
-  background: rgb(41, 44, 53);
+  background: rgb(100, 187, 122);
   height: 2px;
 }
 a:visited {
@@ -230,14 +230,14 @@ a:visited {
   visibility: hidden;
   opacity: 0;
   width: 150px;
-  background: rgb(225, 232, 242);
+  background: #26272b;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   transition: opacity 0.2s ease-out, top 0.2s ease-in-out;
 }
 .dropdown-item {
   position: relative;
-  background: rgb(225, 232, 242);
+  background: #26272b;
   padding: 10px;
   border: solid 1px rgb(200, 200, 200);
 }
@@ -265,7 +265,7 @@ a:visited {
   right: 0;
   width: 0;
   bottom: -5px;
-  background: rgb(41, 44, 53);
+  background: rgb(100, 187, 122);
   height: 2px;
   transition-property: width;
   transition-duration: 0.2s;
