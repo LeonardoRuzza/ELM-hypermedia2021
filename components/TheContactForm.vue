@@ -33,7 +33,7 @@
       required
     />
     <label for="country">Country</label>
-    <select id="countries" v-model="selected" name="countries" required>
+    <select id="countries" name="countries" required>
       <option
         v-for="(item, itemIndex) of countries"
         :key="'footer-item-' + itemIndex"
