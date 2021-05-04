@@ -82,6 +82,11 @@ export default {
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
+}
+.card {
+  width: 300px;
+  height: 533px;
 }
 .container {
   display: flex;
