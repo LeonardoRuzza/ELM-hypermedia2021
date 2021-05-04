@@ -77,6 +77,7 @@ export default {
   width: 100%;
   margin-bottom: 10px;
   text-align: center;
+  background-color: black;
 }
 .card-img img {
   max-width: 90%;

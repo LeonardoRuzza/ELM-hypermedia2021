@@ -1,6 +1,7 @@
 <template>
   <div>
     <the-header></the-header>
+    <the-bread-crumbs></the-bread-crumbs>
     <Nuxt />
     <the-footer></the-footer>
   </div>
@@ -9,11 +10,13 @@
 <script>
 import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
+import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 
 export default {
   components: {
     TheHeader,
     TheFooter,
+    TheBreadCrumbs,
   },
 }
 </script>
