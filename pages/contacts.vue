@@ -1,5 +1,6 @@
 <template>
   <main class="container">
+    <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
     <header>
       <h1>CONTACT US</h1>
       <h4>Get in touch with the team!</h4>
@@ -75,9 +76,21 @@
 
 <script>
 import TheContactForm from '~/components/TheContactForm.vue'
+import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 export default {
   components: {
     TheContactForm,
+    TheBreadCrumbs,
+  },
+  data() {
+    return {
+      crumbs: [
+        {
+          title: 'Contact Us',
+          path: '/contacts',
+        },
+      ],
+    }
   },
 }
 </script>

@@ -1,5 +1,7 @@
 <template>
   <main>
+    <!-- aggiungere la class container ma attenzione che varia posizioni -->
+    <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
     <h1>Products</h1>
     <h3>Top Products</h3>
     <p>
@@ -55,9 +57,11 @@
 </template>
 <script>
 import TheCard from '~/components/TheCard.vue'
+import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 export default {
   components: {
     TheCard,
+    TheBreadCrumbs,
   },
   async asyncData({ $axios }) {
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/products`)
@@ -73,6 +77,16 @@ export default {
     return {
       topProducts,
       standardProducts,
+    }
+  },
+  data() {
+    return {
+      crumbs: [
+        {
+          title: 'Products',
+          path: '/products',
+        },
+      ],
     }
   },
   methods: {

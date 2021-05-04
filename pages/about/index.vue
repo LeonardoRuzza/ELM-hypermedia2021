@@ -1,5 +1,6 @@
 <template>
   <main class="container">
+    <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
     <header>
       <h1>ABOUT US</h1>
       <h2>What about the ELM Corporation?</h2>
@@ -46,9 +47,11 @@
 
 <script>
 import TheSideBar from '~/components/TheSideBar.vue'
+import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 export default {
   components: {
     TheSideBar,
+    TheBreadCrumbs,
   },
   async asyncData({ $axios }) {
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/reviews`)
@@ -62,11 +65,26 @@ export default {
       link1: 'Info',
       link2: 'Reviews',
       visualize: 'Info',
+      crumbs: [
+        {
+          title: 'About Us',
+          path: '/about',
+        },
+        {
+          title: 'Info',
+          path: '/about',
+        },
+      ],
     }
   },
   methods: {
     onUpdateVisualization(path) {
       this.visualize = path
+      this.crumbs.pop()
+      this.crumbs.push({
+        title: path,
+        path: '/about',
+      })
     },
   },
 }

@@ -1,5 +1,6 @@
 <template>
   <main class="container">
+    <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
     <header>
       <h1>{{ visualize }}</h1>
       <h2>Get updated with some News!</h2>
@@ -39,10 +40,12 @@
 <script>
 import TheSideBar from '~/components/TheSideBar.vue'
 import TheCard from '~/components/TheCard.vue'
+import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 export default {
   components: {
     TheSideBar,
     TheCard,
+    TheBreadCrumbs,
   },
   async asyncData({ $axios }) {
     const { data } = await $axios.get(
@@ -63,6 +66,16 @@ export default {
       link1: 'Latest News',
       link2: 'All News',
       visualize: 'Latest News',
+      crumbs: [
+        {
+          title: 'News',
+          path: '/news',
+        },
+        {
+          title: 'Latest News',
+          path: '/news',
+        },
+      ],
     }
   },
   /*   async asyncData({ $axios }) {
@@ -77,6 +90,11 @@ export default {
   methods: {
     onUpdateVisualization(path) {
       this.visualize = path
+      this.crumbs.pop()
+      this.crumbs.push({
+        title: path,
+        path: '/news',
+      })
     },
   },
 }

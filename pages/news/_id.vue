@@ -1,5 +1,6 @@
 <template>
   <main class="container">
+    <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
     <header>
       <h1>News</h1>
       <h2>{{ news.title }}</h2>
@@ -17,13 +18,28 @@
 </template>
 
 <script>
+import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 export default {
+  components: {
+    TheBreadCrumbs,
+  },
   async asyncData({ $axios, route }) {
     const { id } = route.params
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/news/${id}`)
     const news = data
+    const crumbs = [
+      {
+        title: 'News',
+        path: '/news',
+      },
+      {
+        title: news.title,
+        path: '/news/' + news.id,
+      },
+    ]
     return {
       news,
+      crumbs,
     }
   },
 }
