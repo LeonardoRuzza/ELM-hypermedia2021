@@ -1,33 +1,39 @@
 <template>
   <main class="container">
-    <the-side-bar
-      :link1="link1"
-      :link2="link2"
-      @visualization="onUpdateVisualization"
-    >
-    </the-side-bar>
-    <div v-if="visualize == link1" class="cards-container">
-      <the-card
-        v-for="(item, itemIndex) of latestNews"
-        :key="'news-' + itemIndex"
-        :image="'/news/image-' + item.id + '.png'"
-        :title="item.title"
-        :description="item.introduction"
-        :link="'/news/' + item.id"
+    <header>
+      <h1>{{ visualize }}</h1>
+      <h2>Get updated with some News!</h2>
+    </header>
+    <section class="news-container">
+      <the-side-bar
+        :link1="link1"
+        :link2="link2"
+        @visualization="onUpdateVisualization"
       >
-      </the-card>
-    </div>
-    <div v-else class="cards-container">
-      <the-card
-        v-for="(item, itemIndex) of allNews"
-        :key="'news-' + itemIndex"
-        :image="item.img"
-        :title="item.title"
-        :description="item.introduction"
-        :link="item.id"
-      >
-      </the-card>
-    </div>
+      </the-side-bar>
+      <div v-if="visualize == link1" class="cards-container">
+        <the-card
+          v-for="(item, itemIndex) of latestNews"
+          :key="'news-' + itemIndex"
+          :image="'/news/image-' + item.id + '.png'"
+          :title="item.title"
+          :description="item.introduction"
+          :link="'/news/' + item.id"
+        >
+        </the-card>
+      </div>
+      <div v-else class="cards-container">
+        <the-card
+          v-for="(item, itemIndex) of allNews"
+          :key="'news-' + itemIndex"
+          :image="item.img"
+          :title="item.title"
+          :description="item.introduction"
+          :link="item.id"
+        >
+        </the-card>
+      </div>
+    </section>
   </main>
 </template>
 <script>
@@ -88,7 +94,8 @@ export default {
   width: 300px;
   height: 533px;
 }
-.container {
+.news-container {
   display: flex;
+  margin-top: 20px;
 }
 </style>

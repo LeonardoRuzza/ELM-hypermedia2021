@@ -1,8 +1,8 @@
 <template>
   <main class="container">
     <header>
-      <!-- non è meglio un section? giè presente un header nella pagina -->
-      <h1>{{ news.title }}</h1>
+      <h1>News</h1>
+      <h2>{{ news.title }}</h2>
     </header>
     <section class="single-news">
       <h2>{{ news.introduction }}</h2>
