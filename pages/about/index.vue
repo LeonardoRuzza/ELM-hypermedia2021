@@ -2,12 +2,18 @@
   <main class="container">
     <header>
       <h1>ABOUT US</h1>
-      <h4>About this website.</h4>
+      <h4>What about the ELM Corporation?</h4>
       <img
         src="https://pbs.twimg.com/profile_images/1090208956440633345/Okg4uYbh_400x400.jpg"
         alt="Nuxt Logo"
       />
     </header>
+    <the-side-bar
+      :link1="link1"
+      :link2="link2"
+      @visualization="onUpdateVisualization"
+    >
+    </the-side-bar>
     <section>
       <h2>Another lorem ipsum</h2>
       <p>
@@ -24,11 +30,33 @@
 </template>
 
 <script>
+import TheSideBar from '~/components/TheSideBar.vue'
+import TheCard from '~/components/TheCard.vue'
 export default {
-  head() {
+components: {
+    TheSideBar,
+    TheCard,
+  },
+  async asyncData({ $axios }) {
+    const { data } = await $axios.get(
+      `${process.env.BASE_URL}/reviews`
+    )
+    const reviews = data
     return {
-      title: 'A WebSite - About',
+      reviews,
     }
+  },
+  data() {
+    return {
+      link1: 'Info',
+      link2: 'Reviews',
+      visualize: 'Info',
+    }
+  },
+  methods: {
+    onUpdateVisualization(path) {
+      this.visualize = path
+    },
   },
 }
 </script>
