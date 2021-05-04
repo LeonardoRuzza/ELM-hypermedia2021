@@ -1057,7 +1057,7 @@ export default {
 form {
   padding: 12px 20px 12px 20px;
   margin: 8px 10px 8px 10px;
-  border: 2px solid green;
+  border: 2px solid orange;
   -moz-box-shadow: 2px 2px 6px #888;
   -webkit-box-shadow: 2px 2px 6px #888;
   box-shadow: 2px 2px 6px #888;
@@ -1073,7 +1073,7 @@ form {
   -moz-box-shadow: 2px 2px 6px #888;
   -webkit-box-shadow: 2px 2px 6px #888;
   box-shadow: 2px 2px 6px #888;
-  border: 1px solid darkgreen;
+  border: 1px solid orange;
 }
 .form-field,
 #countries {
@@ -1099,10 +1099,10 @@ input[type='submit'] {
   width: 100%;
   margin-right: 10px;
   margin-left: 10px;
-  background-color: darkgreen;
-  color: white;
+  background-color: grey;
+  color: black;
   padding: 14px 20px;
-  border: 1px solid black;
+  border: 1px solid orange;
   border-radius: 4px;
   cursor: pointer;
   -moz-box-shadow: 2px 2px 6px #888;

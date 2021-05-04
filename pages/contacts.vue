@@ -114,11 +114,11 @@ img {
 }
 .contact-box {
   border-radius: 5px;
-  background-color: #7bcc94;
+  background-color: lightgray;
   padding: 10px;
 }
 .contact-info-title {
-  border: 1px solid darkgreen;
+  border: 1px solid orange;
   background-color: #26272b;
   color: white;
   -moz-box-shadow: 2px 2px 6px #888;
@@ -163,7 +163,7 @@ li {
 .info-icons:focus,
 .info-icons:hover {
   color: #fff;
-  background-color: darkgreen;
+  background-color: orange;
 }
 .social-icons.size-sm a,
 .info-icons.size-sm a {
