@@ -5,7 +5,7 @@
       <h1>CONTACT US</h1>
       <h4>Get in touch with the team!</h4>
     </header>
-    <img src="/contacts.png" alt="Contact image" />
+    <img src="/contacts/contacts.png" alt="Contact image" />
     <div class="contact-box">
       <div>
         <p class="contact-box-title">Thank you for your interest</p>

@@ -51,5 +51,21 @@ h1 {
   display: block;
   margin-bottom: 70px;
   margin-top: 30px;
+  margin-left: 12%;
+  margin-right: 12%;
+  border-radius: 25px;
+  border: 5px solid orange;
+}
+h2 {
+  border: 1px solid orange;
+  background-color: #26272b;
+  color: white;
+  -moz-box-shadow: 2px 2px 6px #888;
+  -webkit-box-shadow: 2px 2px 6px #888;
+  box-shadow: 2px 2px 6px #888;
+  font-weight: bolder;
+  font-size: 20px;
+  margin: 20px auto 20px auto;
+  padding: 0px 20px 0px 20px;
 }
 </style>

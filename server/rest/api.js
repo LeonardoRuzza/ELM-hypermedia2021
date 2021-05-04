@@ -16,7 +16,7 @@ async function init() {
    * Apis to make query on the DB
    */
 
-  /********  News *********/
+  /***********************************************************  News *****************************************************/
   app.get('/news/latest_news', async (req, res) => {
     const latest_news = await News.findAll({
       where: {
@@ -42,13 +42,13 @@ async function init() {
     return res.json(news)
   })
 
-  /********  Reviews *********/
+  /***********************************************************  Reviews *****************************************************/
   app.get('/reviews', async (req, res) => {
     const reviews = await Reviews.findAll({})
     return res.json(reviews)
   })
 
-  /********  Areas *********/
+  /***********************************************************  Areas *****************************************************/
   app.get('/areas', async (req, res) => {
     const areas = await Area.findAll({
       order: [['id', 'ASC']],
@@ -56,6 +56,7 @@ async function init() {
     return res.json(areas)
   })
 
+  /********  Single Area info *********/
   app.get('/areas/:id', async (req, res) => {
     const { id } = req.params
 
@@ -103,7 +104,7 @@ async function init() {
     return res.json(WorkingTeam)
   })
 
-  /********  Employees *********/
+  /***********************************************************  Employees *****************************************************/
   app.get('/employees', async (req, res) => {
     const employees = await Employee.findAll({
       order: [['id', 'ASC']],
@@ -111,6 +112,7 @@ async function init() {
     return res.json(employees)
   })
 
+  // Single employee
   app.get('/employees/:id', async (req, res) => {
     const { id } = req.params
     const employee = await Employee.findOne({
@@ -149,7 +151,7 @@ async function init() {
     return res.json(DevelopedProducts)
   })
 
-  /********  Products *********/
+  /***********************************************************  Products *****************************************************/
   app.get('/products', async (req, res) => {
     const products = await Product.findAll({
       order: [['id', 'ASC']],
