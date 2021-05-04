@@ -19,8 +19,14 @@
         About - Information
       </div>
       <div v-else class="reviews-container">
-        <div v-for="(item, itemIndex) of reviews" :key="'news-' + itemIndex">
-          {{ item.author }} {{ item.role }} {{ item.content }}
+        <div
+          v-for="(item, itemIndex) of reviews"
+          :key="'review-' + itemIndex"
+          class="review-container"
+        >
+          <div class="review-author">{{ item.author }}</div>
+          <div class="review-role">{{ item.role }}</div>
+          <div class="review-content">{{ item.content }}</div>
         </div>
       </div>
     </section>
@@ -59,6 +65,19 @@ export default {
 .about-container {
   display: flex;
   margin-top: 20px;
+}
+.review-container {
+  border: 1px solid goldenrod;
+}
+.review-author {
+  padding: 5px;
+  font-size: large;
+}
+.review-role {
+  padding: 5px;
+}
+.review-content {
+  padding: 5px;
 }
 h2 {
   margin-bottom: 30px;
