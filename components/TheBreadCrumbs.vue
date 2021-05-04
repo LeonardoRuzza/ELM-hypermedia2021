@@ -13,6 +13,7 @@ export default {
     description: { type: String, default: () => '' },
     link: { type: String, default: () => '' },
   },
+  
 } 
 </script>
 
