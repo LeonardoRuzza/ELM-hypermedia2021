@@ -1,11 +1,19 @@
 <template>
   <!-- Sidebar -->
   <div class="w3-sidebar w3-border-light w3-bar-block">
-    <h3 class="w3-bar-item">News Menu</h3>
-    <a href="#" class="w3-bar-item w3-button" @click="goToNews(`${link1}`)">
+    <h3 class="w3-bar-item">Menu</h3>
+    <a
+      href="#"
+      class="w3-bar-item w3-button bg-color"
+      @click="goToNews(`${link1}`, $event)"
+    >
       {{ link1 }}
     </a>
-    <a href="#" class="w3-bar-item w3-button" @click="goToNews(`${link2}`)">
+    <a
+      href="#"
+      class="w3-bar-item w3-button"
+      @click="goToNews(`${link2}`, $event)"
+    >
       {{ link2 }}
     </a>
   </div>
@@ -17,7 +25,13 @@ export default {
     link2: { type: String, default: () => '' },
   },
   methods: {
-    goToNews(path) {
+    goToNews(path, event) {
+      event.target.classList.toggle('bg-color')
+      if (path === this.link1) {
+        event.target.nextElementSibling.classList.toggle('bg-color')
+      } else {
+        event.target.previousElementSibling.classList.toggle('bg-color')
+      }
       this.$emit('visualization', path)
     },
   },
@@ -25,14 +39,16 @@ export default {
 </script>
 
 <style scoped>
+.bg-color {
+  background-color: rgba(165, 164, 164, 0.733) !important;
+}
 .w3-sidebar {
   height: 100%;
   width: 18%;
   background-color: #fff;
   position: static;
   z-index: 1;
-  overflow: auto;
-  padding: 1%;
+  padding: 1% 6% 1% 0.5%;
 }
 .w3-bar-block .w3-dropdown-hover,
 .w3-bar-block .w3-dropdown-click {
