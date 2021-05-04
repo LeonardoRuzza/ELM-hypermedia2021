@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <main class="container">
     <h1>Products</h1>
-    <h3>Top Products</h3>
+    <h2>Top Products</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque
       bibendum luctus. Praesent elementum posuere cursus. Suspendisse iaculis et
@@ -26,7 +26,7 @@
       >
       </the-card>
     </div>
-    <h3>Products</h3>
+    <h2>Products</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque
       bibendum luctus. Praesent elementum posuere cursus. Suspendisse iaculis et
@@ -98,16 +98,6 @@ p {
   font-weight: normal;
   max-width: 1000px;
   margin: 30px auto 30px auto;
-}
-h3 {
-  border: 1px solid grey;
-  background-color: #26272b;
-  color: white;
-  box-shadow: 2px 2px 6px #888;
-  font-weight: bolder;
-  font-size: 20px;
-  margin: 20px auto 20px auto;
-  padding: 0px 20px 0px 20px;
 }
 .cards-container {
   display: flex;
