@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize')
 
 // Development
-const db = new Sequelize('postgres://postgres:fuckpg98@localhost:5432/test') //////////////////
+const db = new Sequelize('postgres://postgres:Sql1080@localhost:5432/test') //////////////////
 // Production
 /*  const pg = require('pg')
 pg.defaults.ssl = true
@@ -247,17 +247,17 @@ async function insertData() {
 
   /******** 30 Products *********/
   const firstProduct = await Product.create({
-    name: 'Product1',
-    description: 'Product1 description',
+    name: 'Real-Time Data Platform',
+    description: 'Our real-time big data platform ingests data from IoT data sources, engineering them from raw, unstructured, unformatted data to a set of clean, coherent, real-time data. Using a variety of data science tools, we visualize and transform data in a new actionable framework, covering the entire analytics life cycle for the customer: a key asset to deliver full control of the process of extracting value from big data.',
     isTop: true,
-    image: '...',
+    image: 'product_1.png',
   })
 
   const secondProduct = await Product.create({
-    name: 'Product2',
-    description: 'Product2 description',
+    name: 'Prediction & Scenario Analysis',
+    description: 'We analyze datasets through classification, clustering, and pattern recognition techniques to move from a historical static description of the past to a forward-looking actionable projection in the future. We implement this solution in predictive maintenance, incident analysis, early-warning, customer satisfaction, churn prediction, production planning, risk assessment, attribution modeling and more.',
     isTop: false,
-    image: '...',
+    image: 'product_2.png',
   })
 
   await Area1_PerformanceEngineering.addWorkIn(firstEmployee) // Employee work in area
