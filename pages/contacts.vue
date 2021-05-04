@@ -14,50 +14,56 @@
       </div>
       <div class="row">
         <div class="column">
-          <div>
+          <div class="sub-row1">
             <p class="contact-info-title">Our Office</p>
-            <p>Via Schiaffino, 11 20158 MILANO T</p>
+            <p class="contact-info-content">
+              Via Schiaffino, 11 20158 MILANO T
+            </p>
             <a class="info-icons" href="https://www.facebook.com/moviricompany"
               ><i class="fa fa-map-marker"></i
             ></a>
             <p class="contact-info-title">Contact phone</p>
-            <p>+39 02 4951 7001</p>
+            <p class="contact-info-content">+39 02 4951 7001</p>
             <a class="info-icons" href="https://www.facebook.com/moviricompany"
               ><i class="fa fa-phone"></i
             ></a>
             <p class="contact-info-title">Contact email</p>
-            <p>info@ELM.com</p>
+            <p class="contact-info-content">info@ELM.com</p>
             <a class="info-icons" href="https://www.facebook.com/moviricompany"
               ><i class="fa fa-envelope"></i
             ></a>
           </div>
-          <p class="contact-info-title">Our socials</p>
-          <ul class="social-icons">
-            <li>
-              <a class="facebook" href="https://www.facebook.com/moviricompany"
-                ><i class="fa fa-facebook"></i
-              ></a>
-            </li>
-            <li>
-              <a class="twitter" href="https://twitter.com/moviri"
-                ><i class="fa fa-twitter"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                class="instagram"
-                href="https://www.instagram.com/moviricompany"
-                ><i class="fa fa-instagram"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                class="linkedin"
-                href="https://www.linkedin.com/company/moviri/"
-                ><i class="fa fa-linkedin"></i
-              ></a>
-            </li>
-          </ul>
+          <div class="sub-row2">
+            <p class="contact-info-title">Our socials</p>
+            <ul class="social-icons">
+              <li>
+                <a
+                  class="facebook"
+                  href="https://www.facebook.com/moviricompany"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a class="twitter" href="https://twitter.com/moviri"
+                  ><i class="fa fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="instagram"
+                  href="https://www.instagram.com/moviricompany"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="linkedin"
+                  href="https://www.linkedin.com/company/moviri/"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="column">
           <the-contact-form class="form"></the-contact-form>
@@ -87,9 +93,6 @@ img {
   border-right: 0px;
   margin-bottom: 50px;
 }
-.form {
-  text-align: left;
-}
 .column {
   float: left;
   width: 50%;
@@ -100,6 +103,14 @@ img {
   content: '';
   display: table;
   clear: both;
+}
+.sub-row1 {
+  float: top;
+  height: 75%;
+}
+.sub-row2 {
+  float: top;
+  height: 25%;
 }
 .contact-box {
   border-radius: 5px;
@@ -115,8 +126,11 @@ img {
   box-shadow: 2px 2px 6px #888;
   font-weight: bolder;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 20px;
+}
+.contact-info-content {
+  margin-bottom: 15px;
 }
 li {
   display: inline-block;
@@ -149,7 +163,7 @@ li {
 .info-icons:focus,
 .info-icons:hover {
   color: #fff;
-  background-color: #29aafe;
+  background-color: darkgreen;
 }
 .social-icons.size-sm a,
 .info-icons.size-sm a {

@@ -24,15 +24,7 @@
       placeholder="Your email.."
       required
     />
-    <label class="form-label" for="cname"> Company Name: </label>
-    <input
-      id="cname"
-      class="form-field"
-      name="cname"
-      placeholder="Name of your company.."
-      required
-    />
-    <label for="country">Country</label>
+    <label class="form-label" for="country">Country</label>
     <select id="countries" name="countries" required>
       <option
         v-for="(item, itemIndex) of countries"
@@ -1065,14 +1057,33 @@ export default {
 form {
   padding: 12px 20px 12px 20px;
   margin: 8px 10px 8px 10px;
-  border: 1px solid #ccc;
+  border: 2px solid green;
+  -moz-box-shadow: 2px 2px 6px #888;
+  -webkit-box-shadow: 2px 2px 6px #888;
+  box-shadow: 2px 2px 6px #888;
 }
-.form-label,
-.form-field {
-  margin: 10px 0;
+.form-label {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+  display: block;
+  color: white;
+  background-color: #26272b;
+  -moz-box-shadow: 2px 2px 6px #888;
+  -webkit-box-shadow: 2px 2px 6px #888;
+  box-shadow: 2px 2px 6px #888;
+  border: 1px solid darkgreen;
+}
+.form-field,
+#countries {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  width: 100%;
   display: block;
 }
-
 input[type='text'],
 select {
   width: 100%;
@@ -1086,17 +1097,22 @@ select {
 
 input[type='submit'] {
   width: 100%;
-  background-color: #4caf50;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: darkgreen;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
+  border: 1px solid black;
   border-radius: 4px;
   cursor: pointer;
+  -moz-box-shadow: 2px 2px 6px #888;
+  -webkit-box-shadow: 2px 2px 6px #888;
+  box-shadow: 2px 2px 6px #888;
 }
 
 input[type='submit']:hover {
-  background-color: #45a049;
+  background-color: orange;
+  color: black;
 }
 
 #message {
