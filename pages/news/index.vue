@@ -12,7 +12,8 @@
         :key="'news-' + itemIndex"
         :image="'/news/image-' + item.id + '.png'"
         :title="item.title"
-        :description="item.description"
+        :description="item.introduction"
+        :link="'/news/' + item.id"
       >
       </the-card>
     </div>
@@ -22,7 +23,8 @@
         :key="'news-' + itemIndex"
         :image="item.img"
         :title="item.title"
-        :description="item.description"
+        :description="item.introduction"
+        :link="item.id"
       >
       </the-card>
     </div>

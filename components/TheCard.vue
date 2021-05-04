@@ -1,11 +1,13 @@
 <template>
   <div class="card">
+    <nuxt-link :to="link">
     <div class="card-title">
       {{ title }}
     </div>
     <div class="card-img">
       <img :src="`${image}`" alt="Image of the news" />
     </div>
+    </nuxt-link>
     <div class="card-description">
       {{ description }}
     </div>
@@ -19,6 +21,7 @@ export default {
     title: { type: String, default: () => '' },
     image: { type: String, default: () => '' },
     description: { type: String, default: () => '' },
+    link: { type: String, default: () => '' },
   },
 }
 </script>
