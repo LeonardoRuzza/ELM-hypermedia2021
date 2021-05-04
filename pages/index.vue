@@ -33,7 +33,7 @@
     <img
       id="globalFootprint"
       alt="Presence of the ELM in the world"
-      src="/world_presence.jpg"
+      src="/home/world_presence.jpg"
     />
   </main>
 </template>

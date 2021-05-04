@@ -103,23 +103,23 @@ export default {
     return {
       areas: [
         {
-          name: 'Area1',
+          name: 'Performance Engineering',
           path: '/area1',
         },
         {
-          name: 'Area2',
+          name: 'Analytics',
           path: '/area2',
         },
         {
-          name: 'Area3',
+          name: 'Security',
           path: '/area3',
         },
         {
-          name: 'Area4',
+          name: 'Internet of Things',
           path: '/area4',
         },
         {
-          name: 'Area5',
+          name: 'Machine Learning',
           path: '/area5',
         },
       ],
