@@ -76,7 +76,7 @@ export default {
   font-size: 110%;
 }
 .areas-grid {
-  border-color: lightgreen;
+  border-color: lightgray;
   margin-bottom: 40px;
 }
 .area {
@@ -86,7 +86,7 @@ export default {
   display: block;
   text-align: left;
   overflow: auto;
-  background-color: lightgreen;
+  background-color: lightgray;
 }
 h2 {
   margin-bottom: 30px;

@@ -97,7 +97,7 @@ export default {
           },
           {
             name: 'OUR TEAM',
-            path: '/team',
+            path: '/employees',
             hasDropdown: false,
           },
         ],
@@ -191,7 +191,7 @@ a,
   right: 0;
   width: auto;
   bottom: -5px;
-  background: rgb(100, 187, 122);
+  background: orange;
   height: 4px;
 }
 .dropdown-item .nuxt-link-exact-active.nuxt-link-active:after {
@@ -201,7 +201,7 @@ a,
   right: 0;
   width: auto;
   bottom: -5px;
-  background: rgb(100, 187, 122);
+  background: orange;
   height: 2px;
 }
 a:visited {
@@ -253,7 +253,7 @@ a:visited {
   right: 0;
   width: 0;
   bottom: -5px;
-  background: rgb(100, 187, 122);
+  background: orange;
   height: 4px;
   transition-property: width;
   transition-duration: 0.2s;
@@ -265,7 +265,7 @@ a:visited {
   right: 0;
   width: 0;
   bottom: -5px;
-  background: rgb(100, 187, 122);
+  background: orange;
   height: 2px;
   transition-property: width;
   transition-duration: 0.2s;

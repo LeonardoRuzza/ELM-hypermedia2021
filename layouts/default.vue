@@ -23,7 +23,7 @@ html {
   font-family: 'Helvetica';
   font-weight: bolder;
   box-sizing: border-box;
-  background-color: lightgray;
+  background-color: white;
 }
 
 *,

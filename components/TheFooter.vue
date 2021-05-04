@@ -183,7 +183,7 @@ export default {
 }
 .footer a:hover,
 .footer nuxt-link:hover {
-  color: #3366cc;
+  color: orange;
   text-decoration: none;
 }
 .footer-links {
@@ -204,7 +204,7 @@ export default {
 .footer-links nuxt-link:active,
 .footer-links nuxt-link:focus,
 .footer-links nuxt-link:hover {
-  color: #3366cc;
+  color: orange;
   text-decoration: none;
 }
 .footer-links.inline li {
