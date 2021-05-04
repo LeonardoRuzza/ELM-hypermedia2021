@@ -1,17 +1,22 @@
 <template>
-  <div class="card">
-    <nuxt-link :to="link">
+  <nuxt-link :to="link">
+    <div class="card">
       <div class="card-title">
         {{ title }}
       </div>
-      <div class="card-img">
-        <img :src="`${image}`" alt="Image of the news" />
+      <div class="card-content">
+        <div class="card-img">
+          <img :src="`${image}`" :alt="'Thumbnail of ' + title" />
+        </div>
+        <div v-if="subtitle != ''" class="card-subtitle">
+          {{ subtitle }}
+        </div>
+        <div class="card-description">
+          {{ description }}
+        </div>
       </div>
-    </nuxt-link>
-    <div class="card-description">
-      {{ description }}
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -19,6 +24,7 @@ export default {
   props: {
     // productDetail is an array of object, each item contains the name of the image
     title: { type: String, default: () => '' },
+    subtitle: { type: String, default: () => '' },
     image: { type: String, default: () => '' },
     description: { type: String, default: () => '' },
     link: { type: String, default: () => '' },
@@ -28,25 +34,52 @@ export default {
 
 <style scoped>
 .card {
-  width: 200px;
-  height: 355px;
-  border-radius: 0.2rem;
+  width: 350px;
+  height: 500px;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-direction: column;
 }
+.card:hover {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 3px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .card-title {
   font-size: 22px;
-  margin: 0px;
+  margin: 0px 0px 10px 0px;
   padding: 5px;
+  width: 100%;
+  color: white;
+  background-color: #26272b;
+}
+.card-subtitle {
+  font-size: 0.9rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  /* border-top: 3px solid orange; */
+  border-bottom: 3px solid orange;
+  text-align: center;
   color: #26272b;
+  width: min-content;
+  margin: auto;
 }
 .card-img {
   width: 100%;
-  max-height: 150px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 .card-img img {
-  max-width: 100%;
-  max-height: 150px;
+  max-width: 90%;
 }
 .card-description {
   font-size: 14px;
@@ -54,5 +87,12 @@ export default {
   text-align: left;
   padding: 5px;
   width: 100%;
+  margin: auto;
+}
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 </style>

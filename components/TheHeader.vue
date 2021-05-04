@@ -1,6 +1,6 @@
 <template>
-  <header class="header">
-    <nav class="header-content">
+  <nav class="header">
+    <div class="header-content">
       <div class="menu-item-group">
         <span
           v-for="(item, itemIndex) of menuOptions.left"
@@ -54,8 +54,8 @@
           </nuxt-link>
         </span>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -74,24 +74,24 @@ export default {
             hasDropdown: true,
             dropdown: [
               {
-                name: 'Area 1',
-                path: '/area1',
+                name: 'Performance Engineering',
+                path: '/areas/1',
               },
               {
-                name: 'Area 2',
-                path: '/area2',
+                name: 'Analytics',
+                path: '/areas/2',
               },
               {
-                name: 'Area 3',
-                path: '/area3',
+                name: 'Security',
+                path: '/areas/3',
               },
               {
-                name: 'Area 4',
-                path: '/area4',
+                name: 'Internet of Things',
+                path: '/areas/4',
               },
               {
-                name: 'Area 5',
-                path: '/area5',
+                name: 'Machine Learning',
+                path: '/areas/5',
               },
             ],
           },
@@ -173,6 +173,7 @@ export default {
   justify-content: space-between;
 }
 .menu-item {
+  cursor: pointer;
   position: relative;
 }
 a,
@@ -229,7 +230,7 @@ a:visited {
   top: 70px;
   visibility: hidden;
   opacity: 0;
-  width: 150px;
+  width: 250px;
   background: #26272b;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
@@ -240,6 +241,9 @@ a:visited {
   background: #26272b;
   padding: 10px;
   border: solid 1px rgb(200, 200, 200);
+}
+.dropdown-item a {
+  font-size: 1rem !important;
 }
 .underline,
 .underline-small {
