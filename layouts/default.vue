@@ -23,6 +23,7 @@ html {
   font-family: 'Helvetica';
   font-weight: bolder;
   box-sizing: border-box;
+  background-color: lightgray;
 }
 
 *,
@@ -33,14 +34,14 @@ html {
 }
 .container {
   padding: 0.2%;
-  margin: 1% 0.1% 0.1% 0.1%;
+  margin: 2% 2% 2% 2%;
   text-align: center;
 }
 
 h1 {
-  background-color: #7bcc94;
+  background-color: #26272b;
   font-size: 50px;
-  color: rgb(70, 5, 66);
+  color: white;
   padding: 16px;
   font-weight: bolder;
   -moz-box-shadow: 2px 2px 6px #888;
