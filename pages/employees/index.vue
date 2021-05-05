@@ -9,10 +9,10 @@
         <the-card
           v-for="item of areas"
           :key="'reponsible-' + item.IsResponsible.id"
-          :title="item.IsResponsible.name"
+          :title="item.IsResponsible.name + ' ' + item.IsResponsible.surname"
           :subtitle="item.name"
           :image="'/employees/employee-' + item.id + '.png'"
-          :link="'/api/employees/' + item.id"
+          :link="'/employees/' + item.id"
         >
         </the-card>
       </div>
@@ -23,9 +23,9 @@
         <the-card
           v-for="item of standardEmployees"
           :key="'employees-' + item.id"
-          :title="item.name"
+          :title="item.name + ' ' + item.surname"
           :image="'/employees/employee-' + item.id + '.png'"
-          :link="'/api/employees/' + item.id"
+          :link="'/employees/' + item.id"
         >
         </the-card>
       </div>
@@ -47,8 +47,8 @@ export default {
       )
       areas.push(data)
     }
-    const { data1 } = await $axios.get(`${process.env.BASE_URL}/api/employees`)
-    const standardEmployees = data1
+    const { data } = await $axios.get(`${process.env.BASE_URL}/api/employees`)
+    const standardEmployees = data
 
     return {
       areas,

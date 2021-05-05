@@ -27,7 +27,7 @@
         <the-card
           v-for="(item, itemIndex) of allNews"
           :key="'news-' + itemIndex"
-          :image="item.img"
+          :image="'/news/image-' + item.id + '.png'"
           :title="item.title"
           :description="item.introduction"
           :link="item.id"
@@ -48,18 +48,17 @@ export default {
     TheBreadCrumbs,
   },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get(
-      `${process.env.BASE_URL}/api/news/latest_news`
-    )
-    const latestNews = data
-    const { data1 } = await $axios.get(
-      `${process.env.BASE_URL}/api/news/all_news`
-    )
-    const allNews = data1
-    return {
-      latestNews,
-      allNews,
-    }
+    return Promise.all([
+      await $axios.$get(`${process.env.BASE_URL}/api/news/latest_news`),
+      await $axios.$get(`${process.env.BASE_URL}/api/news/all_news`),
+    ]).then((res) => {
+      const latestNews = res[0]
+      const allNews = res[1]
+      return {
+        latestNews,
+        allNews,
+      }
+    })
   },
   data() {
     return {
