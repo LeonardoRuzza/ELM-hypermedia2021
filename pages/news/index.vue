@@ -30,7 +30,7 @@
           :image="'/news/image-' + item.id + '.png'"
           :title="item.title"
           :description="item.introduction"
-          :link="item.id"
+          :link="'/news/' + item.id"
         >
         </the-card>
       </div>
