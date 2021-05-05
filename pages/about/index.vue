@@ -99,17 +99,26 @@ export default {
   margin-top: 50px;
 }
 .review-container {
-  border: 1px solid goldenrod;
+  border: 2px solid goldenrod;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
 .review-author {
   padding: 5px;
-  font-size: large;
+  font-size: 170%;
+  color: #023f72;
+  margin-top: 10px;
 }
 .review-role {
+  font-size: 120%;
+  font-style: italic;
   padding: 5px;
+  margin-bottom: 10px;
 }
 .review-content {
   padding: 5px;
+  font-size: 120%;
+  margin-bottom: 10px;
 }
 h2 {
   margin-bottom: 30px;
