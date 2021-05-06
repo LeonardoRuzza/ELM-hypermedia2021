@@ -29,7 +29,7 @@
         ></the-card>
         <span>
           <p>All our team member is important for us</p>
-          <nuxt-link to="/#developingTeam" class="button">
+          <nuxt-link :to="'/team/product-' + productId" class="button">
             Developing Team
           </nuxt-link>
         </span>
@@ -95,6 +95,7 @@ export default {
         },
       ],
       isContactVisible: false,
+      productId: id,
     }
   },
   methods: {

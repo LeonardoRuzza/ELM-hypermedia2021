@@ -182,7 +182,7 @@ async function init() {
     const { id } = req.params
     const { QueryTypes } = require('sequelize')
     const DevelopingTeam = await db.query(
-      'SELECT E.id, E.name, E.surname, E.role, E.email, E.image, E.area_of_work_id FROM develops as D, employees as E WHERE D.product_id = ? AND D.employee_id = E.id ',
+      'SELECT E.id, E.name, E.surname, E.role, E.email, E.area_of_work_id, P.name as product_name FROM develops as D, employees as E, products as P WHERE D.product_id = ? AND D.employee_id = E.id AND D.product_id = P.id',
       {
         replacements: [id],
         type: QueryTypes.SELECT,
