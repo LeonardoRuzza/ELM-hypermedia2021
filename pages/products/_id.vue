@@ -42,7 +42,10 @@
     <section class="form-section" :class="{ visible: isContactVisible }">
       <div class="form-container">
         <span @click="closeContact()">&times;</span>
-        <the-contact-form class="form"></the-contact-form>
+        <the-contact-form
+          class="form"
+          :default-message="'Request information for ' + product.name + ':'"
+        ></the-contact-form>
       </div>
     </section>
   </main>
@@ -64,7 +67,6 @@ export default {
       `${process.env.BASE_URL}/api/products/${id}`
     )
     const product = data
-    console.log(product)
     const crumbs = [
       {
         title: 'Products',

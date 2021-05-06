@@ -41,6 +41,7 @@
       class="form-field"
       name="message"
       placeholder="Write here your message.."
+      :value="defaultMessage"
     ></textarea>
     <input class="form-button" type="submit" value="Send Message" />
   </form>
@@ -48,6 +49,9 @@
 
 <script>
 export default {
+  props: {
+    defaultMessage: { type: String, default: () => '' },
+  },
   data() {
     return {
       countries: [
