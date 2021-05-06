@@ -11,7 +11,7 @@
         <div v-if="subtitle != ''" class="card-subtitle">
           {{ subtitle }}
         </div>
-        <div class="card-description">
+        <div v-if="description != ''" class="card-description">
           {{ description }}
         </div>
       </div>
@@ -70,17 +70,18 @@ export default {
   border-bottom: 3px solid orange;
   text-align: center;
   color: #26272b;
-  width: min-content;
   margin: auto;
 }
 .card-img {
   width: 100%;
+  max-height: 90%;
   margin-bottom: 10px;
   text-align: center;
-  background-color: black;
+  background-color: white;
 }
 .card-img img {
   max-width: 90%;
+  max-height: 90%;
 }
 .card-description {
   font-size: 14px;

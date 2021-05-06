@@ -68,4 +68,25 @@ h2 {
   margin: 20px auto 20px auto;
   padding: 0px 20px 0px 20px;
 }
+.button {
+  padding: 15px 25px 15px 25px;
+  border: 1px solid #26272b;
+  background-color: #26272b;
+  color: white;
+  border-radius: 1.7rem;
+  margin: auto;
+  transition: background-color 0.3s ease-in;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:visited {
+  text-decoration: none;
+  color: white;
+}
+.button:hover {
+  background-color: white;
+  color: #26272b;
+  transition: background-color 0.2s ease-in;
+  text-decoration: none;
+}
 </style>

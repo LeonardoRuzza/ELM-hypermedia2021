@@ -15,12 +15,12 @@
       Aliquam lacus eros, commodo ut congue et, dictum cursus orci. Vestibulum
       at lacus vel velit finibus faucibus et in velit.
     </p>
-    <div class="cards-container">
+    <div id="top_products" class="cards-container">
       <the-card
         v-for="item of topProducts"
         :key="'product-' + item.id"
         :title="item.name"
-        :image="'/products/product-' + item.id + '.png'"
+        :image="'/products/' + item.id + '/thumbnail.png'"
         :subtitle="getArea(item.area_of_belonging_id)"
         :description="item.description"
         :link="'/products/' + item.id"
@@ -45,7 +45,7 @@
         v-for="item of standardProducts"
         :key="'product-' + item.id"
         :title="item.name"
-        :image="'/products/product-' + item.id + '.png'"
+        :image="'/products/' + item.id + '/thumbnail.png'"
         :subtitle="getArea(item.area_of_belonging_id)"
         :description="item.description"
         :link="'/products/' + item.id"
@@ -106,6 +106,14 @@ export default {
   },
 }
 </script>
+<!--
+<style>
+#products_top_products .card-img,
+#products_standard_products .card-img {
+  background-color: white;
+}
+</style>
+-->
 <style scoped>
 p {
   font-weight: normal;

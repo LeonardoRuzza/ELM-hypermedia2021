@@ -8,10 +8,7 @@
         class="slide fade"
       >
         <div class="index">{{ itemIndex + 1 }} / 3</div>
-        <img
-          :src="require(`~/assets/${item}`)"
-          :alt="'slide product ' + (itemIndex + 1)"
-        />
+        <img :src="item" :alt="'slide product ' + (itemIndex + 1)" />
       </div>
       <!-- Next and previous buttons -->
       <span class="prev" @click="plusSlides(-1)">&#10094;</span>
@@ -112,7 +109,9 @@ export default {
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
-
+.slide img {
+  height: 400px;
+}
 /* Position the "next button" to the right */
 .next {
   left: auto;

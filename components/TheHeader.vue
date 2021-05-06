@@ -158,6 +158,7 @@ export default {
   position: sticky;
   top: 0px;
   left: 0px;
+  z-index: 10000;
 }
 .header-content {
   display: flex;
