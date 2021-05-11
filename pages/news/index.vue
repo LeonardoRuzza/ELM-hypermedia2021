@@ -110,6 +110,8 @@ export default {
 .card {
   width: 300px;
   height: 533px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .news-container {
   display: flex;
