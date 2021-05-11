@@ -23,7 +23,7 @@
       <div id="product-team" class="team">
         <the-card
           title="Team Manager"
-          :image="'/employees/employee-' + product.Manage.id + '.png'"
+          :image="'/employees/employee-' + product.Manage.id + '.jpg'"
           :link="'employees/' + product.Manage.id"
           :subtitle="product.Manage.name + ' ' + product.Manage.surname"
         ></the-card>

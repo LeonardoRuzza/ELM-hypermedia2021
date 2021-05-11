@@ -10,7 +10,7 @@
           v-for="item of team"
           :key="'employee-' + item.id"
           :title="item.name + ' ' + item.surname"
-          :image="'/employees/employee-' + item.id + '.png'"
+          :image="'/employees/employee-' + item.id + '.jpg'"
           :subtitle="item.role"
           :link="'/employees/' + item.id"
         >
@@ -60,19 +60,19 @@ export default {
     } else if (params[0] === 'area') {
       let areaName
       switch (params[1]) {
-        case 1:
+        case '1':
           areaName = 'Performance Engineering'
           break
-        case 2:
+        case '2':
           areaName = 'Analytics'
           break
-        case 3:
+        case '3':
           areaName = 'Security'
           break
-        case 4:
+        case '4':
           areaName = 'Internet of Things'
           break
-        case 5:
+        case '5':
           areaName = 'Machine Learning'
           break
       }
