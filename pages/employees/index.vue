@@ -11,7 +11,7 @@
           :key="'reponsible-' + item.IsResponsible.id"
           :title="item.IsResponsible.name + ' ' + item.IsResponsible.surname"
           :subtitle="item.name"
-          :image="'/employees/employee-' + item.id + '.png'"
+          :image="'/employees/employee-' + item.id + '.jpg'"
           :link="'/employees/' + item.id"
         >
         </the-card>
@@ -24,7 +24,7 @@
           v-for="item of standardEmployees"
           :key="'employees-' + item.id"
           :title="item.name + ' ' + item.surname"
-          :image="'/employees/employee-' + item.id + '.png'"
+          :image="'/employees/employee-' + item.id + '.jpg'"
           :link="'/employees/' + item.id"
         >
         </the-card>
@@ -62,9 +62,8 @@ export default {
 .cards-container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: nowrap;
   flex-direction: row;
-  flex-wrap: wrap;
   max-width: 1000px;
-  margin: 0px auto 30px auto;
 }
 </style>

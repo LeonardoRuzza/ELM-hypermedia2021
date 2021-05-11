@@ -350,19 +350,155 @@ async function insertData() {
   })
 
   /******** 20 Employees *********/
-  const firstEmployee = await Employee.create({
-    name: 'Employee1 name',
-    surname: 'Employee1 surname',
-    role: 'Employee1 role',
-    email: 'Employee1 mail'
+  const employee1 = await Employee.create({
+    name: 'Paolo',
+    surname: 'Bozzola',
+    role: '',
+    email: 'paolo.bozzola@elmcorp.com'
   })
 
-  const secondEmployee = await Employee.create({
-    name: 'Employee2 name',
-    surname: 'Employee2 surname',
-    role: 'Employee2 role',
-    email: 'Employee2 mail'
+  const employee2 = await Employee.create({
+    name: 'Paolo',
+    surname: 'Cremonesi',
+    role: '',
+    email: 'paolo.cremonesi@elmcorp.com'
   })
+
+  const employee3 = await Employee.create({
+    name: 'Claudio',
+    surname: 'Bellia',
+    role: '',
+    email: 'claudio.bellia@elmcorp.com'
+  })
+
+  const employee4 = await Employee.create({
+    name: 'Enrico',
+    surname: 'Maini',
+    role: '',
+    email: 'enrico.maini@elmcorp.com'
+  })
+
+  const employee5 = await Employee.create({
+    name: 'Camilla',
+    surname: 'Stefani',
+    role: '',
+    email: 'camilla.stefani@elmcorp.com'
+  })
+
+  const employee6 = await Employee.create({
+    name: 'Francesca',
+    surname: 'Bogana',
+    role: '',
+    email: 'francesca.bogana@elmcorp.it'
+  })
+
+  const employee7 = await Employee.create({
+    name: 'Fabio',
+    surname: 'Volante',
+    role: '',
+    email: 'fabio.volante@elmcorp.com'
+  })
+
+  const employee8 = await Employee.create({
+    name: 'Matteo',
+    surname: 'Fabiano',
+    role: '',
+    email: 'matteo.fabiano@elmcorp.com'
+  })
+
+  const employee9 = await Employee.create({
+    name: 'Sharon',
+    surname: 'Smith',
+    role: '',
+    email: 'sharon.smith@elmcorp.com'
+  })
+
+  const employee10 = await Employee.create({
+    name: 'Bruce',
+    surname: 'Lam',
+    role: '',
+    email: 'bruce.lam@elmcorp.com'
+  })
+
+  const employee11 = await Employee.create({
+    name: 'Katrina',
+    surname: 'Ortiz',
+    role: '',
+    email: 'katrina.ortiz@elmcorp.com'
+  })
+
+  const employee12 = await Employee.create({
+    name: 'James',
+    surname: 'Hatch',
+    role: '',
+    email: 'james.hatch@elmcorp.com'
+  })
+
+  const employee13 = await Employee.create({
+    name: 'Gijo',
+    surname: 'Mathew',
+    role: '',
+    email: 'gijo.mathew@elmcorp.com'
+  })
+
+  const employee14 = await Employee.create({
+    name: 'Cristina',
+    surname: 'Everett',
+    role: '',
+    email: 'cristina.everett@elmcorp.com'
+  })
+
+  const employee15 = await Employee.create({
+    name: 'Katie',
+    surname: 'Clancy',
+    role: '',
+    email: 'katie.clancy@elmcorp.com'
+  })
+
+  const employee16 = await Employee.create({
+    name: 'Karen',
+    surname: 'Abbate',
+    role: '',
+    email: 'karen.abbate@elmcorp.com'
+  })
+
+  const employee17 = await Employee.create({
+    name: 'Abbi',
+    surname: 'Whitaker',
+    role: '',
+    email: 'abbi.whitaker@elmcorp.com'
+  })
+
+  const employee18 = await Employee.create({
+    name: 'Craig',
+    surname: 'Japp',
+    role: '',
+    email: 'craig.japp@elm.corp'
+  })
+
+  const employee19 = await Employee.create({
+    name: 'Thomas',
+    surname: 'Jordan',
+    role: '',
+    email: 'thomas.jordan@elm.corp'
+  })
+
+  const employee20 = await Employee.create({
+    name: 'Rachel',
+    surname: 'Fernandez',
+    role: '',
+    email: 'rachel.fernandez@elm.corp'
+  })
+
+  
+
+
+
+
+
+
+
+  
 
   /******** 30 Products *********/
   const firstProduct = await Product.create({
@@ -377,19 +513,19 @@ async function insertData() {
     isTop: false
   })
 
-  await Area1_PerformanceEngineering.addWorkIn(firstEmployee) // Employee work in area
-  await Area2_Analytics.addWorkIn(secondEmployee)
-  await Area1_PerformanceEngineering.setIsResponsible(firstEmployee) // Add Responsible to the area
-  await Area2_Analytics.setIsResponsible(secondEmployee)
+  await Area1_PerformanceEngineering.addWorkIn(employee1) // Employee work in area
+  await Area2_Analytics.addWorkIn(employee2)
+  await Area1_PerformanceEngineering.setIsResponsible(employee1) // Add Responsible to the area
+  await Area2_Analytics.setIsResponsible(employee2)
 
   await Area2_Analytics.addBelongsTo(firstProduct) // Add product to the area
   await Area2_Analytics.addBelongsTo(secondProduct)
 
-  await firstEmployee.addManage(firstProduct) // Add product to the managed ones by employee
-  await firstEmployee.addManage(secondProduct)
+  await employee1.addManage(firstProduct) // Add product to the managed ones by employee
+  await employee1.addManage(secondProduct)
 
-  await firstEmployee.addDevelop(firstProduct) // Add product to the developed ones by employee
-  await firstEmployee.addDevelop(secondProduct)
+  await employee1.addDevelop(firstProduct) // Add product to the developed ones by employee
+  await employee1.addDevelop(secondProduct)
 }
 
 /**
