@@ -1,10 +1,10 @@
 <template>
   <nuxt-link :to="link">
     <div class="card">
-      <div class="card-title">
-        {{ title }}
-      </div>
       <div class="card-content">
+        <div class="card-title">
+          {{ title }}
+        </div>
         <div class="card-img">
           <img :src="`${image}`" :alt="'Thumbnail of ' + title" />
         </div>
@@ -38,8 +38,7 @@ export default {
   height: 500px;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: flex;
-  flex-direction: column;
+  margin: 20px auto 20px auto;
 }
 .card:hover {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 3px 10px 0 rgba(0, 0, 0, 0.4);
@@ -49,9 +48,9 @@ export default {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .card-title {
@@ -61,6 +60,8 @@ export default {
   width: 100%;
   color: white;
   background-color: #26272b;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 .card-subtitle {
   font-size: 0.9rem;
@@ -73,15 +74,16 @@ export default {
   margin: auto;
 }
 .card-img {
-  width: 100%;
-  max-height: 90%;
+  max-width: 90%;
+  max-height: 40%;
   margin-bottom: 10px;
   text-align: center;
-  background-color: white;
+  /* background-color: black;*/
+  margin: auto;
 }
 .card-img img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
 }
 .card-description {
   font-size: 14px;
@@ -89,7 +91,7 @@ export default {
   text-align: left;
   padding: 5px;
   width: 100%;
-  margin: auto;
+  margin: auto auto 10px auto;
 }
 a,
 a:hover,
