@@ -5,7 +5,10 @@
       <h1>{{ area.name }}</h1>
     </header>
     <section class="introduction-container">
+      <img :src="'/areas/images/area-' + area.id + '.png'" :alt="'Image of the area' + area.name"/>
+      <div class="intro-description">
       {{ area.description }}
+      </div>
     </section>
     <section class="top-product-container">
       <h2 class="h2-title">
@@ -14,7 +17,7 @@
       <div class="top-product-info">
         <img
           :src="'/products/' + topProduct.id + '/thumbnail.png'"
-          alt="Image of the top product of the are"
+          alt="Image of the top product of the area"
         />
         <div class="top-product-desc">{{ topProduct.description }}</div>
       </div>
