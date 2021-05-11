@@ -342,9 +342,9 @@ async function insertData() {
     author: 'Guillermo Paez',
     role: 'Product and Innovation Manager - Cablevision',
     content:
-      '"Cablevision customers are looking to enjoy a personalized TV experience. ContentWise expands our ability to deliver state-of-the-art personalized TV experiences, make our offering more attractive and learn about our subscribers preferences.  It is the foundation upon which we are able to continue to enhance and extend our service offering."',
+      '"Cablevision customers are looking to enjoy a personalized TV experience. ELM expands our ability to deliver state-of-the-art personalized TV experiences, make our offering more attractive and learn about our subscribers preferences.  It is the foundation upon which we are able to continue to enhance and extend our service offering."',
   })
-  const review6 = await Reviews.create({
+/*   const review6 = await Reviews.create({
     author: '',
     role: '',
     content:
@@ -373,7 +373,7 @@ async function insertData() {
     role: '',
     content:
       '',
-  })
+  }) */
 
   /******** 4 Areas *********/
   const Area1_PerformanceEngineering = await Area.create({
