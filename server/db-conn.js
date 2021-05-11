@@ -296,9 +296,9 @@ async function insertData() {
     title:
       'Sanofi works with ELM for Capacity Management',
     content:
-      '',
+      'Sanofi was tasked with the ambitious goal of setting up the foundation of a world-class capacity management process. As the solution was implemented, Sanofi also decided to take advantage of Moviri’s Managed Service offering to support BMC’s TrueSight Capacity Optimization Solution on a daily basis. At BMC Engage 2014 in Orlando, Sanofi and ELM held a joint presentation to discuss how they effectively managed growth within Sanofi and continuously aligned IT to business demands. The partnership between Sanofi and us continues to grow stronger as ELM has become a key partner and a trusted advisor for Sanofi’s global challenges. Each customer relationship is personal to ELM and we strive to treat our customer’s needs as if they were our own.  Chris Wimer, Global Capacity Manager at Sanofi, has written a recommendation letter to endorse a leading Moviri consultant’s services and work ethic throughout his time while working with Sanofi. Here is an excerpt from the letter: “I am responsible for Capacity Management within the Application Technology and Solutions (ATS) and Global Infrastructure Services (GIS) groups at Sanofi. As Global Capacity Manager, I provide services to a variety of different internal and external Customers, including administration, support, operation and extension of the BMC TrueSight Capacity Optimization (TSCO) infrastructure” […] “If you are considering engaging a strategic partner with expertise in Capacity Management processes, or you’re interested in getting the best out of your BMC TrueSight Capacity Optimization instance, I would recommend meeting with ELM and discuss how they can help you achieve your objectives.” ELM is greatly appreciative of the opportunity to partner with a market leader such as Sanofi. We take tremendous pride and understand the importance of supporting Sanofi to ensure their enterprise applications are running faster, using less resources and meeting business demands.',
     introduction:
-      'The relationship between Sanofi Aventis Group and ELM dates back to 2014 when ELM first engaged with the leading multinational pharmaceutical company to implement BMC’s Truesight Capacity Optimization solution. Sanofi was tasked with the ambitious goal of setting up the foundation of a world-class capacity management process. As the solution was implemented, Sanofi also decided to take advantage of Moviri’s Managed Service offering to support BMC’s TrueSight Capacity Optimization Solution on a daily basis. At BMC Engage 2014 in Orlando, Sanofi and ELM held a joint presentation to discuss how they effectively managed growth within Sanofi and continuously aligned IT to business demands. The partnership between Sanofi and us continues to grow stronger as ELM has become a key partner and a trusted advisor for Sanofi’s global challenges. Each customer relationship is personal to ELM and we strive to treat our customer’s needs as if they were our own.  Chris Wimer, Global Capacity Manager at Sanofi, has written a recommendation letter to endorse a leading Moviri consultant’s services and work ethic throughout his time while working with Sanofi. Here is an excerpt from the letter: “I am responsible for Capacity Management within the Application Technology and Solutions (ATS) and Global Infrastructure Services (GIS) groups at Sanofi. As Global Capacity Manager, I provide services to a variety of different internal and external Customers, including administration, support, operation and extension of the BMC TrueSight Capacity Optimization (TSCO) infrastructure” […] “If you are considering engaging a strategic partner with expertise in Capacity Management processes, or you’re interested in getting the best out of your BMC TrueSight Capacity Optimization instance, I would recommend meeting with ELM and discuss how they can help you achieve your objectives.” ELM is greatly appreciative of the opportunity to partner with a market leader such as Sanofi. We take tremendous pride and understand the importance of supporting Sanofi to ensure their enterprise applications are running faster, using less resources and meeting business demands.',
+      'The relationship between Sanofi Aventis Group and ELM dates back to 2014 when ELM first engaged with the leading multinational pharmaceutical company to implement BMC’s Truesight Capacity Optimization solution.',
 
     isLatest: false,
   })
@@ -314,12 +314,66 @@ async function insertData() {
   })
 
   /******** Reviews *********/
-  const firstReview = await Reviews.create({
+  const review1 = await Reviews.create({
     author: 'Pablo Antolin',
     role: 'PayTv LATAM Product Manager - Telefònica',
     content:
-      'Telefònica is changinh the way users interact with our video products, following the principle of always placing them at the center of the experience. With the ELM solution, we can offer viewers personalized and simplified experiences.',
+      '"Telefònica is changinh the way users interact with our video products, following the principle of always placing them at the center of the experience. With the ELM solution, we can offer viewers personalized and simplified experiences."',
   })
+  const review2 = await Reviews.create({
+    author: 'Justin Martin',
+    role: 'Senior Technical Solution Leader - Cherner',
+    content:
+      '"IT Infrastructure Capacity Management requires a multifaceted knowledge about technology, business processes, and practice. The ability to talk to all the different areas of the organization provides the unique advantage of creating reliable and accurate models to predict and plan around IT infrastructure Capacity Risks. ELM SMEs brought to Cerner knowledge about the tools, methodologies, and processes that helped with maturing the practice to an unprecedented level that still provides benefits to the storage, compute and network infrastructure capacity planning."',
+  })
+  const review3 = await Reviews.create({
+    author: 'Massimiliano Mazzarolo',
+    role: 'Chief Technology Architect - lastminute.com',
+    content:
+      '"ELM AI allowed us to optimize our container-based Java services, significantly increase reliability under peak loads, and drive towards our cost-saving goals. AI-driven optimization by ELM created a new competitive advantage for lastminute.com and better efficiency in our private cloud platform. Autonomous performance optimization is real and is here."',
+  })
+  const review4 = await Reviews.create({
+    author: 'Andreas Grabner',
+    role: 'DevOps Activist - Dynatrace',
+    content:
+      '"Application development and release cycles today are measured in days, instead of months. Configuration options of the tech stack continue to increase in scope and complexity, with dependencies that have become unpredictable.[...] Tools like Akamas allow us to help our organizations deliver exceptional performance while keeping an eye on resource consumption and costs."',
+  })
+  const review5 = await Reviews.create({
+    author: 'Guillermo Paez',
+    role: 'Product and Innovation Manager - Cablevision',
+    content:
+      '"Cablevision customers are looking to enjoy a personalized TV experience. ELM expands our ability to deliver state-of-the-art personalized TV experiences, make our offering more attractive and learn about our subscribers preferences.  It is the foundation upon which we are able to continue to enhance and extend our service offering."',
+  })
+/*   const review6 = await Reviews.create({
+    author: '',
+    role: '',
+    content:
+      '',
+  })
+  const review7 = await Reviews.create({
+    author: '',
+    role: '',
+    content:
+      '',
+  })
+  const review8 = await Reviews.create({
+    author: '',
+    role: '',
+    content:
+      '',
+  })
+  const review9 = await Reviews.create({
+    author: '',
+    role: '',
+    content:
+      '',
+  })
+  const review10 = await Reviews.create({
+    author: '',
+    role: '',
+    content:
+      '',
+  }) */
 
   /******** 4 Areas *********/
   const Area1_PerformanceEngineering = await Area.create({

@@ -17,17 +17,18 @@
         v-for="(area, areaIndex) of areas"
         :key="'area-' + areaIndex"
         class="area"
-        @click="goToArea(`/areas/${area.id}`)"
       >
-        <div class="area-text">
-          <div class="area-title">{{ area.name }}</div>
-          <div class="area-shortDesc">{{ area.shortDesc }}</div>
-        </div>
-        <img
-          class="icon"
-          alt="Icon of  an area"
-          :src="'/areas/icons/icon-' + area.id + '.png'"
-        />
+        <nuxt-link :to="'/areas/' + area.id">
+          <div class="area-text">
+            <div class="area-title">{{ area.name }}</div>
+            <div class="area-shortDesc">{{ area.shortDesc }}</div>
+          </div>
+          <img
+            class="icon"
+            alt="Icon of  an area"
+            :src="'/areas/icons/icon-' + area.id + '.png'"
+          />
+        </nuxt-link>
       </div>
     </section>
     <img
@@ -47,11 +48,6 @@ export default {
     return {
       areas,
     }
-  },
-  methods: {
-    goToArea(path) {
-      this.$router.push({ path })
-    },
   },
 }
 </script>

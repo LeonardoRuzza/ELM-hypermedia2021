@@ -5,10 +5,13 @@
       <h1>{{ area.name }}</h1>
     </header>
     <section class="introduction-container">
-      <img :src="'/areas/images/area-' + area.id + '.png'" :alt="'Image of the area' + area.name"/>
       <div class="intro-description">
-      {{ area.description }}
+        {{ area.description }}
       </div>
+      <img
+        :src="'/areas/images/area-' + area.id + '.png'"
+        :alt="'Image of the area' + area.name"
+      />
     </section>
     <section class="top-product-container">
       <h2 class="h2-title">
@@ -39,7 +42,7 @@
         <h3>Responsible</h3>
         <div class="responsible-info">
           <img
-            :src="'/employees/employee-' + responsible.id + '.png'"
+            :src="'/employees/employee-' + responsible.id + '.jpg'"
             alt="Image of the Responsible of the area"
           />
           {{ responsible.name }} <br />
@@ -115,6 +118,14 @@ export default {
   font-size: 150%;
   word-spacing: 5px;
   font-style: italic;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.introduction-container img {
+  max-height: 50%;
+  max-width: 40%;
 }
 .h2-title {
   font-size: 200%;

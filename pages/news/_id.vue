@@ -67,7 +67,7 @@ article {
   display: block;
   text-align: left;
   overflow: auto;
-  background-color: lightgreen;
+  background-color: lightgray;
 }
 h2 {
   margin-top: 20px;
