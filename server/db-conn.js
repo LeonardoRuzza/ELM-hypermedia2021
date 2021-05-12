@@ -544,6 +544,41 @@ async function insertData() {
     email: 'rachel.fernandez@elm.corp'
   })
 
+  const employee21 = await Employee.create({
+    name: 'Michael',
+    surname: 'Brody',
+    role: '',
+    email: 'michael.brody@elm.corp'
+  })
+
+  const employee22 = await Employee.create({
+    name: 'Tommy',
+    surname: 'Jhonson',
+    role: '',
+    email: 'tommy.jhonson@elm.corp'
+  })
+
+  const employee23 = await Employee.create({
+    name: 'Mary',
+    surname: 'Luizon',
+    role: '',
+    email: 'mary.luizon@elm.corp'
+  })
+
+  const employee24 = await Employee.create({
+    name: 'Archie',
+    surname: 'Bellman',
+    role: '',
+    email: 'archi.bellman@elm.corp'
+  })
+
+  const employee25 = await Employee.create({
+    name: 'Christine',
+    surname: 'Hopkins',
+    role: '',
+    email: 'christine.hopkins@elm.corp'
+  })
+
   
 
 
@@ -774,6 +809,34 @@ async function insertData() {
 
   await employee1.addManage(product1) // Add product to the managed ones by employee
   await employee1.addManage(product2)
+  await employee1.addManage(product3)
+  await employee1.addManage(product4)
+  await employee2.addManage(product5)
+  await employee2.addManage(product6)
+  await employee2.addManage(product7)
+  await employee6.addManage(product8)
+  await employee6.addManage(product9)
+  await employee6.addManage(product10)
+  await employee7.addManage(product11)
+  await employee7.addManage(product12)
+  await employee11.addManage(product13)
+  await employee11.addManage(product14)
+  await employee11.addManage(product15)
+  await employee12.addManage(product16)
+  await employee12.addManage(product17)
+  await employee16.addManage(product18)
+  await employee16.addManage(product19)
+  await employee16.addManage(product20)
+  await employee17.addManage(product21)
+  await employee17.addManage(product22)
+  await employee17.addManage(product23)
+  await employee21.addManage(product24)
+  await employee21.addManage(product25)
+  await employee21.addManage(product26)
+  await employee22.addManage(product27)
+  await employee22.addManage(product28)
+  await employee22.addManage(product29)
+  await employee23.addManage(product30)
 
   await employee1.addDevelop(product1) // Add product to the developed ones by employee
   await employee1.addDevelop(product2)
