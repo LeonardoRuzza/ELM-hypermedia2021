@@ -378,29 +378,29 @@ async function insertData() {
   /******** 4 Areas *********/
   const Area1_PerformanceEngineering = await Area.create({
     name: 'Performance Engineering',
-    description: 'Area1 description',
-    shortDesc: 'Making IT more reliable, responsive and resilient.'
+    description: 'Design & Validation: Our performance engineering design and validation services help companies build high-performance architectures and services. We are experts in performance testing and tuning, autoscaling, and right-sizing, from evaluation to implementation. Self-Driving Ops: We have built a distinct expertise in self-driving operations in production, such as AIOps, dynamic optimization, chaos testing, canary deployment and self-remediation, automatic discovery and real-time service mapping. Observability: The entire range of IT operations as they relate to performance engineering: performance monitoring, digital performance management, end-user experience management, IT performance analytics and visualization. Planning & Control: We use a performance engineering approach to solve the IT cost equation, helping customers with their capacity planning and management processes, IT resource utilization accounting, chargeback and cost controls.',
+    shortDesc: 'Making IT more reliable, responsive and resilient. We deliver best-in-class performance testing, monitoring, optimization and automation of mission-critical applications for the most demanding enterprise customers worldwide.'
   })
   const Area2_Analytics = await Area.create({
     name: 'Analytics',
-    description: 'Area2 description',
-    shortDesc: 'Understanding data. Generating insights. Augmenting decisions.'
+    description: 'Data Engineering: Unique capabilities in the entire spectrum of data engineering, including cloud and hybrid big data architectures, data pipelines, data quality, NoSQL and streaming systems. Data Science: The combination of data science and research expertise. Machine learning applications in computer vision, NLP, recommender systems, forecasting. network science, BI, and visualization. Quantum AI: Designing, implementing and deploying AI algorithms and applications to solve complex analytics problems using Quantum Computing. Quantum computing adoption advisory.',
+    shortDesc: 'Understanding data. Generating insights. Augmenting decisions. We combine big data engineering and data science expertise to build bespoke, end-to-end business analytics solutions at scale, creating unique value for our customers through cross-industry innovation.'
   })
   const Area3_Security = await Area.create({
     name: 'Security',
-    description: 'Area3 description',
-    shortDesc: 'Partnering with customers to manage digital risk.'
+    description: 'Security Operations & Analytics: We develop advanced cybersecurity use cases and design and implement analytics dashboards. We also build risk-based response automation solutions and help customers implement their SIEM and SOAR platforms. Fraud Detection & Response: The rapid growth of digital payments and the introduction of PSD2 change the landscape and the complexity of the attacks. We offer specialized services and technology for fraud detection, prevention, and countermeasures. Digital Identity & Data Protection: Comprehensive identity & access management solutions to protect critical digital assets, for access management and to protect data in transit, on the cloud and on-prem. Digital Risk Management: Our specialized service offering around cybersecurity risk quantification and management to implement the cybersecurity side of enterprise digital risk management processes. Cloud Security: We offer a range of products and consulting services to secure and protect private and public cloud-native infrastructure and applications.',
+    shortDesc: 'Partnering with customers to manage digital risk. We are unique among IT security consulting firms. We combine security technology engineering, intelligence expertise and our data science DNA to help companies manage digital risk end-to-end.'
   })
   const Area4_IoT = await Area.create({
     name: 'Internet of Things',
-    description: 'Area4 description',
-    shortDesc: 'Full-stack IoT solutions. New business insights.'
+    description: 'IoT Consulting: With our consulting services, we work with customers to understand and unlock the value of IoT. We also help identify and refine business use cases, then create the technology blueprint with the selection of the IoT stack including hardware, software and cloud services. IoT Security: We collaborate with our security team to guarantee the reliability and safety of IoT products. Our end-to-end security approaches start from securing physical devices against tampering, implement advanced cryptography, and build-in in proper security governance. IoT Analytics: We collaborate with our analytics team providing advanced analytics expertise to help customers derive maximum value from the enormous amount of data generated by IoT. We develop solutions to automate processes and inform business decisions, applying AI-on-edge approaches that optimize the IoT architecture and operativity. End-to-End System Integration: We build enterprise IoT systems integrating a vast network of sensors and smart devices combined with advanced analytics and cloud services. We cover the entire life cycle from the design phase to the setup and maintenance of the solution. We develop custom software or deploy packaged software that best serves the project goal.',
+    shortDesc: 'Full-stack IoT solutions. New business insights. We design future-ready IoT architectures, assemble enterprise-grade IoT data pipelines and deliver the insights our customers need to implement IoT initiatives.'
   })
   const Area5_Ml = await Area.create({
     name: 'Machine Learning',
-    description: 'Area5 description',
+    description: 'MLOps & Business Analytics at Scale: Deployment and maintenance of ML tools in operations, Closed loop Analytics, lift-and-shift continuous evolution at enterprise scale. On traditional, cloud and edge architecture.',
     shortDesc:
-      'Automates analytical model building and gives computers the ability to learn.'
+      'Automates analytical model building and gives computers the ability to learn. We exploit at the best Machine Learning solution to specific cases of our customers. Make it simple, acquire hidden fundamental information trough our ML solutions.'
   })
 
   /******** 20 Employees *********/
@@ -542,6 +542,41 @@ async function insertData() {
     surname: 'Fernandez',
     role: '',
     email: 'rachel.fernandez@elm.corp'
+  })
+
+  const employee21 = await Employee.create({
+    name: 'Michael',
+    surname: 'Brody',
+    role: '',
+    email: 'michael.brody@elm.corp'
+  })
+
+  const employee22 = await Employee.create({
+    name: 'Tommy',
+    surname: 'Jhonson',
+    role: '',
+    email: 'tommy.jhonson@elm.corp'
+  })
+
+  const employee23 = await Employee.create({
+    name: 'Mary',
+    surname: 'Luizon',
+    role: '',
+    email: 'mary.luizon@elm.corp'
+  })
+
+  const employee24 = await Employee.create({
+    name: 'Archie',
+    surname: 'Bellman',
+    role: '',
+    email: 'archi.bellman@elm.corp'
+  })
+
+  const employee25 = await Employee.create({
+    name: 'Christine',
+    surname: 'Hopkins',
+    role: '',
+    email: 'christine.hopkins@elm.corp'
   })
 
   
@@ -736,10 +771,37 @@ async function insertData() {
   })
 
 
-  await Area1_PerformanceEngineering.addWorkIn(employee1) // Employee work in area
-  await Area2_Analytics.addWorkIn(employee2)
+  await Area1_PerformanceEngineering.addWorkIn(employee1) // Add employee working in area
+  await Area1_PerformanceEngineering.addWorkIn(employee2)
+  await Area1_PerformanceEngineering.addWorkIn(employee3)
+  await Area1_PerformanceEngineering.addWorkIn(employee4)
+  await Area1_PerformanceEngineering.addWorkIn(employee5)
+  await Area2_Analytics.addWorkIn(employee6)
+  await Area2_Analytics.addWorkIn(employee7)
+  await Area2_Analytics.addWorkIn(employee8)
+  await Area2_Analytics.addWorkIn(employee9)
+  await Area2_Analytics.addWorkIn(employee10)
+  await Area3_Security.addWorkIn(employee11)
+  await Area3_Security.addWorkIn(employee12)
+  await Area3_Security.addWorkIn(employee13)
+  await Area3_Security.addWorkIn(employee14)
+  await Area3_Security.addWorkIn(employee15)
+  await Area4_IoT.addWorkIn(employee16)
+  await Area4_IoT.addWorkIn(employee17)
+  await Area4_IoT.addWorkIn(employee18)
+  await Area4_IoT.addWorkIn(employee19)
+  await Area4_IoT.addWorkIn(employee20)
+  await Area5_Ml.addWorkIn(employee21)
+  await Area5_Ml.addWorkIn(employee22)
+  await Area5_Ml.addWorkIn(employee23)
+  await Area5_Ml.addWorkIn(employee24)
+  await Area5_Ml.addWorkIn(employee25)
+
   await Area1_PerformanceEngineering.setIsResponsible(employee1) // Add Responsible to the area
-  await Area2_Analytics.setIsResponsible(employee2)
+  await Area2_Analytics.setIsResponsible(employee6)
+  await Area3_Security.setIsResponsible(employee11)
+  await Area4_IoT.setIsResponsible(employee16)
+  await Area5_Ml.setIsResponsible(employee21)
 
   await Area1_PerformanceEngineering.addBelongsTo(product1) // Add product to the area
   await Area1_PerformanceEngineering.addBelongsTo(product2)
@@ -774,9 +836,131 @@ async function insertData() {
 
   await employee1.addManage(product1) // Add product to the managed ones by employee
   await employee1.addManage(product2)
+  await employee1.addManage(product3)
+  await employee1.addManage(product4)
+  await employee2.addManage(product5)
+  await employee2.addManage(product6)
+  await employee2.addManage(product7)
+  await employee6.addManage(product8)
+  await employee6.addManage(product9)
+  await employee6.addManage(product10)
+  await employee7.addManage(product11)
+  await employee7.addManage(product12)
+  await employee11.addManage(product13)
+  await employee11.addManage(product14)
+  await employee11.addManage(product15)
+  await employee12.addManage(product16)
+  await employee12.addManage(product17)
+  await employee16.addManage(product18)
+  await employee16.addManage(product19)
+  await employee16.addManage(product20)
+  await employee17.addManage(product21)
+  await employee17.addManage(product22)
+  await employee17.addManage(product23)
+  await employee21.addManage(product24)
+  await employee21.addManage(product25)
+  await employee21.addManage(product26)
+  await employee22.addManage(product27)
+  await employee22.addManage(product28)
+  await employee22.addManage(product29)
+  await employee23.addManage(product30)
 
   await employee1.addDevelop(product1) // Add product to the developed ones by employee
   await employee1.addDevelop(product2)
+  await employee1.addDevelop(product3)
+  await employee1.addDevelop(product4)
+  await employee2.addDevelop(product5)
+  await employee2.addDevelop(product6)
+  await employee2.addDevelop(product7)
+  await employee3.addDevelop(product2)
+  await employee3.addDevelop(product3)
+  await employee3.addDevelop(product6)
+  await employee3.addDevelop(product7)
+  await employee4.addDevelop(product1)
+  await employee4.addDevelop(product4)
+  await employee4.addDevelop(product7)
+  await employee4.addDevelop(product5)
+  await employee5.addDevelop(product5)
+  await employee5.addDevelop(product1)
+  await employee5.addDevelop(product2)
+  await employee5.addDevelop(product3)
+  await employee5.addDevelop(product4)
+  await employee6.addDevelop(product8)
+  await employee6.addDevelop(product9)
+  await employee6.addDevelop(product10)
+  await employee7.addDevelop(product11)
+  await employee7.addDevelop(product12)
+  await employee7.addDevelop(product10)
+  await employee8.addDevelop(product8)
+  await employee8.addDevelop(product9)
+  await employee8.addDevelop(product10)
+  await employee8.addDevelop(product8)
+  await employee9.addDevelop(product8)
+  await employee9.addDevelop(product9)
+  await employee9.addDevelop(product10)
+  await employee9.addDevelop(product11)
+  await employee10.addDevelop(product12)
+  await employee10.addDevelop(product8)
+  await employee10.addDevelop(product9)
+  await employee10.addDevelop(product11)
+  await employee11.addDevelop(product13)
+  await employee11.addDevelop(product14)
+  await employee11.addDevelop(product15)
+  await employee12.addDevelop(product16)
+  await employee12.addDevelop(product17)
+  await employee12.addDevelop(product14)
+  await employee13.addDevelop(product14)
+  await employee13.addDevelop(product15)
+  await employee13.addDevelop(product16)
+  await employee14.addDevelop(product17)
+  await employee14.addDevelop(product16)
+  await employee14.addDevelop(product15)
+  await employee15.addDevelop(product13)
+  await employee15.addDevelop(product14)
+  await employee15.addDevelop(product15)
+  await employee15.addDevelop(product16)
+  await employee16.addDevelop(product18)
+  await employee16.addDevelop(product19)
+  await employee16.addDevelop(product20)
+  await employee17.addDevelop(product21)
+  await employee17.addDevelop(product22)
+  await employee17.addDevelop(product23)
+  await employee18.addDevelop(product18)
+  await employee18.addDevelop(product19)
+  await employee18.addDevelop(product20)
+  await employee18.addDevelop(product21)
+  await employee18.addDevelop(product23)
+  await employee19.addDevelop(product18)
+  await employee19.addDevelop(product19)
+  await employee19.addDevelop(product23)
+  await employee19.addDevelop(product22)
+  await employee20.addDevelop(product18)
+  await employee20.addDevelop(product19)
+  await employee20.addDevelop(product20)
+  await employee20.addDevelop(product21)
+  await employee20.addDevelop(product23)
+  await employee21.addDevelop(product24)
+  await employee21.addDevelop(product25)
+  await employee21.addDevelop(product26)
+  await employee21.addDevelop(product27)
+  await employee22.addDevelop(product27)
+  await employee22.addDevelop(product28)
+  await employee22.addDevelop(product29)
+  await employee22.addDevelop(product24)
+  await employee23.addDevelop(product30)
+  await employee23.addDevelop(product24)
+  await employee23.addDevelop(product25)
+  await employee23.addDevelop(product26)
+  await employee24.addDevelop(product24)
+  await employee24.addDevelop(product25)
+  await employee24.addDevelop(product26)
+  await employee24.addDevelop(product27)
+  await employee24.addDevelop(product28)
+  await employee25.addDevelop(product29)
+  await employee25.addDevelop(product30)
+  await employee25.addDevelop(product28)
+  await employee25.addDevelop(product27)
+  await employee25.addDevelop(product26)
 }
 
 /**
