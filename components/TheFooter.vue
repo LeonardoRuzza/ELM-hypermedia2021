@@ -130,7 +130,7 @@ export default {
         },
         {
           name: 'Our Team',
-          path: '/team',
+          path: '/employees',
         },
         {
           name: 'News',
@@ -161,7 +161,7 @@ export default {
   padding: 18px 3px 10px;
   font-size: 15px;
   line-height: 24px;
-  color: #737373;
+  color: white;
 }
 .footer hr {
   border-top-color: #bbb;
@@ -171,7 +171,7 @@ export default {
   margin: 20px 0;
 }
 .footer h6 {
-  color: #fff;
+  color: orange;
   font-size: 16px;
   text-transform: uppercase;
   margin-top: 5px;
@@ -179,7 +179,7 @@ export default {
 }
 .footer a,
 .footer nuxt-link {
-  color: #737373;
+  color: white;
 }
 .footer a:hover,
 .footer nuxt-link:hover {
@@ -195,7 +195,7 @@ export default {
 }
 .footer-links a,
 .footer-links nuxt-link {
-  color: #737373;
+  color: white;
   text-decoration: none;
 }
 .footer-links a:active,

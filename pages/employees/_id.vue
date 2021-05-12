@@ -12,30 +12,61 @@
           />
         </div>
         <div class="column">
-          <div class="sub-row">
-            <p>{{ employee.role }}</p>
-            <p>
-              <button class="button">{{ employee.email }}</button>
+          <div class="sub-row1">
+            <p class="role">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              scelerisque bibendum luctus. Praesent elementum posuere cursus.
+              Suspendisse iaculis et ligula ornare ultricies.
             </p>
           </div>
-
-          <div class="sub-row">
-            <div class="card-container">
-              <the-card
-                :key="'area-' + employee.WorkIn.id"
-                :title="'Area of work'"
-                :image="'/areas/icons/icon-' + employee.WorkIn.id + '.png'"
-                :link="'/api/areas/' + employee.WorkIn.id"
-              >
-              </the-card>
-            </div>
+          <div id="area" class="cards-container-area">
+            <the-card
+              :key="'area-' + employee.WorkIn.id"
+              :title="'Area of work'"
+              :image="'/areas/icons/icon-' + employee.WorkIn.id + '.png'"
+              :link="'/api/areas/' + employee.WorkIn.id"
+            >
+            </the-card>
+          </div>
+          <div id="area" class="sub-row2">
+            <p class="get-in-touch">
+              Want to get in touch with {{ employee.name }}?
+            </p>
+            <button class="button">{{ employee.email }}</button>
+            <ul class="social-icons">
+              <li>
+                <a
+                  class="facebook"
+                  href="https://www.facebook.com/moviricompany"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a class="twitter" href="https://twitter.com/moviri"
+                  ><i class="fa fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="instagram"
+                  href="https://www.instagram.com/moviricompany"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="linkedin"
+                  href="https://www.linkedin.com/company/moviri/"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+            </ul>
           </div>
         </div>
-        <p>{{ employee.role }}</p>
       </div>
     </section>
     <h2>Managed Products</h2>
-    <div class="cards-container">
+    <div class="cards-container-products">
       <the-card
         v-for="item of managedProducts"
         :key="'products-' + item.id"
@@ -47,7 +78,7 @@
       </the-card>
     </div>
     <h2>Developed Products</h2>
-    <div class="cards-container">
+    <div class="cards-container-products">
       <the-card
         v-for="item of developedProducts"
         :key="'products-' + item.id"
@@ -92,6 +123,13 @@ export default {
 }
 </script>
 
+<style>
+#area .card {
+  width: 150px;
+  height: 200px;
+}
+</style>
+
 <style scoped>
 .column {
   float: left;
@@ -106,21 +144,79 @@ export default {
 }
 .sub-row1 {
   float: top;
-  height: 75%;
+  height: 55%;
+  margin-top: 5%;
 }
 .sub-row2 {
   float: top;
-  height: 25%;
+  height: 45%;
+  margin-top: 10%;
 }
-.cards-container {
+.cards-container-products {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0px auto 30px auto;
 }
+.get-in-touch {
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
 img {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   border-radius: 3%;
+}
+.button:hover {
+  background-color: orange;
+  color: white;
+  transition: background-color 0.2s ease-in;
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+  margin-top: 3%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.social-icons,
+.info-icons {
+  text-align: center;
+}
+.social-icons a,
+.info-icons {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.social-icons.size-sm a,
+.info-icons.size-sm a {
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  font-size: 14px;
+}
+.social-icons a.facebook:hover {
+  background-color: #3b5998;
+}
+.social-icons a.twitter:hover {
+  background-color: #00aced;
+}
+.social-icons a.linkedin:hover {
+  background-color: #007bb6;
+}
+.social-icons a.instagram:hover {
+  background-color: #ea4c89;
 }
 </style>
