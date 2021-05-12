@@ -308,7 +308,7 @@ async function insertData() {
     content:
       'This particular period of time is making companies realize how important customer support can be. Information desks have been replaced by call centers and help that used to be offered face-to-face is now delivered through online channels. This webinar illustrates what changes occurred over the last year and how AI can help customer care through automatic resolution and real-time help given to live agent. Together with Genesys we will give an overview of new products in customer care and innovative AI solutions to be integrated in your systems. Why Attend: you should attend this webinar if your main goal is to innovate your customer care and you want to deep dive into the possible solutions offered by Machine Learning ELM that leverage artificial intelligence. We are going to present you what AI is offering and how it can be integrated into your applications. Come and listen to our speakers to find out about upcoming trends and optimize your workforce.',
     introduction:
-      'February 17, 2021 | from 4:00 PM to 4:45 PM  CET',
+      'Join the event in February 17, 2021 | from 4:00 PM to 4:45 PM  CET',
 
     isLatest: false,
   })
@@ -344,36 +344,36 @@ async function insertData() {
     content:
       '"Cablevision customers are looking to enjoy a personalized TV experience. ELM expands our ability to deliver state-of-the-art personalized TV experiences, make our offering more attractive and learn about our subscribers preferences.  It is the foundation upon which we are able to continue to enhance and extend our service offering."',
   })
-/*   const review6 = await Reviews.create({
-    author: '',
-    role: '',
+   const review6 = await Reviews.create({
+    author: 'Daniel Baron',
+    role: 'CEO & Founder - SmartTab',
     content:
-      '',
+      '"SmartTab is an extremely complex software solution that performs heavy processes from multiple different hardware and software touch points in close to real-time (within milliseconds) as it gets. Our clients demand high performance and we stand firmly as the most robust and reliable software product in our space. The skilled and competent engineers provided by ELM have consistently delivered on my expectations. I cannot recommend MobiDev enough. I went from 5 engineers to over 20 of them. We have a reputation of having the best tech when compared to companies like Square, Micros (owned by Oracle), and Aloha (owned by NCR). These are all multi-billion dollar companies. And thanks to my team at ELM, I’m standing on stable ground in making these very bold claims."',
   })
-  const review7 = await Reviews.create({
-    author: '',
-    role: '',
+   const review7 = await Reviews.create({
+    author: 'Eugene Neale',
+    role: 'Director of CX Engineering and Business IT - loveholidays',
     content:
-      '',
+      '“Agent Assist has been a beneficial aid to agents and our customers alike. Our customers receive prompt responses which have been tailored to provide information to make them self-sufficient but also resolve their queries.”',
   })
   const review8 = await Reviews.create({
-    author: '',
-    role: '',
+    author: 'Shibin Li',
+    role: 'Co-Founder - Castbox',
     content:
-      '',
+      '“Based on our analysis of the data now we can determine what type of content users are listening to, how long they like to listen to it, and when they like to listen to it. This allows us to recommend similar podcasts to each user based on the preferences he or she expressed, encouraging activity on and return visits to our platform.”',
   })
   const review9 = await Reviews.create({
-    author: '',
-    role: '',
+    author: 'Gunnar H. Hide',
+    role: 'Country Lead Food and Beverage - Norway ABB',
     content:
-      '',
+      '"With AI and IoT technologies from ELM, we are bringing higher accuracy to NRS so the company can use its licenses more efficiently and improve profit margins."',
   })
   const review10 = await Reviews.create({
-    author: '',
-    role: '',
+    author: 'Steve Knox',
+    role: 'Manager of Connected Customer Experience - Sub-Zero Group',
     content:
-      '',
-  }) */
+      '"We have a philosophy of continuing to improve security and always putting the customer first. We saw this reflected in ELM and what they are doing with their services."',
+  })  
 
   /******** 4 Areas *********/
   const Area1_PerformanceEngineering = await Area.create({
