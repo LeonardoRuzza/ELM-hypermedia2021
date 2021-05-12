@@ -378,29 +378,29 @@ async function insertData() {
   /******** 4 Areas *********/
   const Area1_PerformanceEngineering = await Area.create({
     name: 'Performance Engineering',
-    description: 'Area1 description',
-    shortDesc: 'Making IT more reliable, responsive and resilient.'
+    description: 'Design & Validation: Our performance engineering design and validation services help companies build high-performance architectures and services. We are experts in performance testing and tuning, autoscaling, and right-sizing, from evaluation to implementation. Self-Driving Ops: We have built a distinct expertise in self-driving operations in production, such as AIOps, dynamic optimization, chaos testing, canary deployment and self-remediation, automatic discovery and real-time service mapping. Observability: The entire range of IT operations as they relate to performance engineering: performance monitoring, digital performance management, end-user experience management, IT performance analytics and visualization. Planning & Control: We use a performance engineering approach to solve the IT cost equation, helping customers with their capacity planning and management processes, IT resource utilization accounting, chargeback and cost controls.',
+    shortDesc: 'Making IT more reliable, responsive and resilient. We deliver best-in-class performance testing, monitoring, optimization and automation of mission-critical applications for the most demanding enterprise customers worldwide.'
   })
   const Area2_Analytics = await Area.create({
     name: 'Analytics',
-    description: 'Area2 description',
-    shortDesc: 'Understanding data. Generating insights. Augmenting decisions.'
+    description: 'Data Engineering: Unique capabilities in the entire spectrum of data engineering, including cloud and hybrid big data architectures, data pipelines, data quality, NoSQL and streaming systems. Data Science: The combination of data science and research expertise. Machine learning applications in computer vision, NLP, recommender systems, forecasting. network science, BI, and visualization. Quantum AI: Designing, implementing and deploying AI algorithms and applications to solve complex analytics problems using Quantum Computing. Quantum computing adoption advisory.',
+    shortDesc: 'Understanding data. Generating insights. Augmenting decisions. We combine big data engineering and data science expertise to build bespoke, end-to-end business analytics solutions at scale, creating unique value for our customers through cross-industry innovation.'
   })
   const Area3_Security = await Area.create({
     name: 'Security',
-    description: 'Area3 description',
-    shortDesc: 'Partnering with customers to manage digital risk.'
+    description: 'Security Operations & Analytics: We develop advanced cybersecurity use cases and design and implement analytics dashboards. We also build risk-based response automation solutions and help customers implement their SIEM and SOAR platforms. Fraud Detection & Response: The rapid growth of digital payments and the introduction of PSD2 change the landscape and the complexity of the attacks. We offer specialized services and technology for fraud detection, prevention, and countermeasures. Digital Identity & Data Protection: Comprehensive identity & access management solutions to protect critical digital assets, for access management and to protect data in transit, on the cloud and on-prem. Digital Risk Management: Our specialized service offering around cybersecurity risk quantification and management to implement the cybersecurity side of enterprise digital risk management processes. Cloud Security: We offer a range of products and consulting services to secure and protect private and public cloud-native infrastructure and applications.',
+    shortDesc: 'Partnering with customers to manage digital risk. We are unique among IT security consulting firms. We combine security technology engineering, intelligence expertise and our data science DNA to help companies manage digital risk end-to-end.'
   })
   const Area4_IoT = await Area.create({
     name: 'Internet of Things',
-    description: 'Area4 description',
-    shortDesc: 'Full-stack IoT solutions. New business insights.'
+    description: 'IoT Consulting: With our consulting services, we work with customers to understand and unlock the value of IoT. We also help identify and refine business use cases, then create the technology blueprint with the selection of the IoT stack including hardware, software and cloud services. IoT Security: We collaborate with our security team to guarantee the reliability and safety of IoT products. Our end-to-end security approaches start from securing physical devices against tampering, implement advanced cryptography, and build-in in proper security governance. IoT Analytics: We collaborate with our analytics team providing advanced analytics expertise to help customers derive maximum value from the enormous amount of data generated by IoT. We develop solutions to automate processes and inform business decisions, applying AI-on-edge approaches that optimize the IoT architecture and operativity. End-to-End System Integration: We build enterprise IoT systems integrating a vast network of sensors and smart devices combined with advanced analytics and cloud services. We cover the entire life cycle from the design phase to the setup and maintenance of the solution. We develop custom software or deploy packaged software that best serves the project goal.',
+    shortDesc: 'Full-stack IoT solutions. New business insights. We design future-ready IoT architectures, assemble enterprise-grade IoT data pipelines and deliver the insights our customers need to implement IoT initiatives.'
   })
   const Area5_Ml = await Area.create({
     name: 'Machine Learning',
-    description: 'Area5 description',
+    description: 'MLOps & Business Analytics at Scale: Deployment and maintenance of ML tools in operations, Closed loop Analytics, lift-and-shift continuous evolution at enterprise scale. On traditional, cloud and edge architecture.',
     shortDesc:
-      'Automates analytical model building and gives computers the ability to learn.'
+      'Automates analytical model building and gives computers the ability to learn. We exploit at the best Machine Learning solution to specific cases of our customers. Make it simple, acquire hidden fundamental information trough our ML solutions.'
   })
 
   /******** 20 Employees *********/
