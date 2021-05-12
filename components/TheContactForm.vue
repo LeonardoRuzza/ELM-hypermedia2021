@@ -1061,7 +1061,8 @@ export default {
 form {
   padding: 12px 20px 12px 20px;
   margin: 8px 10px 8px 10px;
-  border: 2px solid orange;
+  border: 5px solid black;
+  border-radius: 1.7rem;
   -moz-box-shadow: 2px 2px 6px #888;
   -webkit-box-shadow: 2px 2px 6px #888;
   box-shadow: 2px 2px 6px #888;
@@ -1074,10 +1075,11 @@ form {
   display: block;
   color: white;
   background-color: #26272b;
-  -moz-box-shadow: 2px 2px 6px #888;
-  -webkit-box-shadow: 2px 2px 6px #888;
-  box-shadow: 2px 2px 6px #888;
+  -moz-box-shadow: 2px 2px 6px orange;
+  -webkit-box-shadow: 2px 2px 6px orange;
+  box-shadow: 2px 2px 6px orange;
   border: 1px solid orange;
+  border-radius: 1.7rem;
 }
 .form-field,
 #countries {
@@ -1095,7 +1097,7 @@ select {
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 1.7rem;
   box-sizing: border-box;
 }
 
@@ -1103,11 +1105,12 @@ input[type='submit'] {
   width: 100%;
   margin-right: 10px;
   margin-left: 10px;
+  margin-bottom: 15px;
   background-color: grey;
   color: black;
   padding: 14px 20px;
   border: 1px solid orange;
-  border-radius: 4px;
+  border-radius: 1.7rem;
   cursor: pointer;
   -moz-box-shadow: 2px 2px 6px #888;
   -webkit-box-shadow: 2px 2px 6px #888;

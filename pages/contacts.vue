@@ -14,7 +14,7 @@
         </p>
       </div>
       <div class="row">
-        <div class="column">
+        <div class="column1">
           <div class="sub-row1">
             <p class="contact-info-title">Our Office</p>
             <p class="contact-info-content">
@@ -66,7 +66,7 @@
             </ul>
           </div>
         </div>
-        <div class="column">
+        <div class="column2">
           <the-contact-form class="form"></the-contact-form>
         </div>
       </div>
@@ -97,7 +97,7 @@ export default {
 
 <style scoped>
 .form {
-  border-radius: 2%;
+  border-radius: 1.7rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -111,12 +111,18 @@ img {
   border-left: 0px;
   border-right: 0px;
   margin-bottom: 50px;
-  border-radius: 3%;
+  border-radius: 1.7rem;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 10px 12px 4px;
 }
-.column {
+.column1 {
   float: left;
-  width: 50%;
+  width: 70%;
+  margin-top: 6px;
+  padding: 20px;
+}
+.column2 {
+  float: left;
+  width: 30%;
   margin-top: 6px;
   padding: 20px;
 }
@@ -136,20 +142,21 @@ img {
 .contact-box {
   background-color: lightgray;
   padding: 10px;
-  border-radius: 3%;
+  border-radius: 1.7rem;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 12px 12px 4px;
 }
 .contact-info-title {
   border: 1px solid orange;
   background-color: #26272b;
   color: white;
-  -moz-box-shadow: 2px 2px 6px #888;
-  -webkit-box-shadow: 2px 2px 6px #888;
-  box-shadow: 2px 2px 6px #888;
+  -moz-box-shadow: 2px 2px 6px orange;
+  -webkit-box-shadow: 2px 2px 6px orange;
+  box-shadow: 2px 2px 6px orange;
   font-weight: bolder;
   font-size: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
+  border-radius: 1.7rem;
 }
 .contact-info-content {
   margin-bottom: 15px;
