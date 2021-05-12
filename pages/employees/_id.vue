@@ -8,18 +8,27 @@
         <div class="column">
           <img
             alt="Employee image"
-            :src="'/employees/employee-' + employee.id + '.png'"
+            :src="'/employees/employee-' + employee.id + '.jpg'"
           />
         </div>
         <div class="column">
-          <div class="card-container">
-            <the-card
-              :key="'area-' + employee.WorkIn.id"
-              :title="employee.WorkIn.name"
-              :image="'/areas/icons/icon-' + employee.WorkIn.id + '.png'"
-              :link="'/api/employees/' + item.id"
-            >
-            </the-card>
+          <div class="sub-row">
+            <p>{{ employee.role }}</p>
+            <p>
+              <button class="button">{{ employee.email }}</button>
+            </p>
+          </div>
+
+          <div class="sub-row">
+            <div class="card-container">
+              <the-card
+                :key="'area-' + employee.WorkIn.id"
+                :title="'Area of work'"
+                :image="'/areas/icons/icon-' + employee.WorkIn.id + '.png'"
+                :link="'/api/areas/' + employee.WorkIn.id"
+              >
+              </the-card>
+            </div>
           </div>
         </div>
         <p>{{ employee.role }}</p>
@@ -31,8 +40,8 @@
         v-for="item of managedProducts"
         :key="'products-' + item.id"
         :title="item.name"
-        :subtitle="item.description"
-        :image="'/products/product-' + item.id + '.png'"
+        :description="item.description"
+        :image="'/products/' + item.id + '/thumbnail.png'"
         :link="'/api/products/' + item.id"
       >
       </the-card>
@@ -43,8 +52,8 @@
         v-for="item of developedProducts"
         :key="'products-' + item.id"
         :title="item.name"
-        :subtitle="item.description"
-        :image="'/products/product-' + item.id + '.png'"
+        :description="item.description"
+        :image="'/products/' + item.id + '/thumbnail.png'"
         :link="'/api/products/' + item.id"
       >
       </the-card>
@@ -72,6 +81,7 @@ export default {
       const employee = res[0]
       const developedProducts = res[1]
       const managedProducts = res[2]
+
       return {
         employee,
         developedProducts,
@@ -94,12 +104,23 @@ export default {
   display: table;
   clear: both;
 }
+.sub-row1 {
+  float: top;
+  height: 75%;
+}
+.sub-row2 {
+  float: top;
+  height: 25%;
+}
 .cards-container {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 1000px;
   margin: 0px auto 30px auto;
+}
+img {
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 3%;
 }
 </style>

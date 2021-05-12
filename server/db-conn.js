@@ -555,31 +555,228 @@ async function insertData() {
   
 
   /******** 30 Products *********/
-  const firstProduct = await Product.create({
+  const product1 = await Product.create({
+    name: 'Peak Demand Events',
+    description: 'We use stress testing, capacity planning, scalability and monitoring in production, to eliminate the risk of outages or service degradation during events that produce peak loads on systems and applications, such as Cyber Monday, campaigns or unplanned events.',
+    isTop: true
+  })
+
+  const product2 = await Product.create({
+    name: 'Kubernetes & Microservices',
+    description: 'We use stress testing, capacity planning, scalability and monitoring in production, to eliminate the risk of outages or service degradation during events that produce peak loads on systems and applications, such as Cyber Monday, campaigns or unplanned events.',
+    isTop: false
+  })
+
+  const product3 = await Product.create({
+    name: 'Agile, DevOps & CI/CD Automation',
+    description: 'Our agile, devops and continuous integration automation solutions incorporate performance engineering in the modern software development and delivery approach, so that customers can accelerate their ability to deliver innovation through software.',
+    isTop: false
+  })
+
+  const product4 = await Product.create({
+    name: 'AI-Powered Performance Engineering',
+    description: 'The complexity of modern technology stacks and application pipelines requires end-to-end automation. We use machine learning techniques and the right tooling to create automated, full-stack, closed-loop performance engineering solutions.',
+    isTop: false
+  })
+
+  const product5 = await Product.create({
+    name: 'Datacenter & Cloud Optimization',
+    description: 'Our datacenter and cloud optimization solutions align infrastructure costs to business demand, whether in the enterprise datacenter, the public cloud or hybrid and multi-cloud architectures. We also help customers orchestrate their Go-to-cloud transition.',
+    isTop: false
+  })
+
+  const product6 = await Product.create({
+    name: 'Open Source Performance Framework',
+    description: 'We have packaged our open source expertise to help customers make sense of, and integrate, ever evolving open source tools and frameworks in performance management, building a reliable and efficient toolchain and ecosystem.',
+    isTop: false
+  })
+
+  const product7 = await Product.create({
+    name: 'IoT & Client Side Performance',
+    description: 'Mobile devices, IoT endpoints and RIA frameworks impose challenges that require to be addressed from new perspectives. We rethink the approach to specifically address fragmentation, limited resources, power, GUIs challenges and leverage crowd testing, front-end optimization, device and component emulators.',
+    isTop: false
+  })
+
+  const product8 = await Product.create({
     name: 'Real-Time Data Platform',
     description: 'Our real-time big data platform ingests data from IoT data sources, engineering them from raw, unstructured, unformatted data to a set of clean, coherent, real-time data. Using a variety of data science tools, we visualize and transform data in a new actionable framework, covering the entire analytics life cycle for the customer: a key asset to deliver full control of the process of extracting value from big data.',
     isTop: true
   })
 
-  const secondProduct = await Product.create({
+  const product9 = await Product.create({
     name: 'Prediction & Scenario Analysis',
     description: 'We analyze datasets through classification, clustering, and pattern recognition techniques to move from a historical static description of the past to a forward-looking actionable projection in the future. We implement this solution in predictive maintenance, incident analysis, early-warning, customer satisfaction, churn prediction, production planning, risk assessment, attribution modeling and more.',
     isTop: false
   })
+
+  const product10 = await Product.create({
+    name: 'Graph-Based Dynamic Systems',
+    description: 'We use graph technology to explicit the relationships between resources and digital data flows taking place within a business process in real-time. By mapping the ontology of the internal processes we develop mathematical and logical models that can, for example, detect failures, spot wrong system configurations, prevent data leakage, assess risk or detect fraud and take automatic actions based on the data.',
+    isTop: false
+  })
+
+  const product11 = await Product.create({
+    name: 'Marketing Optimization & Attribution Models',
+    description: 'Our solution helps marketing executives optimize the media mix budget allocation, on a variety of channels such as SEM, social, display, email and TV. We analyze the customer experience and explore marketing data to identify correlations, trends, seasonality, and outliers that characterize dynamic KPIs. We provide business results predictions and what-if scenario evaluations, giving one centralized view of what is working and what is not.',
+    isTop: false
+  })
+
+  const product12 = await Product.create({
+    name: 'UX Personalization & Next Best Action',
+    description: 'Using our AI-powered UX personalization software platform, we optimize the customer journey through all digital touchpoints. We analyze interaction data through advanced machine learning and classification algorithms to identify and propose contents to users that suit their preferences, creating bespoke 1-to-1 experiences. Personalization also enables Next Best Action strategies to reach the highest probability of engagement and conversion.',
+    isTop: false
+  })
+
+  const product13 = await Product.create({
+    name: 'Continuous Monitoring & Risk Evaluation',
+    description: 'We leverage frameworks and standards such as MITRE to design systems that collect, normalize and analyze security data in real-time. We use intelligence tools to generate insights that limit risk exposure, while reducing operational effort.',
+    isTop: true
+  })
+
+  const product14 = await Product.create({
+    name: 'Digital Identity for Critical Services',
+    description: 'We provide the tools to ensure that all users and all device access activities are visible and controllable. We also support governance processes to control critical access, such as access by privileged parties or by third-parties, both to services and to data.',
+    isTop: false
+  })
+
+  const product15 = await Product.create({
+    name: 'Cloud Security Zero-Trust Architecture',
+    description: 'As companies migrate services and data to the cloud, we have a range of solutions for cloud native application and infrastructure, risk monitoring of cloud traffic and multi-cloud integrations, security enforcement, continuous monitoring for cloud native services, SASE and CASB implementation, containers and serverless security.',
+    isTop: false
+  })
+
+  const product16 = await Product.create({
+    name: 'Cyber & Enterprise Risk Integration',
+    description: 'We offer solutions specifically designed to help enterprises meet regulatory and governance challenges, including enterprise risk management and compliance around a variety of governance frameworks.',
+    isTop: false
+  })
+
+  const product17 = await Product.create({
+    name: 'AI-Based Fraud & Threat Intelligence',
+    description: 'With our threat analysis and response orchestration solution, we create early detection systems for threats. We also create automatic orchestration response solutions that actively react to attack campaigns in a scalable way.',
+    isTop: false
+  })
+
+  const product18 = await Product.create({
+    name: 'Sensorization',
+    description: 'Sensorization is crucial to the functionality of an Internet of Things initiative. It defines the trend of embedding sensing capabilities to “things” i.e. devices, machinery and equipment. Sensorization is primarily concerned with how technologies are integrated with multiple sensors and/or sensing technologies. This allows for data capture and analysis for a variety of applications like asset management, resource optimization, predictive maintenance, etc.',
+    isTop: true
+  })
+
+  const product19 = await Product.create({
+    name: 'Smart City',
+    description: 'We help municipalities and urban environments to adopt smart city concepts, based on IoT systems, optimizing the efficient management of community resources, operations and services. We support government officials and their business partners in creating connected smart system networks to improve transportation systems, build energy-efficient infrastructure, decrease environmental pollution, provide state-of-the-art security, prevent crimes and manage emergencies in public spaces.',
+    isTop: false
+  })
+
+  const product20 = await Product.create({
+    name: 'Smart Agriculture',
+    description: 'Our IoT solutions create smart farming systems that drive higher yields without putting additional strain on the environment. We deploy specialized IoT communication technologies such as LoraWAN, Sigfox, NB-IoT, 5G, and help customers collect data from multiple in-field and in-building sensors to improve quality control and productivity.',
+    isTop: false
+  })
+
+  const product21 = await Product.create({
+    name: 'Smart Retail',
+    description: 'Our solution is suited for shopping malls, supermarkets and other retail settings. We help retailers personalize the in-store customers experience thanks to applications such as intelligent reception, proactive concierging, virtual storage and dressing room, etc.',
+    isTop: false
+  })
+
+  const product22 = await Product.create({
+    name: 'Product Servitization',
+    description: 'Product servitization enables organizations to extend their value chain in order to better serve their customers. We help machinery and equipment manufacturers and integrators instrument their products with sensors and IoT software so that they can collect data throughout the lifecycle of the product. This means they will have more real-time information about when and how their product is being used to enable new business models. For example, implementing a resource consumption measurement, an organization can adopt a pricing mechanism based on data coming from sensors.',
+    isTop: false
+  })
+
+  const product23 = await Product.create({
+    name: 'Contextual Marketing & Innovative Shopping Journey',
+    description: 'Hi engage is a Contextual Marketing solution that allows, using your smartphone and tablet, to experience an innovative shopping journey. It enables brands and companies to open a new, direct and personal channel of communication with their customers. Hi engage technology sends text, audio and video messages in multiple languages, manages barcodes and QR',
+    isTop: false
+  })
+
+  const product24 = await Product.create({
+    name: 'AI Platform',
+    description: 'Whether it is point-and-click data science using AutoML or advanced model optimization, AI Platform helps all users take their projects from ideation to deployment, quickly and seamlessly. Machine learning doesn’t stop at deployment. AI Platform makes it easy for developers, data scientists, and data engineers to streamline and scale their ML workflows.',
+    isTop: true
+  })
+
+  const product25 = await Product.create({
+    name: 'AI Infrastructure',
+    description: 'Tensor Processing Units (TPUs) are custom-built ASIC to train and execute deep neural networks. Train and run more powerful and accurate models cost-effectively with faster speed and scale. Access CPU platforms when you start a VM instance on Compute Engine. Compute Engine offers a range of both Intel and AMD processors for your VMs.',
+    isTop: false
+  })
+
+  const product26 = await Product.create({
+    name: 'Speech-to-Text',
+    description: 'Customize speech recognition to transcribe domain-specific terms and rare words by providing hints and boost your transcription accuracy of specific words or phrases. Automatically convert spoken numbers into addresses, years, currencies, and more using classes.',
+    isTop: false
+  })
+
+  const product27 = await Product.create({
+    name: 'Text-to-Speech',
+    description: 'Train a custom voice model using your own audio recordings to create a unique and more natural sounding voice for your organization. You can define and choose the voice profile that suits your organization and quickly adjust to changes in voice needs without needing to record new phrases.',
+    isTop: false
+  })
+
+  const product28 = await Product.create({
+    name: 'Agent Assist',
+    description: 'Empowers human agents with continuous support during their calls and chats by identifying intent and providing real-time, step-by-step assistance. Uses natural language processing to identify call drivers and sentiment that helps contact center managers learn about customer interactions to improve call outcomes.',
+    isTop: false
+  })
+
+  const product29 = await Product.create({
+    name: 'Translation',
+    description: 'Developers, translators, and localization experts with limited machine learning expertise can quickly create high-quality, production-ready models. Just upload translated language pairs and AutoML Translation will train a custom model that you can scale and adapt to meet your domain-specific needs.',
+    isTop: false
+  })
+
+  const product30 = await Product.create({
+    name: 'Document AI',
+    description: 'Document AI is built on decades of AI innovation at Google, bringing powerful and useful solutions to these challenges. Under the hood are Google’s industry-leading technologies: computer vision (including OCR) and natural language processing (NLP) that create pre-trained models for high-value, high-volume documents. DocAI has already processed tens of billions of pages of documents across lending, insurance, government and other industries.',
+    isTop: false
+  })
+
 
   await Area1_PerformanceEngineering.addWorkIn(employee1) // Employee work in area
   await Area2_Analytics.addWorkIn(employee2)
   await Area1_PerformanceEngineering.setIsResponsible(employee1) // Add Responsible to the area
   await Area2_Analytics.setIsResponsible(employee2)
 
-  await Area2_Analytics.addBelongsTo(firstProduct) // Add product to the area
-  await Area2_Analytics.addBelongsTo(secondProduct)
+  await Area1_PerformanceEngineering.addBelongsTo(product1) // Add product to the area
+  await Area1_PerformanceEngineering.addBelongsTo(product2)
+  await Area1_PerformanceEngineering.addBelongsTo(product3)
+  await Area1_PerformanceEngineering.addBelongsTo(product4)
+  await Area1_PerformanceEngineering.addBelongsTo(product5)
+  await Area1_PerformanceEngineering.addBelongsTo(product6)
+  await Area1_PerformanceEngineering.addBelongsTo(product7)
+  await Area2_Analytics.addBelongsTo(product8)
+  await Area2_Analytics.addBelongsTo(product9)
+  await Area2_Analytics.addBelongsTo(product10)
+  await Area2_Analytics.addBelongsTo(product11)
+  await Area2_Analytics.addBelongsTo(product12)
+  await Area3_Security.addBelongsTo(product13)
+  await Area3_Security.addBelongsTo(product14)
+  await Area3_Security.addBelongsTo(product15)
+  await Area3_Security.addBelongsTo(product16)
+  await Area3_Security.addBelongsTo(product17)
+  await Area4_IoT.addBelongsTo(product18)
+  await Area4_IoT.addBelongsTo(product19)
+  await Area4_IoT.addBelongsTo(product20)
+  await Area4_IoT.addBelongsTo(product21)
+  await Area4_IoT.addBelongsTo(product22)
+  await Area4_IoT.addBelongsTo(product23)
+  await Area5_Ml.addBelongsTo(product24)
+  await Area5_Ml.addBelongsTo(product25)
+  await Area5_Ml.addBelongsTo(product26)
+  await Area5_Ml.addBelongsTo(product27)
+  await Area5_Ml.addBelongsTo(product28)
+  await Area5_Ml.addBelongsTo(product29)
+  await Area5_Ml.addBelongsTo(product30)
 
-  await employee1.addManage(firstProduct) // Add product to the managed ones by employee
-  await employee1.addManage(secondProduct)
+  await employee1.addManage(product1) // Add product to the managed ones by employee
+  await employee1.addManage(product2)
 
-  await employee1.addDevelop(firstProduct) // Add product to the developed ones by employee
-  await employee1.addDevelop(secondProduct)
+  await employee1.addDevelop(product1) // Add product to the developed ones by employee
+  await employee1.addDevelop(product2)
 }
 
 /**

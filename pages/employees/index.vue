@@ -62,8 +62,8 @@ export default {
 .cards-container {
   display: flex;
   justify-content: space-around;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
-  max-width: 1000px;
+  max-width: 100%;
 }
 </style>
