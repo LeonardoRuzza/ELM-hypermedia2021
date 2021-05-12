@@ -2,12 +2,13 @@
   <main class="container">
     <header>
       <h1>TRANSFORMING BUSINESS</h1>
-      <h4>
+      <p>
         ELM is a multinational consulting and software group of companies,
         helping customers harness the power of transformative technologies.
-      </h4>
+      </p>
     </header>
     <section class="areas-grid">
+      <h2>OUR BUSINESS LINES</h2>
       <p class="areas-intro">
         The following are the main areas of work of the ELM Corporation. We are
         focus on the innovation in the ICT field for companies which want to be
@@ -18,16 +19,22 @@
         :key="'area-' + areaIndex"
         class="area"
       >
-        <nuxt-link :to="'/areas/' + area.id">
+        <nuxt-link
+          :class="{ 'area-reverse': areaIndex % 2 == 0 }"
+          class="area-flex"
+          :to="'/areas/' + area.id"
+        >
           <div class="area-text">
             <div class="area-title">{{ area.name }}</div>
             <div class="area-shortDesc">{{ area.shortDesc }}</div>
           </div>
-          <img
-            class="icon"
-            alt="Icon of  an area"
-            :src="'/areas/icons/icon-' + area.id + '.png'"
-          />
+          <div class="area-image">
+            <img
+              class="icon"
+              alt="Icon of an area"
+              :src="'/areas/icons/icon-' + area.id + '.png'"
+            />
+          </div>
         </nuxt-link>
       </div>
     </section>
@@ -54,51 +61,87 @@ export default {
 
 <style scoped>
 .area-text {
-  display: inline-block;
+  width: 80%;
+  margin: auto;
+  padding: 0px 20% 0px 20%;
 }
 .area-title {
-  font-size: 180%;
-  font-weight: bold;
-  margin: 0.5%;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.area-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  width: 100%;
+  height: 100%;
+}
+.area-flex.area-reverse {
+  flex-direction: row-reverse;
+  background-image: linear-gradient(180deg, #f7f8fc 0%, #e9e9f4 100%);
+}
+.area-image {
+  width: 20%;
+  height: 100%;
+  margin: auto;
+  padding: 2rem;
+}
+.area-image img {
+  width: 90%;
+  margin: auto;
+  max-height: 80%;
 }
 .area-shortDesc {
-  font-size: 150%;
-  display: inline-block;
-  margin: 5%;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: normal;
 }
 .areas-intro {
+  font-weight: normal;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 110%;
+  max-width: 800px;
+  margin: auto auto 30px auto;
+  font-size: 1rem;
 }
 .areas-grid {
   border-color: lightgray;
   margin-bottom: 40px;
 }
 .area {
-  padding: 1%;
-  border-radius: 25px;
-  margin: 5% 5% 5% 5%;
-  display: block;
-  text-align: left;
-  overflow: auto;
-  background-color: lightgray;
-}
-h2 {
-  margin-bottom: 30px;
-}
-h4 {
-  margin-top: 20px;
-  margin-bottom: 70px;
+  width: 100%;
+  margin: 20px 0px 20px 0px;
+  padding: 0px;
 }
 #globalFootprint {
   max-height: 100%;
   max-width: 100%;
-  border-radius: 10px;
 }
 .icon {
   margin: 0% 5% 0% 10%;
   width: 10%;
   float: right;
+}
+a,
+a:visited,
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  padding: 0px;
+  margin: 0px;
+}
+header p {
+  max-width: 400px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: auto auto 3rem auto;
+}
+header h1 {
+  margin-bottom: 0.5rem;
+}
+h2 {
+  margin: auto 2% 2% 2%;
 }
 </style>
