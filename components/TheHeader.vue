@@ -90,7 +90,7 @@ export default {
                 path: '/areas/4',
               },
               {
-                name: 'Machine Learning',
+                name: 'Machine Learning & AI',
                 path: '/areas/5',
               },
             ],

@@ -397,10 +397,10 @@ async function insertData() {
     shortDesc: 'Full-stack IoT solutions. New business insights. We design future-ready IoT architectures, assemble enterprise-grade IoT data pipelines and deliver the insights our customers need to implement IoT initiatives.'
   })
   const Area5_Ml = await Area.create({
-    name: 'Machine Learning',
-    description: 'MLOps & Business Analytics at Scale: Deployment and maintenance of ML tools in operations, Closed loop Analytics, lift-and-shift continuous evolution at enterprise scale. On traditional, cloud and edge architecture.',
+    name: 'Machine Learning & AI',
+    description: 'MLOps & Business Analytics at Scale: Deployment and maintenance of ML tools in operations, Closed loop Analytics, lift-and-shift continuous evolution at enterprise scale. On traditional, cloud and edge architecture. Boost productivity with ML: Rapidly build and deploy machine learning models using tools that meet your needs, regardless of skill level. Accelerate model creation with automated machine learning, and access powerful feature engineering, algorithm selection and hyperparameter-sweeping capabilities. Communication with AI: automated speech to text, text to speech, translation and assist agents tools with the most advanced speech recognition software for media content. Based on artificial-intelligence and deep neural networks. Improve your customer interactions. AI trough Cloud: More customers, across a diverse set of industries, choose ELM compared to any other cloud to build, train, and deploy their machine learning applications. ELM delivers the broadest choice of powerful compute, high speed networking, and scalable high performance storage options for any ML project or application.',
     shortDesc:
-      'Automates analytical model building and gives computers the ability to learn. We exploit at the best Machine Learning solution to specific cases of our customers. Make it simple, acquire hidden fundamental information trough our ML solutions.'
+      'Automates analytical model building and gives computers the ability to learn. We exploit at the best Machine Learning solution to specific cases of our customers. Make it simple, acquire hidden fundamental information trough our ML solutions and exploit them.'
   })
 
   /******** 20 Employees *********/
@@ -766,7 +766,7 @@ async function insertData() {
 
   const product30 = await Product.create({
     name: 'Document AI',
-    description: 'Document AI is built on decades of AI innovation at Google, bringing powerful and useful solutions to these challenges. Under the hood are Google’s industry-leading technologies: computer vision (including OCR) and natural language processing (NLP) that create pre-trained models for high-value, high-volume documents. DocAI has already processed tens of billions of pages of documents across lending, insurance, government and other industries.',
+    description: 'Document AI is built on decades of AI innovation at ELM, bringing powerful and useful solutions to these challenges. Under the hood are ELM s industry-leading technologies: computer vision (including OCR) and natural language processing (NLP) that create pre-trained models for high-value, high-volume documents. DocAI has already processed tens of billions of pages of documents across lending, insurance, government and other industries.',
     isTop: false
   })
 
