@@ -102,6 +102,8 @@ export default {
   border: 2px solid goldenrod;
   border-radius: 5px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+  margin: 0px 0px 45px 0px;
+  padding: 10px 0px 10px 0px;
 }
 .review-author {
   padding: 5px;
