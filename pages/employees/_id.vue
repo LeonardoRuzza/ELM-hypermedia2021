@@ -121,7 +121,7 @@ export default {
           path: '/employees',
         },
         {
-          title: employee.name + employee.surname,
+          title: employee.name + " " + employee.surname,
           path: '/employees/' + employee.id,
         },
       ]
