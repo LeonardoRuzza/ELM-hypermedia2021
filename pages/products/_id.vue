@@ -14,7 +14,7 @@
       <the-card
         :title="product.BelongsTo.name"
         :image="'/areas/icons/icon-' + product.BelongsTo.id + '.png'"
-        :link="'areas/' + product.BelongsTo.id"
+        :link="'/areas/' + product.BelongsTo.id"
       >
       </the-card>
     </section>
@@ -24,7 +24,7 @@
         <the-card
           title="Team Manager"
           :image="'/employees/employee-' + product.Manage.id + '.jpg'"
-          :link="'employees/' + product.Manage.id"
+          :link="'/employees/' + product.Manage.id"
           :subtitle="product.Manage.name + ' ' + product.Manage.surname"
         ></the-card>
         <span>

@@ -136,9 +136,7 @@ export default {
       document.querySelector('.dropdown').style.top = ''
     },
     childSelected() {
-      const child = ['area1', 'area2', 'area3', 'area4', 'area5']
-      if (child.includes(this.$route.name)) {
-        // console.log('it is active')
+      if (this.$route.name === 'areas-id') {
         return 'nuxt-link-exact-active nuxt-link-active'
       } else return ''
     },

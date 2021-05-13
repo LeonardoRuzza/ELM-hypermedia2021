@@ -15,6 +15,7 @@
       Aliquam lacus eros, commodo ut congue et, dictum cursus orci. Vestibulum
       at lacus vel velit finibus faucibus et in velit.
     </p>
+    <!--:description="item.description"-->
     <div id="top_products" class="cards-container">
       <the-card
         v-for="item of topProducts"
@@ -22,7 +23,6 @@
         :title="item.name"
         :image="'/products/' + item.id + '/thumbnail.png'"
         :subtitle="getArea(item.area_of_belonging_id)"
-        :description="item.description"
         :link="'/products/' + item.id"
       >
       </the-card>
@@ -47,7 +47,6 @@
         :title="item.name"
         :image="'/products/' + item.id + '/thumbnail.png'"
         :subtitle="getArea(item.area_of_belonging_id)"
-        :description="item.description"
         :link="'/products/' + item.id"
       >
       </the-card>
