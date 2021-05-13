@@ -1,5 +1,6 @@
 <template>
   <main class="container">
+    <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
     <header>
       <h1>{{ employee.name }} {{ employee.surname }}</h1>
     </header>
@@ -94,9 +95,11 @@
 
 <script>
 import TheCard from '~/components/TheCard.vue'
+import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 export default {
   components: {
     TheCard,
+    TheBreadCrumbs,
   },
   async asyncData({ $axios, route }) {
     const { id } = route.params
@@ -112,11 +115,22 @@ export default {
       const employee = res[0]
       const developedProducts = res[1]
       const managedProducts = res[2]
+      const crumbs = [
+        {
+          title: "Our Team",
+          path: '/employees',
+        },
+        {
+          title: employee.name + employee.surname,
+          path: '/employees/' + employee.id,
+        },
+      ]
 
       return {
         employee,
         developedProducts,
         managedProducts,
+        crumbs,
       }
     })
   },

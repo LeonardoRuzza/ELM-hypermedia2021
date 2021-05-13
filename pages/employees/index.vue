@@ -1,5 +1,6 @@
 <template>
   <main class="container">
+    <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
     <header>
       <h1>OUR TEAM</h1>
     </header>
@@ -35,9 +36,11 @@
 
 <script>
 import TheCard from '~/components/TheCard.vue'
+import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 export default {
   components: {
     TheCard,
+    TheBreadCrumbs,
   },
   async asyncData({ $axios }) {
     const areas = []
@@ -49,10 +52,17 @@ export default {
     }
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/employees`)
     const standardEmployees = data
+    const crumbs = [
+        {
+          title: "Our Team",
+          path: '/employees',
+        },
+      ] 
 
     return {
       areas,
       standardEmployees,
+      crumbs,
     }
   },
 }
