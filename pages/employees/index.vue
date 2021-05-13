@@ -11,8 +11,8 @@
           :key="'reponsible-' + item.IsResponsible.id"
           :title="item.IsResponsible.name + ' ' + item.IsResponsible.surname"
           :subtitle="item.name"
-          :image="'/employees/employee-' + item.id + '.jpg'"
-          :link="'/employees/' + item.id"
+          :image="'/employees/employee-' + item.IsResponsible.id + '.jpg'"
+          :link="'/employees/' + item.IsResponsible.id"
         >
         </the-card>
       </div>
@@ -41,7 +41,7 @@ export default {
   },
   async asyncData({ $axios }) {
     const areas = []
-    for (let aId = 1; aId <= 2; aId++) {
+    for (let aId = 1; aId <= 5; aId++) {
       const { data } = await $axios.get(
         `${process.env.BASE_URL}/api/areas/${aId}`
       )

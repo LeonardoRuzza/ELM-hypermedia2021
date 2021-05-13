@@ -24,11 +24,11 @@
               :key="'area-' + employee.WorkIn.id"
               :title="'Area of work'"
               :image="'/areas/icons/icon-' + employee.WorkIn.id + '.png'"
-              :link="'/api/areas/' + employee.WorkIn.id"
+              :link="'areas/' + employee.WorkIn.id"
             >
             </the-card>
           </div>
-          <div id="area" class="sub-row2">
+          <div class="sub-row2">
             <p class="get-in-touch">
               Want to get in touch with {{ employee.name }}?
             </p>
