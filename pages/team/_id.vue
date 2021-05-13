@@ -48,16 +48,8 @@ export default {
     }
     // TODO check out design correctness
 
-    const flush = false
     let crumbs
-    if (flush) {
-      crumbs = [
-        {
-          title: `${developingOrWorking}`,
-          path: '#',
-        },
-      ]
-    } else if (params[0] === 'area') {
+    if (params[0] === 'area') {
       let areaName
       switch (params[1]) {
         case '1':
