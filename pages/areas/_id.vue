@@ -18,7 +18,7 @@
         Our Top Product in this area is: {{ topProduct.name }}
       </h2>
       <div class="top-product-info">
-        <nuxt-link :to="'/products/' + topProduct.id">
+        <nuxt-link :to="'/products/' + topProduct.id" class="not-link-style">
           <img
             :src="'/products/' + topProduct.id + '/thumbnail.png'"
             alt="Image of the top product of the area"
@@ -29,20 +29,22 @@
     </section>
     <section class="all-products-list">
       <h2 class="h2-title">Our products in the field</h2>
-      <the-card
-        v-for="item of products"
-        :key="'product-' + item.id"
-        :title="item.name"
-        :image="'/products/' + item.id + '/thumbnail.png'"
-        :description="item.description"
-        :link="'/products/' + item.id"
-      >
-      </the-card>
+      <!-- :description="item.description" -->
+      <div id="area-card-container" class="cards-container">
+        <the-card
+          v-for="item of products"
+          :key="'product-' + item.id"
+          :title="item.name"
+          :image="'/products/' + item.id + '/thumbnail.png'"
+          :link="'/products/' + item.id"
+        >
+        </the-card>
+      </div>
     </section>
     <section class="workers-container">
       <div class="responsible-container">
         <h3>Responsible</h3>
-        <nuxt-link :to="'/employees/' + responsible.id">
+        <nuxt-link :to="'/employees/' + responsible.id" class="not-link-style">
           <div class="responsible-info">
             <img
               :src="'/employees/employee-' + responsible.id + '.jpg'"
@@ -56,6 +58,7 @@
         </nuxt-link>
       </div>
       <div class="working-team">
+        <p>All our team member is important for us</p>
         <nuxt-link class="button" :to="'/team/area-' + area.id">
           Working Team
         </nuxt-link>
@@ -100,7 +103,18 @@ export default {
   },
 }
 </script>
+<style>
+#area-card-container .card {
+  height: 300px;
+}
+#area-card-container .card-img {
+  max-height: 70%;
+}
+</style>
 <style scoped>
+.container {
+  font-weight: normal;
+}
 .all-products-list {
   margin: auto;
   width: 100%;
@@ -118,8 +132,8 @@ export default {
   align-items: center;
 }
 .introduction-container {
-  line-height: 190%;
-  font-size: 150%;
+  line-height: 180%;
+  font-size: 1.5rem;
   word-spacing: 5px;
   font-style: italic;
   display: flex;
@@ -136,8 +150,11 @@ export default {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+.top-product-container a {
+  margin: auto;
+}
 .top-product-container img {
-  width: 30%;
+  width: 40%;
 }
 .top-product-info {
   display: flex;
@@ -145,6 +162,7 @@ export default {
   align-items: center;
 }
 .top-product-desc {
+  max-width: 1000px;
   font-size: 120%;
   line-height: 140%;
   word-spacing: 4px;
@@ -157,6 +175,16 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px auto 20px auto;
+  max-width: 1000px;
 }
 h3 {
   border: 1px solid orange;
@@ -173,5 +201,22 @@ h3 {
 }
 .responsible-info div {
   display: block;
+}
+a.not-link-style,
+a:visited.not-link-style,
+a:hover.not-link-style {
+  color: inherit;
+  text-decoration: none;
+}
+.working-team {
+  width: 50%;
+}
+.working-team p {
+  font-size: 0.9rem;
+  font-weight: lighter;
+  text-align: center;
+  line-height: 1.7rem;
+  color: rgb(100, 100, 100);
+  margin-bottom: 30px;
 }
 </style>
