@@ -53,11 +53,11 @@ export default {
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/employees`)
     const standardEmployees = data
     const crumbs = [
-        {
-          title: "Our Team",
-          path: '/employees',
-        },
-      ] 
+      {
+        title: 'Our Team',
+        path: '/employees',
+      },
+    ]
 
     return {
       areas,

@@ -25,7 +25,7 @@
               :key="'area-' + employee.WorkIn.id"
               :title="'Area of work'"
               :image="'/areas/icons/icon-' + employee.WorkIn.id + '.png'"
-              :link="'areas/' + employee.WorkIn.id"
+              :link="'/areas/' + employee.WorkIn.id"
             >
             </the-card>
           </div>
@@ -74,7 +74,7 @@
         :title="item.name"
         :description="item.description"
         :image="'/products/' + item.id + '/thumbnail.png'"
-        :link="'/api/products/' + item.id"
+        :link="'/products/' + item.id"
       >
       </the-card>
     </div>
@@ -86,7 +86,7 @@
         :title="item.name"
         :description="item.description"
         :image="'/products/' + item.id + '/thumbnail.png'"
-        :link="'/api/products/' + item.id"
+        :link="'/products/' + item.id"
       >
       </the-card>
     </div>
@@ -117,11 +117,11 @@ export default {
       const managedProducts = res[2]
       const crumbs = [
         {
-          title: "Our Team",
+          title: 'Our Team',
           path: '/employees',
         },
         {
-          title: employee.name + " " + employee.surname,
+          title: employee.name + ' ' + employee.surname,
           path: '/employees/' + employee.id,
         },
       ]
@@ -140,7 +140,7 @@ export default {
 <style>
 #area .card {
   width: 150px;
-  height: 200px;
+  height: 150px;
 }
 </style>
 
@@ -174,8 +174,11 @@ export default {
   margin: 0px auto 30px auto;
 }
 .get-in-touch {
-  margin-top: 5%;
+  margin-top: 2%;
   margin-bottom: 3%;
+}
+.role {
+  margin-bottom: 8%;
 }
 img {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -192,7 +195,7 @@ li {
   display: inline-block;
   margin-top: 3%;
   margin-right: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 }
 .social-icons,
 .info-icons {
