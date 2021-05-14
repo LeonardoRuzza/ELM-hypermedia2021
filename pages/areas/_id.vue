@@ -18,11 +18,13 @@
         Our Top Product in this area is: {{ topProduct.name }}
       </h2>
       <div class="top-product-info">
-        <img
-          :src="'/products/' + topProduct.id + '/thumbnail.png'"
-          alt="Image of the top product of the area"
-        />
-        <div class="top-product-desc">{{ topProduct.description }}</div>
+        <nuxt-link :to="'/products/' + topProduct.id">
+          <img
+            :src="'/products/' + topProduct.id + '/thumbnail.png'"
+            alt="Image of the top product of the area"
+          />
+          <div class="top-product-desc">{{ topProduct.description }}</div>
+        </nuxt-link>
       </div>
     </section>
     <section class="all-products-list">
@@ -40,16 +42,18 @@
     <section class="workers-container">
       <div class="responsible-container">
         <h3>Responsible</h3>
-        <div class="responsible-info">
-          <img
-            :src="'/employees/employee-' + responsible.id + '.jpg'"
-            alt="Image of the Responsible of the area"
-          />
-          {{ responsible.name }} <br />
-          {{ responsible.surname }} <br />
-          <br />
-          {{ responsible.role }}
-        </div>
+        <nuxt-link :to="'/employees/' + responsible.id">
+          <div class="responsible-info">
+            <img
+              :src="'/employees/employee-' + responsible.id + '.jpg'"
+              alt="Image of the Responsible of the area"
+            />
+            {{ responsible.name }} <br />
+            {{ responsible.surname }} <br />
+            <br />
+            {{ responsible.role }}
+          </div>
+        </nuxt-link>
       </div>
       <div class="working-team">
         <nuxt-link class="button" :to="'/team/area-' + area.id">
