@@ -4,16 +4,8 @@
     <h1>Products</h1>
     <h2>Top Products</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque
-      bibendum luctus. Praesent elementum posuere cursus. Suspendisse iaculis et
-      ligula ornare ultricies. Integer sit amet justo vestibulum, pellentesque
-      tortor eu, aliquam eros. Nam interdum ipsum ac neque venenatis, a placerat
-      tellus consectetur. Etiam suscipit mauris non arcu consequat porta. Proin
-      ac augue vel felis auctor posuere sed non risus. Orci varius natoque
-      penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed
-      malesuada eros a ante ultricies rhoncus. Phasellus vel egestas elit.
-      Aliquam lacus eros, commodo ut congue et, dictum cursus orci. Vestibulum
-      at lacus vel velit finibus faucibus et in velit.
+      These are our most famous products, one for each of the areas in which we
+      develop and offer products and services in the ICT industry.
     </p>
     <!--:description="item.description"-->
     <div id="top_products" class="cards-container">
@@ -29,16 +21,10 @@
     </div>
     <h2>All Other Products</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque
-      bibendum luctus. Praesent elementum posuere cursus. Suspendisse iaculis et
-      ligula ornare ultricies. Integer sit amet justo vestibulum, pellentesque
-      tortor eu, aliquam eros. Nam interdum ipsum ac neque venenatis, a placerat
-      tellus consectetur. Etiam suscipit mauris non arcu consequat porta. Proin
-      ac augue vel felis auctor posuere sed non risus. Orci varius natoque
-      penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed
-      malesuada eros a ante ultricies rhoncus. Phasellus vel egestas elit.
-      Aliquam lacus eros, commodo ut congue et, dictum cursus orci. Vestibulum
-      at lacus vel velit finibus faucibus et in velit.
+      Here you can find all the other products that the ELM Corporation offer.
+      All of them are top quality products in the ICT field and were developed
+      with a great experience and all the required knowledge. You will for sure
+      find the best solution to fit your company needs.
     </p>
     <div class="cards-container">
       <the-card
@@ -115,9 +101,10 @@ export default {
 -->
 <style scoped>
 p {
-  font-weight: normal;
+  font-weight: 550;
   max-width: 1000px;
   margin: 30px auto 30px auto;
+  font-size: 1.5rem;
 }
 .cards-container {
   display: flex;
