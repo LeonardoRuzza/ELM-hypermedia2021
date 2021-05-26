@@ -2,7 +2,7 @@
   <main class="container">
     <header>
       <h1>TRANSFORMING BUSINESS</h1>
-      <p>
+      <p class="home-intro">
         ELM is a multinational consulting and software group of companies,
         helping customers harness the power of transformative technologies.
       </p>
@@ -60,13 +60,20 @@ export default {
 </script>
 
 <style scoped>
+.home-intro {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 3rem auto 3rem auto;
+  font-style: italic;
+  max-width: 600px;
+}
 .area-text {
   width: 80%;
   margin: auto;
   padding: 0px 20% 0px 20%;
 }
 .area-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
 }
 .area-flex {
@@ -94,15 +101,15 @@ export default {
 }
 .area-shortDesc {
   margin-top: 2rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: normal;
 }
 .areas-intro {
-  font-weight: normal;
+  font-weight: bold;
   text-align: center;
   max-width: 800px;
   margin: auto auto 30px auto;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .areas-grid {
   border-color: lightgray;
@@ -131,12 +138,6 @@ a:hover {
 .container {
   padding: 0px;
   margin: 0px;
-}
-header p {
-  max-width: 400px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin: auto auto 3rem auto;
 }
 header h1 {
   margin-bottom: 0.5rem;
