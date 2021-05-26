@@ -121,6 +121,7 @@ export default {
   padding: 5px;
   font-size: 120%;
   margin-bottom: 10px;
+  font-weight: normal;
 }
 h2 {
   margin-bottom: 30px;

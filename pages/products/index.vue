@@ -27,7 +27,7 @@
       >
       </the-card>
     </div>
-    <h2>Products</h2>
+    <h2>All Other Products</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque
       bibendum luctus. Praesent elementum posuere cursus. Suspendisse iaculis et
@@ -124,7 +124,7 @@ p {
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0px auto 30px auto;
 }
 </style>

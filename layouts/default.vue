@@ -64,7 +64,7 @@ h2 {
   -webkit-box-shadow: 2px 2px 6px #888;
   box-shadow: 2px 2px 6px #888;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 35px;
   margin: 20px auto 20px auto;
   padding: 0px 20px 0px 20px;
 }
