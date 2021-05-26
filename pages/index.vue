@@ -99,6 +99,30 @@ export default {
   margin: auto;
   max-height: 80%;
 }
+@media screen and (max-width: 768px) {
+  .area-flex {
+    flex-direction: column !important;
+  }
+  .area-text {
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 400px) {
+  .area-image {
+    width: 30%;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 500px) and (min-width: 400px) {
+  .area-image {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .area-image {
+    width: 60%;
+  }
+}
 .area-shortDesc {
   margin-top: 2rem;
   font-size: 1.3rem;

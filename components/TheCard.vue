@@ -102,6 +102,7 @@ a:visited {
 @media screen and (max-width: 360px) {
   .card {
     width: 300px;
+    height: 400px;
   }
 }
 </style>
