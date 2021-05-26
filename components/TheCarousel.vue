@@ -112,6 +112,12 @@ export default {
 .slide img {
   height: 400px;
 }
+@media screen and (max-width: 493px) {
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+}
 /* Position the "next button" to the right */
 .next {
   left: auto;

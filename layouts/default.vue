@@ -1,6 +1,7 @@
 <template>
   <div>
-    <the-header></the-header>
+    <!-- The tag clientOnly is necessary to avoid an SSR problem on the header -->
+    <ClientOnly><the-header></the-header></ClientOnly>
     <Nuxt />
     <the-footer></the-footer>
   </div>
@@ -40,7 +41,7 @@ html {
 
 h1 {
   background-color: #26272b;
-  font-size: 50px;
+  font-size: 3rem;
   color: white;
   padding: 16px;
   font-weight: bolder;
@@ -64,7 +65,7 @@ h2 {
   -webkit-box-shadow: 2px 2px 6px #888;
   box-shadow: 2px 2px 6px #888;
   font-weight: bolder;
-  font-size: 35px;
+  font-size: 2rem;
   margin: 20px auto 20px auto;
   padding: 0px 20px 0px 20px;
 }
@@ -88,5 +89,21 @@ h2 {
   color: #26272b;
   transition: background-color 0.2s ease-in;
   text-decoration: none;
+}
+@media screen and (max-width: 768px) and (min-width: 425px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
 }
 </style>

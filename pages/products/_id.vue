@@ -118,18 +118,24 @@ export default {
 </script>
 <style>
 #product-information .card {
-  width: 150px;
+  width: 180px;
   height: 200px;
 }
 #product-information .card-content {
   justify-content: flex-start;
 }
 #product-information .card-img {
-  max-height: 70%;
+  max-height: 60%;
 }
 #product-team .card {
   width: 400px;
   height: 350px;
+}
+@media screen and (max-width: 410px) {
+  #product-team .card {
+    width: 300px;
+    height: 250px;
+  }
 }
 #product-team .card-content {
   justify-content: flex-start;
@@ -216,5 +222,14 @@ export default {
   font-size: 30px;
   font-weight: bolder;
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .product-description p {
+    text-align: center;
+  }
+  .product-information,
+  .team {
+    flex-wrap: wrap;
+  }
 }
 </style>

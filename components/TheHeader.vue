@@ -55,53 +55,55 @@
         </span>
       </div>
     </div>
-    <div v-else class="header-content mobile">
-      <nuxt-link to="/">
-        <span key="menu-item-logo">
-          <img
-            src="~/assets/logo_small.png"
-            alt="ELM corporation"
-            class="logo"
-          />
-        </span>
-      </nuxt-link>
-      <div
-        id="menu-toggle"
-        class="menu-icon"
-        :class="{ 'menu-opened': menuOpened }"
-        @click="openMenu()"
-      >
-        <div class="menu-bar1"></div>
-        <div class="menu-bar2"></div>
-        <div class="menu-bar3"></div>
-      </div>
-    </div>
-    <div v-if="menuOpened" class="collapse-menu">
-      <div
-        v-for="(item, itemIndex) of menuOptions.all"
-        :key="'menu-item-' + itemIndex"
-        class="menu-item"
-      >
-        <nuxt-link v-if="!item.hasDropdown" :to="item.path">
-          {{ item.name }}
+    <div v-else>
+      <div class="header-content mobile">
+        <nuxt-link to="/">
+          <span key="menu-item-logo">
+            <img
+              src="~/assets/logo_small.png"
+              alt="ELM corporation"
+              class="logo"
+            />
+          </span>
         </nuxt-link>
-        <span
-          v-else
-          :class="'menu-item-a ' + childSelected()"
-          @click="toggleSubMenu()"
+        <div
+          id="menu-toggle"
+          class="menu-icon"
+          :class="{ 'menu-opened': menuOpened }"
+          @click="openMenu()"
         >
-          {{ item.name }}
-          <i class="dropdown-icon" :class="{ up: submenuOpened }"></i>
-        </span>
-        <div v-if="item.hasDropdown && submenuOpened" class="sub-menu">
-          <div
-            v-for="(subItem, subIndex) of item.dropdown"
-            :key="'sub-menu-item-' + subIndex"
-            class="sub-menu-item"
+          <div class="menu-bar1"></div>
+          <div class="menu-bar2"></div>
+          <div class="menu-bar3"></div>
+        </div>
+      </div>
+      <div v-if="menuOpened" class="collapse-menu">
+        <div
+          v-for="(item, itemIndex) of menuOptions.all"
+          :key="'menu-item-' + itemIndex"
+          class="menu-item"
+        >
+          <nuxt-link v-if="!item.hasDropdown" :to="item.path">
+            {{ item.name }}
+          </nuxt-link>
+          <span
+            v-else
+            :class="'menu-item-a ' + childSelected()"
+            @click="toggleSubMenu()"
           >
-            <nuxt-link :to="subItem.path">
-              {{ subItem.name }}
-            </nuxt-link>
+            {{ item.name }}
+            <i class="dropdown-icon" :class="{ up: submenuOpened }"></i>
+          </span>
+          <div v-if="item.hasDropdown && submenuOpened" class="sub-menu">
+            <div
+              v-for="(subItem, subIndex) of item.dropdown"
+              :key="'sub-menu-item-' + subIndex"
+              class="sub-menu-item"
+            >
+              <nuxt-link :to="subItem.path">
+                {{ subItem.name }}
+              </nuxt-link>
+            </div>
           </div>
         </div>
       </div>
@@ -275,6 +277,9 @@ export default {
 <style scoped>
 .header {
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
 }
 .header-content {
   height: 70px;
@@ -286,7 +291,6 @@ export default {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  position: sticky;
   top: 0px;
   left: 0px;
   z-index: 10000;

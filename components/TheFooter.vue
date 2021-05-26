@@ -3,14 +3,14 @@
     <div class="footer-content">
       <nav class="right">
         <div class="row">
-          <div class="col-sm-12 col-md-6">
+          <div class="col">
             <h6>ELM Corporation</h6>
             <p class="text-justify">
               © 2021 ELM S.p.A. Via Schiaffino 11 20158 Milano, Italy P. IVA
               IT13187610152
             </p>
           </div>
-          <div class="col-xs-6 col-md-3">
+          <div class="col">
             <h6>Areas</h6>
             <ul class="footer-links">
               <li
@@ -24,7 +24,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-xs-6 col-md-3">
+          <div class="col">
             <h6>Company</h6>
             <ul class="footer-links">
               <li
@@ -38,7 +38,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-xs-6 col-md-3">
+          <div class="col">
             <h6>Help?</h6>
             <ul class="footer-links">
               <li
@@ -58,13 +58,13 @@
     </div>
     <div class="footer-content">
       <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
+        <div class="col">
           <p class="copyright-text">
             Copyright &copy; 2017 All Rights Reserved by ELM Corporation.
           </p>
         </div>
 
-        <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="col">
           <ul class="social-icons">
             <li>
               <a class="facebook" href="https://www.facebook.com/moviricompany"
@@ -155,6 +155,9 @@ export default {
 <style scoped>
 .row {
   display: contents;
+  /* flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; */
 }
 .footer {
   background-color: #26272b;
@@ -227,7 +230,19 @@ export default {
   justify-content: space-between;
   width: 100%;
   margin: auto;
-  max-width: 80%;
+  max-width: 1200px;
+}
+.col {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+  .right {
+    display: contents;
+  }
+  .right .col {
+    margin-left: 2rem;
+  }
 }
 .copyright-text {
   margin: 0;

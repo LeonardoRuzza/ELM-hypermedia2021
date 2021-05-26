@@ -99,4 +99,9 @@ a:visited {
   text-decoration: none;
   color: inherit;
 }
+@media screen and (max-width: 360px) {
+  .card {
+    width: 300px;
+  }
+}
 </style>
