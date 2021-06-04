@@ -157,7 +157,7 @@ export default {
   padding: 20px;
 }
 .product-description p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: normal;
   text-align: left;
   width: 90%;

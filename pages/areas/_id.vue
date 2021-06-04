@@ -28,7 +28,7 @@
       </div>
     </section>
     <section class="all-products-list">
-      <h2 class="h2-title">Our products in the field</h2>
+      <h2 class="h2-title">Our products in the {{ area.name }} area</h2>
       <!-- :description="item.description" -->
       <div id="area-card-container" class="cards-container">
         <the-card
@@ -43,7 +43,7 @@
     </section>
     <section class="workers-container">
       <div class="responsible-container">
-        <h3>Responsible</h3>
+        <h3>Responsible of the {{ area.name }} area</h3>
         <nuxt-link :to="'/employees/' + responsible.id" class="not-link-style">
           <div class="responsible-info">
             <img
@@ -212,7 +212,7 @@ a:hover.not-link-style {
   width: 50%;
 }
 .working-team p {
-  font-size: 0.9rem;
+  font-size: 1.6rem;
   font-weight: lighter;
   text-align: center;
   line-height: 1.7rem;

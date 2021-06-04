@@ -1,7 +1,6 @@
 <template>
   <!-- Sidebar -->
   <div class="w3-sidebar w3-border-light w3-bar-block">
-    <h3 class="w3-bar-item">Menu</h3>
     <a
       href="#"
       class="w3-bar-item w3-button bg-color"

@@ -43,4 +43,7 @@ li a {
 li a.nuxt-link-exact-active.nuxt-link-active {
   color: grey;
 }
+span {
+  font-size: 1.8em;
+}
 </style>
