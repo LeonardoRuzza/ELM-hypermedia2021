@@ -20,7 +20,7 @@
               Suspendisse iaculis et ligula ornare ultricies.
             </p>
           </div>
-          <div id="area" class="cards-container-area">
+          <div id="area-of-work" class="cards-container-area">
             <the-card
               :key="'area-' + employee.WorkIn.id"
               :title="'Area of work'"
@@ -140,13 +140,17 @@ export default {
 </script>
 
 <style>
-#area .card {
+#area-of-work .card {
   width: 150px;
   height: 150px;
+}
+#area-of-work .card-img {
+  max-height: 60%;
 }
 </style>
 
 <style scoped>
+/*
 .column {
   float: left;
   width: 50%;
@@ -158,6 +162,37 @@ export default {
   display: table;
   clear: both;
 }
+*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.column {
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: row-reverse;
+  }
+  .column {
+    max-width: 100%;
+    margin: auto;
+  }
+  .column img {
+    box-shadow: none;
+  }
+  .role {
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+}
+/*
 .sub-row1 {
   float: top;
   height: 55%;
@@ -168,6 +203,7 @@ export default {
   height: 45%;
   margin-top: 10%;
 }
+*/
 .cards-container-products {
   display: flex;
   justify-content: space-around;
