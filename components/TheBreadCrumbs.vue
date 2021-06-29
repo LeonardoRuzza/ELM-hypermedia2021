@@ -48,4 +48,14 @@ li a.nuxt-link-exact-active.nuxt-link-active {
 span {
   font-size: 1.8em;
 }
+@media screen and (max-width: 425px) {
+  span {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  span {
+    font-size: 1.3em;
+  }
+}
 </style>

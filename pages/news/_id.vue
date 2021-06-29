@@ -10,9 +10,9 @@
       <h2>{{ news.introduction }}</h2>
       <article>
         <p class="news-text">
+          <img alt="News Image" :src="'/news/image-' + news.id + '.png'" />
           {{ news.content }}
         </p>
-        <img alt="News' Image" :src="'/news/image-' + news.id + '.png'" />
       </article>
     </section>
   </main>
@@ -51,6 +51,7 @@ export default {
 <style scoped>
 article {
   display: flex;
+  align-items: center;
 }
 .news-text {
   display: inline-block;
@@ -69,7 +70,6 @@ article {
   margin: 0.5% 2% 2% 2%;
   display: block;
   text-align: left;
-  overflow: auto;
   background-color: lightgray;
 }
 h2 {
@@ -79,6 +79,18 @@ h2 {
 }
 img {
   margin: 0% 4% 1% 4%;
-  width: 30%;
+  max-width: 40%;
+  float: right;
+}
+@media screen and (max-width: 768px) {
+  img {
+    float: none;
+    display: block;
+    margin: auto;
+    max-width: 100%;
+  }
+  h2 {
+    font-size: 1rem;
+  }
 }
 </style>
