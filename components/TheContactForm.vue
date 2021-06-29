@@ -44,7 +44,7 @@
       placeholder="Write here your message.."
       :value="defaultMessage"
     ></textarea>
-    <input class="form-button" type="submit" value="Send Message" />
+    <input class="button" type="submit" value="Send Message" />
   </form>
 </template>
 
@@ -1063,46 +1063,33 @@ export default {
 form {
   padding: 12px 20px 12px 20px;
   margin: 8px 10px 8px 10px;
-  border: 5px solid black;
-  border-radius: 1.7rem;
-  -moz-box-shadow: 2px 2px 6px #888;
-  -webkit-box-shadow: 2px 2px 6px #888;
-  box-shadow: 2px 2px 6px #888;
 }
 .form-label {
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  width: 100%;
   display: block;
   color: white;
   background-color: #26272b;
-  -moz-box-shadow: 2px 2px 6px orange;
-  -webkit-box-shadow: 2px 2px 6px orange;
-  box-shadow: 2px 2px 6px orange;
-  border: 1px solid orange;
   border-radius: 1.7rem;
 }
 .form-field,
 #countries {
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 25px;
-  width: 100%;
+  margin: 10px auto 25px auto;
+  width: 80%;
   display: block;
 }
-input[type='text'],
-select {
+input,
+select,
+textarea {
   width: 100%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 1.7rem;
-  box-sizing: border-box;
 }
-
+/*
 input[type='submit'] {
   width: 100%;
   margin-right: 10px;
@@ -1122,10 +1109,9 @@ input[type='submit'] {
 input[type='submit']:hover {
   background-color: orange;
   color: black;
-}
-
+}*/
 #message {
-  width: 100%;
+  width: 90%;
   height: 100%;
 }
 </style>

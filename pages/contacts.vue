@@ -111,12 +111,6 @@ export default {
 </script>
 
 <style scoped>
-.form {
-  border-radius: 1.7rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
 h4 {
   margin-bottom: 50px;
 }
@@ -129,6 +123,13 @@ img {
   border-radius: 1.7rem;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 10px 12px 4px;
 }
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: stretch;
+}
+/*
 .column1 {
   float: left;
   width: 70%;
@@ -146,6 +147,32 @@ img {
   display: table;
   clear: both;
 }
+*/
+input {
+  border-radius: 1rem;
+  line-height: 2rem;
+  border: 1px solid black;
+}
+.column1,
+.column2 {
+  width: 100%;
+  padding: 0px 2rem 0px 2rem;
+}
+.column2 {
+  /*color: white;*/
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) 1
+    100%;
+  /*
+  border-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  */
+}
 .sub-row1 {
   float: top;
   height: 75%;
@@ -155,10 +182,10 @@ img {
   height: 25%;
 }
 .contact-box {
-  background-color: lightgray;
   padding: 10px;
   border-radius: 1.7rem;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 12px 12px 4px;
+  background-image: linear-gradient(180deg, #f7f8fc 0%, #e9e9f4 100%);
 }
 .contact-info-title {
   border: 1px solid orange;
@@ -186,8 +213,8 @@ li {
 }
 .social-icons a,
 .info-icons {
-  background-color: #eceeef;
-  color: #818a91;
+  background-color: #818a91;
+  color: #eceeef;
   font-size: 16px;
   display: inline-block;
   line-height: 44px;
