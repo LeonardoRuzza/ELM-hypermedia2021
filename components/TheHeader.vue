@@ -113,7 +113,7 @@
 
 <script>
 export default {
-  // Define all the varibales to associate link to the respective name in the header.
+  // Define all the variables to associate links to the respective names of pages showed in the header.
   data() {
     return {
       menuOptions: {

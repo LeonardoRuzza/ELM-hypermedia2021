@@ -1,4 +1,5 @@
 <template>
+  <!-- The contact form includes the fields for: name, surname, email, country, message.  -->
   <form name="contact_form" action="" method="post">
     <label class="form-label" for="fname"> First Name: </label>
     <input

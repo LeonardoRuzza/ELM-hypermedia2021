@@ -1,4 +1,5 @@
 <template>
+  <!-- List of nuxt link which represent the parts of the breadcrumbs -->
   <ol>
     <li v-for="(crumb, index) in crumbs" :key="'crumb-' + index">
       <nuxt-link :to="crumb.path">
@@ -10,7 +11,7 @@
 
 <script>
 export default {
-  // Set the values to show for the breadcrumbs.
+  // Set the values for the breadcrumbs.
   props: {
     crumbs: {
       type: Array,
