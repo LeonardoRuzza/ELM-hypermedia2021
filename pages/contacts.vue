@@ -15,7 +15,11 @@
           </p>
         </div>
         <div class="row">
-          <div class="column1">
+          <div
+            ref="column1"
+            class="column1"
+            :class="{ highlight: highlightContacts }"
+          >
             <!-- General contact info -->
             <div class="sub-row1">
               <p class="contact-info-title">Our Office</p>
@@ -78,12 +82,20 @@
               </ul>
             </div>
           </div>
-          <div class="column2">
+          <div
+            ref="column2"
+            class="column2"
+            :class="{ highlight: highlightForm }"
+          >
             <the-contact-form class="form"></the-contact-form>
           </div>
         </div>
       </div>
     </section>
+    <div
+      class="overlay"
+      :class="{ visible: highlightContacts || highlightForm }"
+    ></div>
   </main>
 </template>
 
@@ -105,7 +117,38 @@ export default {
           path: '/contacts',
         },
       ],
+      highlightForm: false,
+      highlightContacts: false,
     }
+  },
+  beforeMount() {
+    setTimeout(() => {
+      this.showForm()
+    }, 10000)
+  },
+  methods: {
+    showForm() {
+      const el = this.$refs.column2
+      if (el) {
+        // scroll to the component to highlight
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+      this.highlightForm = true
+      this.highlightContacts = false
+    },
+    showContacts() {
+      const el = this.$refs.column1
+      if (el) {
+        // scroll to the component to highlight
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+      this.highlightForm = false
+      this.highlightContacts = true
+    },
+    closeHighlight() {
+      this.highlightForm = false
+      this.highlightContacts = false
+    },
   },
 }
 </script>
@@ -127,27 +170,9 @@ img {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: stretch;
+  justify-content: space-evenly;
+  position: relative;
 }
-/*
-.column1 {
-  float: left;
-  width: 70%;
-  margin-top: 6px;
-  padding: 20px;
-}
-.column2 {
-  float: left;
-  width: 30%;
-  margin-top: 6px;
-  padding: 20px;
-}
-.row:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-*/
 input {
   border-radius: 1rem;
   line-height: 2rem;
@@ -156,22 +181,43 @@ input {
 .column1,
 .column2 {
   width: 100%;
+  max-width: 600px;
   padding: 0px 2rem 0px 2rem;
+  margin: 2rem auto 2rem auto;
 }
-.column2 {
-  /*color: white;*/
-  border-left-width: 3px;
-  border-left-style: solid;
-  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) 1
-    100%;
-  /*
-  border-image: linear-gradient(
+.column1:after {
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  width: 2px;
+  position: absolute;
+  content: '';
+  background-image: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 20%,
     rgba(0, 0, 0, 1) 50%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0) 80%
   );
-  */
+}
+@media screen and (max-width: 768px) {
+  .column1:after {
+    top: 50%;
+    right: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    content: '';
+    background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 20%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 0) 80%
+    );
+  }
+  .row {
+    flex-wrap: wrap;
+  }
 }
 .sub-row1 {
   float: top;
@@ -191,9 +237,9 @@ input {
   border: 1px solid orange;
   background-color: #26272b;
   color: white;
-  -moz-box-shadow: 2px 2px 6px orange;
-  -webkit-box-shadow: 2px 2px 6px orange;
-  box-shadow: 2px 2px 6px orange;
+  -moz-box-shadow: 2px 2px 6px #888;
+  -webkit-box-shadow: 2px 2px 6px #888;
+  box-shadow: 2px 2px 6px #888;
   font-weight: bolder;
   font-size: 20px;
   margin-bottom: 20px;
@@ -210,6 +256,7 @@ li {
 .social-icons,
 .info-icons {
   text-align: center;
+  padding: 0px;
 }
 .social-icons a,
 .info-icons {
@@ -254,5 +301,22 @@ li {
 }
 .social-icons a.instagram:hover {
   background-color: #ea4c89;
+}
+.overlay {
+  z-index: 999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.overlay.visible {
+  display: block;
+}
+.highlight {
+  z-index: 1000000;
+  background-image: linear-gradient(180deg, #f7f8fc 0%, #e9e9f4 100%);
 }
 </style>

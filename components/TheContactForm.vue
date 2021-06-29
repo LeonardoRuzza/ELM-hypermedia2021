@@ -1079,8 +1079,6 @@ export default {
 
 <style scoped>
 form {
-  padding: 12px 20px 12px 20px;
-  margin: 8px 10px 8px 10px;
   position: relative;
 }
 .form-label {
@@ -1091,6 +1089,7 @@ form {
   color: white;
   background-color: #26272b;
   border-radius: 1.7rem;
+  border: 1px solid orange;
 }
 .form-field,
 #countries {
@@ -1107,28 +1106,16 @@ textarea {
   display: inline-block;
   border: none;
   border-radius: 1.7rem;
+  border: 1px solid #888;
 }
-/*
+textarea {
+  resize: vertical;
+}
 input[type='submit'] {
-  width: 100%;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 15px;
-  background-color: grey;
-  color: black;
-  padding: 14px 20px;
-  border: 1px solid orange;
-  border-radius: 1.7rem;
-  cursor: pointer;
-  -moz-box-shadow: 2px 2px 6px #888;
-  -webkit-box-shadow: 2px 2px 6px #888;
+  font-size: 1.5rem;
+  font-weight: bold;
   box-shadow: 2px 2px 6px #888;
 }
-
-input[type='submit']:hover {
-  background-color: orange;
-  color: black;
-}*/
 #message {
   width: 90%;
   height: 100%;
