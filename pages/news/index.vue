@@ -5,13 +5,21 @@
       <h1>{{ visualize }}</h1>
       <h2>Get updated with some News!</h2>
     </header>
-    <section class="news-container">
+    <section id="news-card-container" class="news-container">
       <the-side-bar
+        v-if="width > 768"
         :link1="link1"
         :link2="link2"
         @visualization="onUpdateVisualization"
       >
       </the-side-bar>
+      <the-top-bar
+        v-else
+        :link1="link1"
+        :link2="link2"
+        @visualization="onUpdateVisualization"
+      >
+      </the-top-bar>
       <div v-if="visualize == link1" class="cards-container">
         <the-card
           v-for="(item, itemIndex) of latestNews"
@@ -39,6 +47,7 @@
 </template>
 <script>
 import TheSideBar from '~/components/TheSideBar.vue'
+import TheTopBar from '~/components/TheTopBar.vue'
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 
@@ -47,6 +56,7 @@ export default {
     TheSideBar,
     TheCard,
     TheBreadCrumbs,
+    TheTopBar,
   },
   // Get the latest and all the news from the DB.
   async asyncData({ $axios }) {
@@ -78,7 +88,17 @@ export default {
           path: '/news',
         },
       ],
+      width: 0,
     }
+  },
+  beforeMount() {
+    // Add an event listener on the event resize when the object is created.
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  beforeDestroy() {
+    // Remove the listener when the object is destroyed.
+    window.removeEventListener('resize', this.handleResize)
   },
   /*   async asyncData({ $axios }) {
     const { data } = await $axios.get(
@@ -99,9 +119,18 @@ export default {
         path: '/news',
       })
     },
+    handleResize() {
+      // When resize reset the property width.
+      this.width = window.innerWidth
+    },
   },
 }
 </script>
+<style>
+#news-card-container .card-title {
+  font-size: 16px;
+}
+</style>
 <style scoped>
 .cards-container {
   position: static;
@@ -119,6 +148,12 @@ export default {
 }
 .news-container {
   display: flex;
+  flex-wrap: nowrap;
   margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  .news-container {
+    flex-wrap: wrap;
+  }
 }
 </style>

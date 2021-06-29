@@ -15,6 +15,7 @@
         <div class="column">
           <div class="sub-row1">
             <p class="role">
+              <!--TODO modificare con role dinamico da database-->
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
               scelerisque bibendum luctus. Praesent elementum posuere cursus.
               Suspendisse iaculis et ligula ornare ultricies.
@@ -150,19 +151,6 @@ export default {
 </style>
 
 <style scoped>
-/*
-.column {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding: 20px;
-}
-.row:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-*/
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -192,18 +180,6 @@ export default {
     margin-top: 1rem;
   }
 }
-/*
-.sub-row1 {
-  float: top;
-  height: 55%;
-  margin-top: 5%;
-}
-.sub-row2 {
-  float: top;
-  height: 45%;
-  margin-top: 10%;
-}
-*/
 .cards-container-products {
   display: flex;
   justify-content: space-around;
