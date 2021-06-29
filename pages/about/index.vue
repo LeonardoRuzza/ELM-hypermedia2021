@@ -13,6 +13,7 @@
         @visualization="onUpdateVisualization"
       >
       </the-side-bar>
+      <!-- Use of v-if and v-else to show the reviews or the general info about the company -->
       <div v-if="visualize == link1" class="info-container">
         <h4>A Global Technology Business</h4>
         Founded in Italy in 2000, today ELM is a multinational group that
@@ -48,11 +49,13 @@
 <script>
 import TheSideBar from '~/components/TheSideBar.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheSideBar,
     TheBreadCrumbs,
   },
+  // Get reviews from the DB.
   async asyncData({ $axios }) {
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/reviews`)
     const reviews = data
@@ -60,6 +63,7 @@ export default {
       reviews,
     }
   },
+  // Create the varibales used to show the breadcrumbs and navigate with the sidebar.
   data() {
     return {
       link1: 'Info',
@@ -77,6 +81,7 @@ export default {
       ],
     }
   },
+  // Method to manage the use of the sidebar and update with consistency the breadcrumbs.
   methods: {
     onUpdateVisualization(path) {
       this.visualize = path
@@ -121,6 +126,7 @@ export default {
   padding: 5px;
   font-size: 120%;
   margin-bottom: 10px;
+  font-weight: normal;
 }
 h2 {
   margin-bottom: 30px;

@@ -1,4 +1,5 @@
 <template>
+  <!-- The nuxt link implementing a card include a title, an image, a subtitle (facultative, e.g. v-if) and a description (facultative, e.g. v-if)  -->
   <nuxt-link :to="link">
     <div class="card">
       <div class="card-content">
@@ -22,7 +23,7 @@
 <script>
 export default {
   props: {
-    // productDetail is an array of object, each item contains the name of the image
+    // productDetail is an array of object, each item contains the name of the image.
     title: { type: String, default: () => '' },
     subtitle: { type: String, default: () => '' },
     image: { type: String, default: () => '' },
@@ -98,5 +99,11 @@ a:hover,
 a:visited {
   text-decoration: none;
   color: inherit;
+}
+@media screen and (max-width: 360px) {
+  .card {
+    width: 300px;
+    height: 400px;
+  }
 }
 </style>

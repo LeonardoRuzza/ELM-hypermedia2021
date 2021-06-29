@@ -1,7 +1,6 @@
 <template>
-  <!-- Sidebar -->
+  <!-- Sidebar with two allocated "blocks" (e.g., like link) -->
   <div class="w3-sidebar w3-border-light w3-bar-block">
-    <h3 class="w3-bar-item">Menu</h3>
     <a
       href="#"
       class="w3-bar-item w3-button bg-color"
@@ -20,10 +19,12 @@
 </template>
 <script>
 export default {
+  // Set the two name (link) in the sidebar.
   props: {
     link1: { type: String, default: () => '' },
     link2: { type: String, default: () => '' },
   },
+  // Method to manage the visualized info on the page when the sidebar is used (emit an event later managed by the page which exploit the sidebar component).
   methods: {
     goToNews(path, event) {
       event.target.classList.toggle('bg-color')

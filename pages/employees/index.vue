@@ -5,6 +5,7 @@
       <h1>OUR TEAM</h1>
     </header>
     <h2>Our Leadership</h2>
+    <!-- Section for the cards of the employess who are in the Leadership of the company -->
     <section>
       <div class="cards-container">
         <the-card
@@ -19,6 +20,7 @@
       </div>
     </section>
     <h2>Our Team</h2>
+    <!-- Section for the cards representing all the employees of the company -->
     <section>
       <div class="cards-container">
         <the-card
@@ -37,11 +39,13 @@
 <script>
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheCard,
     TheBreadCrumbs,
   },
+  // Get all the rsponsible of the 5 areas and then all the employees in general from the DB. Assigne also the values for the breadcrumbs.
   async asyncData({ $axios }) {
     const areas = []
     for (let aId = 1; aId <= 5; aId++) {

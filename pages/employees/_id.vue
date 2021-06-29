@@ -4,6 +4,7 @@
     <header>
       <h1>{{ employee.name }} {{ employee.surname }}</h1>
     </header>
+    <!-- Section for the general info about the employee including: image, role, area of work, social icons -->
     <section>
       <div class="row">
         <div class="column">
@@ -15,12 +16,13 @@
         <div class="column">
           <div class="sub-row1">
             <p class="role">
+              <!--TODO modificare con role dinamico da database-->
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
               scelerisque bibendum luctus. Praesent elementum posuere cursus.
               Suspendisse iaculis et ligula ornare ultricies.
             </p>
           </div>
-          <div id="area" class="cards-container-area">
+          <div id="area-of-work" class="cards-container-area">
             <the-card
               :key="'area-' + employee.WorkIn.id"
               :title="'Area of work'"
@@ -66,41 +68,53 @@
         </div>
       </div>
     </section>
-    <h2>Managed Products</h2>
-    <div class="cards-container-products">
-      <the-card
-        v-for="item of managedProducts"
-        :key="'products-' + item.id"
-        :title="item.name"
-        :description="item.description"
-        :image="'/products/' + item.id + '/thumbnail.png'"
-        :link="'/products/' + item.id"
-      >
-      </the-card>
-    </div>
-    <h2>Developed Products</h2>
-    <div class="cards-container-products">
-      <the-card
-        v-for="item of developedProducts"
-        :key="'products-' + item.id"
-        :title="item.name"
-        :description="item.description"
-        :image="'/products/' + item.id + '/thumbnail.png'"
-        :link="'/products/' + item.id"
-      >
-      </the-card>
-    </div>
+    <!-- Section for the products managed by the employee -->
+    <section>
+      <h2>Managed Products</h2>
+      <div class="cards-container-products">
+        <the-card
+          v-for="item of managedProducts"
+          :key="'products-' + item.id"
+          :title="item.name"
+          :description="item.description"
+          :image="'/products/' + item.id + '/thumbnail.png'"
+          :link="'/products/' + item.id"
+        >
+        </the-card>
+      </div>
+      <div v-if="managedProducts.length == 0">Not yet manged products.</div>
+    </section>
+    <!-- Section for the products developed by the employee -->
+    <section>
+      <h2>Developed Products</h2>
+      <div class="cards-container-products">
+        <the-card
+          v-for="item of developedProducts"
+          :key="'products-' + item.id"
+          :title="item.name"
+          :description="item.description"
+          :image="'/products/' + item.id + '/thumbnail.png'"
+          :link="'/products/' + item.id"
+        >
+        </the-card>
+      </div>
+      <div v-if="developedProducts.length == 0">
+        Not yet developed products.
+      </div>
+    </section>
   </main>
 </template>
 
 <script>
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheCard,
     TheBreadCrumbs,
   },
+  // Get all the info about an employee from the DB (employee itself, his developedProducts, his managedProducts) and generate correct breadcrumbs.
   async asyncData({ $axios, route }) {
     const { id } = route.params
     return Promise.all([
@@ -138,33 +152,44 @@ export default {
 </script>
 
 <style>
-#area .card {
+#area-of-work .card {
   width: 150px;
   height: 150px;
+}
+#area-of-work .card-img {
+  max-height: 60%;
 }
 </style>
 
 <style scoped>
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
 .column {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding: 20px;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.row:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-.sub-row1 {
-  float: top;
-  height: 55%;
-  margin-top: 5%;
-}
-.sub-row2 {
-  float: top;
-  height: 45%;
-  margin-top: 10%;
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: row-reverse;
+  }
+  .column {
+    max-width: 100%;
+    margin: auto;
+  }
+  .column img {
+    box-shadow: none;
+  }
+  .role {
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
 }
 .cards-container-products {
   display: flex;

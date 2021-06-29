@@ -4,7 +4,9 @@
     <header>
       <h1>{{ product.name }}</h1>
     </header>
+    <!-- Images of the product -->
     <the-carousel :product-detail="detail"></the-carousel>
+    <!-- Section of the general info about the current product -->
     <section id="product-information" class="product-information">
       <div class="product-description">
         <p>
@@ -18,6 +20,7 @@
       >
       </the-card>
     </section>
+    <!-- Section for the team related to the product (manager and other developers)  -->
     <section>
       <h2>Team</h2>
       <div id="product-team" class="team">
@@ -35,10 +38,12 @@
         </span>
       </div>
     </section>
+    <!-- Section for the contact button for the product -->
     <section class="contact">
       <p>To get more information about our product:</p>
       <button class="button" @click="contactUs()">Contact Us</button>
     </section>
+    <!-- Section for the "pop-up" contact form for the product -->
     <section class="form-section" :class="{ visible: isContactVisible }">
       <div class="form-container">
         <span @click="closeContact()">&times;</span>
@@ -55,12 +60,14 @@
 import TheCard from '~/components/TheCard.vue'
 import TheCarousel from '~/components/TheCarousel.vue'
 import TheContactForm from '~/components/TheContactForm.vue'
+
 export default {
   components: {
     TheCarousel,
     TheCard,
     TheContactForm,
   },
+  // Get the info about a specific product from the DB and generate the correct breadcrumbs.
   async asyncData({ $axios, route }) {
     const { id } = route.params
     const { data } = await $axios.get(
@@ -82,6 +89,7 @@ export default {
       crumbs,
     }
   },
+  // Generate the variable to retrieve the images to show about the product, and setting variable to manage the pop up form.
   data() {
     const id = this.$route.params.id
     return {
@@ -90,25 +98,20 @@ export default {
         `/products/${id}/carousel-2.png`,
         `/products/${id}/carousel-3.png`,
       ],
-      crumbs: [
-        {
-          title: 'Products',
-          path: '/products',
-        },
-      ],
       isContactVisible: false,
       productId: id,
     }
   },
+  // Methods to manage the contact form pop up displaying.
   methods: {
     contactUs() {
-      // display the contact form if is not visible
+      // Display the contact form if is not visible.
       if (!this.isContactVisible) {
         this.isContactVisible = true
       }
     },
     closeContact() {
-      // close the contact form if is visible
+      // Close the contact form if is visible.
       if (this.isContactVisible) {
         this.isContactVisible = false
       }
@@ -118,18 +121,24 @@ export default {
 </script>
 <style>
 #product-information .card {
-  width: 150px;
+  width: 180px;
   height: 200px;
 }
 #product-information .card-content {
   justify-content: flex-start;
 }
 #product-information .card-img {
-  max-height: 70%;
+  max-height: 60%;
 }
 #product-team .card {
   width: 400px;
   height: 350px;
+}
+@media screen and (max-width: 410px) {
+  #product-team .card {
+    width: 300px;
+    height: 250px;
+  }
 }
 #product-team .card-content {
   justify-content: flex-start;
@@ -151,7 +160,7 @@ export default {
   padding: 20px;
 }
 .product-description p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: normal;
   text-align: left;
   width: 90%;
@@ -216,5 +225,14 @@ export default {
   font-size: 30px;
   font-weight: bolder;
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .product-description p {
+    text-align: center;
+  }
+  .product-information,
+  .team {
+    flex-wrap: wrap;
+  }
 }
 </style>

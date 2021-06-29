@@ -4,6 +4,7 @@
     <header>
       <h1>{{ area.name }}</h1>
     </header>
+    <!-- Section for general info related to the area including: description, image -->
     <section class="introduction-container">
       <div class="intro-description">
         {{ area.description }}
@@ -13,6 +14,7 @@
         :alt="'Image of the area' + area.name"
       />
     </section>
+    <!-- Section for the top product of the area -->
     <section class="top-product-container">
       <h2 class="h2-title">
         Our Top Product in this area is: {{ topProduct.name }}
@@ -27,8 +29,9 @@
         </nuxt-link>
       </div>
     </section>
+    <!-- Section for the list of all the products' cards of the area (excluding the top one) -->
     <section class="all-products-list">
-      <h2 class="h2-title">Our products in the field</h2>
+      <h2 class="h2-title">Our products in the {{ area.name }} area</h2>
       <!-- :description="item.description" -->
       <div id="area-card-container" class="cards-container">
         <the-card
@@ -41,9 +44,10 @@
         </the-card>
       </div>
     </section>
+    <!-- Section for the employees of the area (responsible + working team link) -->
     <section class="workers-container">
       <div class="responsible-container">
-        <h3>Responsible</h3>
+        <h3>Responsible of the {{ area.name }} area</h3>
         <nuxt-link :to="'/employees/' + responsible.id" class="not-link-style">
           <div class="responsible-info">
             <img
@@ -70,11 +74,13 @@
 <script>
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheCard,
     TheBreadCrumbs,
   },
+  // Get the info about the area from the DB (area, responsible of the area, topProduct of the area, products of the area) and generate the correct variables for the breadcrumbs.
   async asyncData({ $axios, route }) {
     const { id } = route.params
     return Promise.all([
@@ -212,7 +218,7 @@ a:hover.not-link-style {
   width: 50%;
 }
 .working-team p {
-  font-size: 0.9rem;
+  font-size: 1.6rem;
   font-weight: lighter;
   text-align: center;
   line-height: 1.7rem;

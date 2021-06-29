@@ -1,4 +1,5 @@
 <template>
+  <!-- The contact form includes the fields for: name, surname, email, country, message.  -->
   <form name="contact_form" action="" method="post">
     <label class="form-label" for="fname"> First Name: </label>
     <input
@@ -52,6 +53,7 @@ export default {
   props: {
     defaultMessage: { type: String, default: () => '' },
   },
+  // Set the values to show for the county selection of the form.
   data() {
     return {
       countries: [
