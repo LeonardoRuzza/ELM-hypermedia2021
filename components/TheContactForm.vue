@@ -1,6 +1,15 @@
 <template>
   <!-- The contact form includes the fields for: name, surname, email, country, message.  -->
-  <form name="contact_form" action="" method="post">
+  <form
+    ref="contact_form"
+    name="contact_form"
+    action=""
+    method="post"
+    @submit.prevent="messageSent"
+  >
+    <div class="alert" :class="{ visible: isMessageVisible }">
+      Message Sent!
+    </div>
     <label class="form-label" for="fname"> First Name: </label>
     <input
       id="fname"
@@ -56,6 +65,7 @@ export default {
   // Set the values to show for the county selection of the form.
   data() {
     return {
+      isMessageVisible: false,
       countries: [
         {
           name: 'Afghanistan',
@@ -1056,6 +1066,14 @@ export default {
       ],
     }
   },
+  methods: {
+    messageSent() {
+      this.$refs.contact_form.reset()
+      this.isMessageVisible = true
+      setTimeout(() => (this.isMessageVisible = false), 5000)
+      setTimeout(() => this.$emit('sent'), 6000)
+    },
+  },
 }
 </script>
 
@@ -1063,6 +1081,7 @@ export default {
 form {
   padding: 12px 20px 12px 20px;
   margin: 8px 10px 8px 10px;
+  position: relative;
 }
 .form-label {
   margin-top: 10px;
@@ -1113,5 +1132,17 @@ input[type='submit']:hover {
 #message {
   width: 90%;
   height: 100%;
+}
+.alert {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 40%;
+  border: 1px solid green;
+  background-color: rgba(0, 255, 0, 0.3);
+  z-index: 100000;
+}
+.alert.visible {
+  display: block;
 }
 </style>

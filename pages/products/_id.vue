@@ -50,6 +50,7 @@
         <the-contact-form
           class="form"
           :default-message="'Request information for ' + product.name + ':'"
+          @sent="closeContact"
         ></the-contact-form>
       </div>
     </section>
