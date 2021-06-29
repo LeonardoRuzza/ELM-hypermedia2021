@@ -5,6 +5,7 @@
       <h1>OUR {{ developingOrWorking.toUpperCase() }}</h1>
     </header>
     <section>
+      <!-- Cards of employees -->
       <div class="cards-container">
         <the-card
           v-for="item of team"

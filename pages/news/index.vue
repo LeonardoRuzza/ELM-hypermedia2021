@@ -12,6 +12,7 @@
         @visualization="onUpdateVisualization"
       >
       </the-side-bar>
+      <!-- Show the cards for the "latestNews" or "allNews" exploiting v-if and v-else semantics -->
       <div v-if="visualize == link1" class="cards-container">
         <the-card
           v-for="(item, itemIndex) of latestNews"

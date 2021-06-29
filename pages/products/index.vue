@@ -2,41 +2,47 @@
   <main class="container">
     <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
     <h1>Products</h1>
-    <h2>Top Products</h2>
-    <p>
-      These are our most famous products, one for each of the areas in which we
-      develop and offer products and services in the ICT industry.
-    </p>
-    <!--:description="item.description"-->
-    <div id="top_products" class="cards-container">
-      <the-card
-        v-for="item of topProducts"
-        :key="'product-' + item.id"
-        :title="item.name"
-        :image="'/products/' + item.id + '/thumbnail.png'"
-        :subtitle="getArea(item.area_of_belonging_id)"
-        :link="'/products/' + item.id"
-      >
-      </the-card>
-    </div>
-    <h2>All Other Products</h2>
-    <p>
-      Here you can find all the other products that the ELM Corporation offer.
-      All of them are top quality products in the ICT field and were developed
-      with a great experience and all the required knowledge. You will for sure
-      find the best solution to fit your company needs.
-    </p>
-    <div class="cards-container">
-      <the-card
-        v-for="item of standardProducts"
-        :key="'product-' + item.id"
-        :title="item.name"
-        :image="'/products/' + item.id + '/thumbnail.png'"
-        :subtitle="getArea(item.area_of_belonging_id)"
-        :link="'/products/' + item.id"
-      >
-      </the-card>
-    </div>
+    <!-- Section of Top Product cards (one for each areas)-->
+    <section>
+      <h2>Top Products</h2>
+      <p>
+        These are our most famous products, one for each of the areas in which
+        we develop and offer products and services in the ICT industry.
+      </p>
+      <!--:description="item.description"-->
+      <div id="top_products" class="cards-container">
+        <the-card
+          v-for="item of topProducts"
+          :key="'product-' + item.id"
+          :title="item.name"
+          :image="'/products/' + item.id + '/thumbnail.png'"
+          :subtitle="getArea(item.area_of_belonging_id)"
+          :link="'/products/' + item.id"
+        >
+        </the-card>
+      </div>
+    </section>
+    <!-- Section of all the other products (not Top) cards -->
+    <section>
+      <h2>All Other Products</h2>
+      <p>
+        Here you can find all the other products that the ELM Corporation offer.
+        All of them are top quality products in the ICT field and were developed
+        with a great experience and all the required knowledge. You will for
+        sure find the best solution to fit your company needs.
+      </p>
+      <div class="cards-container">
+        <the-card
+          v-for="item of standardProducts"
+          :key="'product-' + item.id"
+          :title="item.name"
+          :image="'/products/' + item.id + '/thumbnail.png'"
+          :subtitle="getArea(item.area_of_belonging_id)"
+          :link="'/products/' + item.id"
+        >
+        </the-card>
+      </div>
+    </section>
   </main>
 </template>
 <script>

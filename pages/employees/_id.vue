@@ -4,6 +4,7 @@
     <header>
       <h1>{{ employee.name }} {{ employee.surname }}</h1>
     </header>
+    <!-- Section for the general info about the employee including: image, role, area of work, social icons -->
     <section>
       <div class="row">
         <div class="column">
@@ -66,30 +67,40 @@
         </div>
       </div>
     </section>
-    <h2>Managed Products</h2>
-    <div class="cards-container-products">
-      <the-card
-        v-for="item of managedProducts"
-        :key="'products-' + item.id"
-        :title="item.name"
-        :description="item.description"
-        :image="'/products/' + item.id + '/thumbnail.png'"
-        :link="'/products/' + item.id"
-      >
-      </the-card>
-    </div>
-    <h2>Developed Products</h2>
-    <div class="cards-container-products">
-      <the-card
-        v-for="item of developedProducts"
-        :key="'products-' + item.id"
-        :title="item.name"
-        :description="item.description"
-        :image="'/products/' + item.id + '/thumbnail.png'"
-        :link="'/products/' + item.id"
-      >
-      </the-card>
-    </div>
+    <!-- Section for the products managed by the employee -->
+    <section>
+      <h2>Managed Products</h2>
+      <div class="cards-container-products">
+        <the-card
+          v-for="item of managedProducts"
+          :key="'products-' + item.id"
+          :title="item.name"
+          :description="item.description"
+          :image="'/products/' + item.id + '/thumbnail.png'"
+          :link="'/products/' + item.id"
+        >
+        </the-card>
+      </div>
+      <div v-if="managedProducts.length == 0">Not yet manged products.</div>
+    </section>
+    <!-- Section for the products developed by the employee -->
+    <section>
+      <h2>Developed Products</h2>
+      <div class="cards-container-products">
+        <the-card
+          v-for="item of developedProducts"
+          :key="'products-' + item.id"
+          :title="item.name"
+          :description="item.description"
+          :image="'/products/' + item.id + '/thumbnail.png'"
+          :link="'/products/' + item.id"
+        >
+        </the-card>
+      </div>
+      <div v-if="developedProducts.length == 0">
+        Not yet developed products.
+      </div>
+    </section>
   </main>
 </template>
 

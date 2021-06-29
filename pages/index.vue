@@ -1,12 +1,13 @@
 <template>
   <main class="container">
     <header>
-      <h1>TRANSFORMING BUSINESS</h1>
+      <h1>ELM Corporation</h1>
       <p class="home-intro">
         ELM is a multinational consulting and software group of companies,
         helping customers harness the power of transformative technologies.
       </p>
     </header>
+    <!-- Introduction to all the areas with links -->
     <section class="areas-grid">
       <h2>OUR BUSINESS LINES</h2>
       <p class="areas-intro">
@@ -40,7 +41,7 @@
     </section>
     <img
       id="globalFootprint"
-      alt="Presence of the ELM in the world"
+      alt="Image representing the presence of the ELM Comporation in the world"
       src="/home/world_presence.jpg"
     />
   </main>

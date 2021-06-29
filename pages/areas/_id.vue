@@ -4,6 +4,7 @@
     <header>
       <h1>{{ area.name }}</h1>
     </header>
+    <!-- Section for general info related to the area including: description, image -->
     <section class="introduction-container">
       <div class="intro-description">
         {{ area.description }}
@@ -13,6 +14,7 @@
         :alt="'Image of the area' + area.name"
       />
     </section>
+    <!-- Section for the top product of the area -->
     <section class="top-product-container">
       <h2 class="h2-title">
         Our Top Product in this area is: {{ topProduct.name }}
@@ -27,6 +29,7 @@
         </nuxt-link>
       </div>
     </section>
+    <!-- Section for the list of all the products' cards of the area (excluding the top one) -->
     <section class="all-products-list">
       <h2 class="h2-title">Our products in the {{ area.name }} area</h2>
       <!-- :description="item.description" -->
@@ -41,6 +44,7 @@
         </the-card>
       </div>
     </section>
+    <!-- Section for the employees of the area (responsible + working team link) -->
     <section class="workers-container">
       <div class="responsible-container">
         <h3>Responsible of the {{ area.name }} area</h3>

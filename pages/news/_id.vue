@@ -1,6 +1,7 @@
 <template>
   <main class="container">
     <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
+    <!-- Info related to the news including a title, an introduction, an image and the content -->
     <header>
       <h1>News</h1>
       <h2>{{ news.title }}</h2>
@@ -11,7 +12,7 @@
         <p class="news-text">
           {{ news.content }}
         </p>
-        <img alt="News Image" :src="'/news/image-' + news.id + '.png'" />
+        <img alt="News' Image" :src="'/news/image-' + news.id + '.png'" />
       </article>
     </section>
   </main>

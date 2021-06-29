@@ -13,6 +13,7 @@
         @visualization="onUpdateVisualization"
       >
       </the-side-bar>
+      <!-- Use of v-if and v-else to show the reviews or the general info about the company -->
       <div v-if="visualize == link1" class="info-container">
         <h4>A Global Technology Business</h4>
         Founded in Italy in 2000, today ELM is a multinational group that

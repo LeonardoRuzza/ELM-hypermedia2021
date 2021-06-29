@@ -5,6 +5,7 @@
       <h1>OUR TEAM</h1>
     </header>
     <h2>Our Leadership</h2>
+    <!-- Section for the cards of the employess who are in the Leadership of the company -->
     <section>
       <div class="cards-container">
         <the-card
@@ -19,6 +20,7 @@
       </div>
     </section>
     <h2>Our Team</h2>
+    <!-- Section for the cards representing all the employees of the company -->
     <section>
       <div class="cards-container">
         <the-card

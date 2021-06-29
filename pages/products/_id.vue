@@ -4,7 +4,9 @@
     <header>
       <h1>{{ product.name }}</h1>
     </header>
+    <!-- Images of the product -->
     <the-carousel :product-detail="detail"></the-carousel>
+    <!-- Section of the general info about the current product -->
     <section id="product-information" class="product-information">
       <div class="product-description">
         <p>
@@ -18,6 +20,7 @@
       >
       </the-card>
     </section>
+    <!-- Section for the team related to the product (manager and other developers)  -->
     <section>
       <h2>Team</h2>
       <div id="product-team" class="team">
@@ -35,10 +38,12 @@
         </span>
       </div>
     </section>
+    <!-- Section for the contact button for the product -->
     <section class="contact">
       <p>To get more information about our product:</p>
       <button class="button" @click="contactUs()">Contact Us</button>
     </section>
+    <!-- Section for the "pop-up" contact form for the product -->
     <section class="form-section" :class="{ visible: isContactVisible }">
       <div class="form-container">
         <span @click="closeContact()">&times;</span>
