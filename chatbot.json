@@ -1,0 +1,80 @@
+{"name": "Hypermedia Example",
+	"data": {
+		"kb": {
+			"start": "Welcome on the ELM Corporation website, I am here to help you.",
+			"first_xor": "Do you want to proceed with a general guide trough the website or are you interested only in our contacts?",
+			"guide": "Welcome to the guide of our website, when you are ready tell me it.",
+			"home": "Welcome to the Homepage of the ELM Corporation website. Here you can find the main areas of the services offered by us.",
+			"about": "Welcome to the About Us page of the ELM Corporation website. Here you can find all the information about our company.",
+			"contact_xor": "Do you want to directly contact us through a form or are you interested only in our general contact information?",
+			"contact_form": "Welcome to the Contact Us page. Now you can fill this form and send it to the company.",
+			"contact_page": "Welcome to the Contact Us page. Here you can all our contacts.",
+			"end": "The process is completed. Thank you for your interest!",
+			"steps_v": ["/", "/about"],
+			"continue_v": ["continue", "ok", "go", "start", "yes"],
+			"guide_v": ["ready"],
+			"fist_xor_v": ["guide, contacts"],
+			"stay_message": "I don't understand. Do you want to continue?"
+		},
+		"process": {
+			"activities": [
+			{
+				"my_id": "start",
+				"next_id": "first_xor",
+				"my_type": "START",
+				"callback": "start"
+			},
+			{
+				"my_id": "first_xor",
+				"next_id": "end",
+				"my_type": "XOR",
+				"callback": "generic_xor",
+				"choices": ["guide", "contact_xor"]
+			},
+			{
+				"my_id": "guide",
+				"next_id": "home",
+				"my_type": "TASK",
+				"callback": "guide"
+			},
+			{
+				"my_id": "home",
+				"next_id": "about",
+				"my_type": "TASK",
+				"callback": "guide"
+			},
+			{
+				"my_id": "about",
+				"next_id": null,
+				"my_type": "TASK",
+				"callback": "guide"
+			},
+			{
+				"my_id": "contact_xor",
+				"next_id": null,
+				"my_type": "XOR",
+				"callback": "generic_xor",
+				"choices": ["contact_form", "contact_page"]
+			},
+			{
+				"my_id": "contact_form",
+				"next_id": null,
+				"my_type": "TASK",
+				"callback": ""
+			},
+			{
+				"my_id": "contact_page",
+				"next_id": null,
+				"my_type": "TASK",
+				"callback": ""
+			},
+			{
+				"my_id": "end",
+				"next_id": "start",
+				"my_type": "END"
+			}
+			],
+			"first_activity_id": "start"
+		}
+	}
+}
