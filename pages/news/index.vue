@@ -7,19 +7,11 @@
     </header>
     <section id="news-card-container" class="news-container">
       <the-side-bar
-        v-if="width > 768"
         :link1="link1"
         :link2="link2"
         @visualization="onUpdateVisualization"
       >
       </the-side-bar>
-      <the-top-bar
-        v-else
-        :link1="link1"
-        :link2="link2"
-        @visualization="onUpdateVisualization"
-      >
-      </the-top-bar>
       <!-- Show the cards for the "latestNews" or "allNews" exploiting v-if and v-else semantics -->
       <div v-if="visualize == link1" class="cards-container">
         <the-card
@@ -48,7 +40,6 @@
 </template>
 <script>
 import TheSideBar from '~/components/TheSideBar.vue'
-import TheTopBar from '~/components/TheTopBar.vue'
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
 
@@ -57,7 +48,6 @@ export default {
     TheSideBar,
     TheCard,
     TheBreadCrumbs,
-    TheTopBar,
   },
   // Get the latest and all the news from the DB.
   async asyncData({ $axios }) {
@@ -89,17 +79,7 @@ export default {
           path: '/news',
         },
       ],
-      width: 0,
     }
-  },
-  beforeMount() {
-    // Add an event listener on the event resize when the object is created.
-    window.addEventListener('resize', this.handleResize)
-    this.handleResize()
-  },
-  beforeDestroy() {
-    // Remove the listener when the object is destroyed.
-    window.removeEventListener('resize', this.handleResize)
   },
   /*   async asyncData({ $axios }) {
     const { data } = await $axios.get(

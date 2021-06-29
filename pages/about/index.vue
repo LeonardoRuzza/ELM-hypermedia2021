@@ -101,7 +101,13 @@ export default {
 }
 .about-container {
   display: flex;
+  flex-wrap: nowrap;
   margin-top: 50px;
+}
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-wrap: wrap;
+  }
 }
 .review-container {
   border: 2px solid goldenrod;
@@ -135,7 +141,8 @@ h4 {
   margin-bottom: 30px;
 }
 img {
-  max-width: 1300px;
+  width: 1300px;
+  max-width: 100%;
 }
 p {
   text-align: left;
