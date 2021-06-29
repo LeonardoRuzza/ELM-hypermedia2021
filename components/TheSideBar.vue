@@ -1,5 +1,5 @@
 <template>
-  <!-- Sidebar -->
+  <!-- Sidebar with two allocated "blocks" (e.g., like link) -->
   <div class="w3-sidebar w3-border-light w3-bar-block">
     <a
       href="#"

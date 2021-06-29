@@ -11,6 +11,7 @@
             </p>
           </div>
           <div class="col">
+            <!-- List of the areas (e.g., areas section of the footer)-->
             <h6>Areas</h6>
             <ul class="footer-links">
               <li
@@ -25,6 +26,7 @@
             </ul>
           </div>
           <div class="col">
+            <!-- List of links to other main pages related to general info about the company ((e.g., company section of the footer) -->
             <h6>Company</h6>
             <ul class="footer-links">
               <li
@@ -39,6 +41,7 @@
             </ul>
           </div>
           <div class="col">
+            <!-- Links of the helps section of the footer -->
             <h6>Help?</h6>
             <ul class="footer-links">
               <li
@@ -65,6 +68,7 @@
         </div>
 
         <div class="col">
+          <!-- List of the social icons -->
           <ul class="social-icons">
             <li>
               <a class="facebook" href="https://www.facebook.com/moviricompany"
@@ -99,7 +103,7 @@
 
 <script>
 export default {
-  // Define the varible to represent the correct association between name and link for the pages in the footer.
+  // Define the varible to represent the correct association between names and links for the pages listed in the footer.
   data() {
     return {
       areas: [
