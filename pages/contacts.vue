@@ -121,11 +121,6 @@ export default {
       highlightContacts: false,
     }
   },
-  beforeMount() {
-    setTimeout(() => {
-      this.showForm()
-    }, 10000)
-  },
   methods: {
     showForm() {
       const el = this.$refs.column2
