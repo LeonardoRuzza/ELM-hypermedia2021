@@ -23,11 +23,13 @@
 <script>
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheCard,
     TheBreadCrumbs,
   },
+  // Get the employees who work for a specific area (Working Team) or the employees who devolop a specific product (Developing Team) from the DB. Also, generate the correct breadcrumbs.
   async asyncData({ $axios, route }) {
     const { id } = route.params
     const params = id.split('-')

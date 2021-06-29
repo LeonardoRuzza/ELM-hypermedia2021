@@ -48,11 +48,13 @@
 <script>
 import TheSideBar from '~/components/TheSideBar.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheSideBar,
     TheBreadCrumbs,
   },
+  // Get reviews from the DB.
   async asyncData({ $axios }) {
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/reviews`)
     const reviews = data
@@ -60,6 +62,7 @@ export default {
       reviews,
     }
   },
+  // Create the varibales used to show the breadcrumbs and navigate with the sidebar.
   data() {
     return {
       link1: 'Info',
@@ -77,6 +80,7 @@ export default {
       ],
     }
   },
+  // Method to manage the use of the sidebar and update with consistency the breadcrumbs.
   methods: {
     onUpdateVisualization(path) {
       this.visualize = path

@@ -19,10 +19,12 @@
 </template>
 <script>
 export default {
+  // Set the two name (link) in the sidebar.
   props: {
     link1: { type: String, default: () => '' },
     link2: { type: String, default: () => '' },
   },
+  // Method to manage the visualized info on the page when the sidebar is used (emit an event later managed by the page which exploit the sidebar component).
   methods: {
     goToNews(path, event) {
       event.target.classList.toggle('bg-color')

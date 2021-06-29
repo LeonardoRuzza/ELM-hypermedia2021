@@ -113,6 +113,7 @@
 
 <script>
 export default {
+  // Define all the varibales to associate link to the respective name in the header.
   data() {
     return {
       menuOptions: {
@@ -231,25 +232,25 @@ export default {
     }
   },
   beforeMount() {
-    // add an event listener on the event resize when the object is created
+    // Add an event listener on the event resize when the object is created.
     window.addEventListener('resize', this.handleResize)
     this.handleResize()
   },
   beforeDestroy() {
-    // remove the listener when the object is destroyed
+    // Remove the listener when the object is destroyed.
     window.removeEventListener('resize', this.handleResize)
   },
   methods: {
     openDropdown(item) {
       if (item.hasDropdown) {
-        // add all the property of visibility to trigger the transition
+        // Add all the property of visibility to trigger the transition.
         document.querySelector('.dropdown').style.visibility = 'visible'
         document.querySelector('.dropdown').style.opacity = '1'
         document.querySelector('.dropdown').style.top = '50px'
       }
     },
     closeAllDropdown() {
-      // remove all the property of visibility to trigger the transition
+      // Remove all the property of visibility to trigger the transition.
       document.querySelector('.dropdown').style.visibility = ''
       document.querySelector('.dropdown').style.opacity = ''
       document.querySelector('.dropdown').style.top = ''
@@ -263,11 +264,11 @@ export default {
       } else return ''
     },
     handleResize() {
-      // when resize reset the property width
+      // When resize reset the property width.
       this.width = window.innerWidth
     },
     openMenu() {
-      // toggle the attribute menuOpened to change class and the reaction on opening/closing
+      // Toggle the attribute menuOpened to change class and the reaction on opening/closing.
       this.menuOpened = !this.menuOpened
     },
   },

@@ -19,10 +19,12 @@
 
 <script>
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheBreadCrumbs,
   },
+  // Get all the info about a specific news from the DB. Also, create the correct breadcrumbs.
   async asyncData({ $axios, route }) {
     const { id } = route.params
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/news/${id}`)

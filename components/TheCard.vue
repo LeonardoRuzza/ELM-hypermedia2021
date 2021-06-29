@@ -22,7 +22,7 @@
 <script>
 export default {
   props: {
-    // productDetail is an array of object, each item contains the name of the image
+    // productDetail is an array of object, each item contains the name of the image.
     title: { type: String, default: () => '' },
     subtitle: { type: String, default: () => '' },
     image: { type: String, default: () => '' },

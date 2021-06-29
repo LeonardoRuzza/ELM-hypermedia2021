@@ -99,6 +99,7 @@
 
 <script>
 export default {
+  // Define the varible to represent the correct association between name and link for the pages in the footer.
   data() {
     return {
       areas: [

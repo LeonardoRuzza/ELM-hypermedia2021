@@ -49,6 +49,7 @@
 <script>
 // import axios from 'axios'
 export default {
+  // Get all the areas from the DB.
   async asyncData({ $axios }) {
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/areas`)
     const areas = data

@@ -52,6 +52,7 @@ export default {
   props: {
     defaultMessage: { type: String, default: () => '' },
   },
+  // Set the values to show for the county selection of the form.
   data() {
     return {
       countries: [

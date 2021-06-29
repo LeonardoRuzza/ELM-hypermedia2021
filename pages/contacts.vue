@@ -77,11 +77,13 @@
 <script>
 import TheContactForm from '~/components/TheContactForm.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheContactForm,
     TheBreadCrumbs,
   },
+  // Define the value for the breadcrumbs.
   data() {
     return {
       crumbs: [

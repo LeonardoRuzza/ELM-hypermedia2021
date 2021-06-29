@@ -70,11 +70,13 @@
 <script>
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheCard,
     TheBreadCrumbs,
   },
+  // Get the info about the area from the DB (area, responsible of the area, topProduct of the area, products of the area) and generate the correct variables for the breadcrumbs.
   async asyncData({ $axios, route }) {
     const { id } = route.params
     return Promise.all([

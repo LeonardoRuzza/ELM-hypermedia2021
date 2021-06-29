@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  // Set the values to show for the breadcrumbs.
   props: {
     crumbs: {
       type: Array,

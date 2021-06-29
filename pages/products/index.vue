@@ -42,11 +42,13 @@
 <script>
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheCard,
     TheBreadCrumbs,
   },
+  // Get all the products data from the DB (dividing between topProducts of areas and not).
   async asyncData({ $axios }) {
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/products`)
     const topProducts = []
@@ -63,6 +65,7 @@ export default {
       standardProducts,
     }
   },
+  // Define the values for the breadcrumbs.
   data() {
     return {
       crumbs: [
@@ -73,6 +76,7 @@ export default {
       ],
     }
   },
+  // Method to associate id of an area to the name of this latter.
   methods: {
     getArea(id) {
       switch (id) {

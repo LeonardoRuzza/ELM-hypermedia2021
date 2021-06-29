@@ -31,7 +31,7 @@
 <script>
 export default {
   props: {
-    // productDetail is an array of object, each item contains the name of the image
+    // productDetail is an array of object, each item contains the name of the image.
     productDetail: { type: Array, default: () => [] },
   },
   data() {
@@ -43,11 +43,11 @@ export default {
     this.showSlides(this.slideIndex)
   },
   methods: {
-    // Next/previous controls
+    // Next/previous controls.
     plusSlides(n) {
       this.showSlides((this.slideIndex += n))
     },
-    // Thumbnail image controls
+    // Thumbnail image controls.
     currentSlide(n) {
       this.showSlides((this.slideIndex = n))
     },

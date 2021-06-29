@@ -37,11 +37,13 @@
 <script>
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheCard,
     TheBreadCrumbs,
   },
+  // Get all the rsponsible of the 5 areas and then all the employees in general from the DB. Assigne also the values for the breadcrumbs.
   async asyncData({ $axios }) {
     const areas = []
     for (let aId = 1; aId <= 5; aId++) {

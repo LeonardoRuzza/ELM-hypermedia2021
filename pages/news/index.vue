@@ -41,12 +41,14 @@
 import TheSideBar from '~/components/TheSideBar.vue'
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheSideBar,
     TheCard,
     TheBreadCrumbs,
   },
+  // Get the latest and all the news from the DB.
   async asyncData({ $axios }) {
     return Promise.all([
       await $axios.$get(`${process.env.BASE_URL}/api/news/latest_news`),
@@ -60,6 +62,7 @@ export default {
       }
     })
   },
+  // Create the variable to manage correctly the use of the sidebar and breadcrumbs.
   data() {
     return {
       link1: 'Latest News',
@@ -86,6 +89,7 @@ export default {
       allNews,
     }
   }, */
+  // Method to manage correctly the interaction with the sidebar and update with coerence the breadcrumbs.
   methods: {
     onUpdateVisualization(path) {
       this.visualize = path

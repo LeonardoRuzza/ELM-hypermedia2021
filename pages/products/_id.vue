@@ -55,12 +55,14 @@
 import TheCard from '~/components/TheCard.vue'
 import TheCarousel from '~/components/TheCarousel.vue'
 import TheContactForm from '~/components/TheContactForm.vue'
+
 export default {
   components: {
     TheCarousel,
     TheCard,
     TheContactForm,
   },
+  // Get the info about a specific product from the DB and generate the correct breadcrumbs.
   async asyncData({ $axios, route }) {
     const { id } = route.params
     const { data } = await $axios.get(
@@ -82,6 +84,7 @@ export default {
       crumbs,
     }
   },
+  // Generate the variable to retrieve the images to show about the product, and setting variable to manage the pop up form.
   data() {
     const id = this.$route.params.id
     return {
@@ -90,25 +93,20 @@ export default {
         `/products/${id}/carousel-2.png`,
         `/products/${id}/carousel-3.png`,
       ],
-      crumbs: [
-        {
-          title: 'Products',
-          path: '/products',
-        },
-      ],
       isContactVisible: false,
       productId: id,
     }
   },
+  // Methods to manage the contact form pop up displaying.
   methods: {
     contactUs() {
-      // display the contact form if is not visible
+      // Display the contact form if is not visible.
       if (!this.isContactVisible) {
         this.isContactVisible = true
       }
     },
     closeContact() {
-      // close the contact form if is visible
+      // Close the contact form if is visible.
       if (this.isContactVisible) {
         this.isContactVisible = false
       }

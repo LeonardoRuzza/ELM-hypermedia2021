@@ -96,11 +96,13 @@
 <script>
 import TheCard from '~/components/TheCard.vue'
 import TheBreadCrumbs from '~/components/TheBreadCrumbs.vue'
+
 export default {
   components: {
     TheCard,
     TheBreadCrumbs,
   },
+  // Get all the info about an employee from the DB (employee itself, his developedProducts, his managedProducts) and generate correct breadcrumbs.
   async asyncData({ $axios, route }) {
     const { id } = route.params
     return Promise.all([
