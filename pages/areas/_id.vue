@@ -31,7 +31,7 @@
     </section>
     <!-- Section for the list of all the products' cards of the area (excluding the top one) -->
     <section class="all-products-list">
-      <h2 class="h2-title">Our products in the {{ area.name }} area</h2>
+      <h2>Our products in the {{ area.name }} area</h2>
       <!-- :description="item.description" -->
       <div id="area-card-container" class="cards-container">
         <the-card
@@ -151,11 +151,6 @@ export default {
   max-height: 50%;
   max-width: 40%;
 }
-.h2-title {
-  font-size: 200%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
 .top-product-container a {
   margin: auto;
 }
@@ -200,10 +195,9 @@ h3 {
   -webkit-box-shadow: 2px 2px 6px #888;
   box-shadow: 2px 2px 6px #888;
   font-weight: bolder;
-  font-size: 20px;
   margin: 15px auto 15px auto;
   padding: 0px 20px 0px 20px;
-  font-size: 140%;
+  font-size: 165%;
 }
 .responsible-info div {
   display: block;
