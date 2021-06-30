@@ -1,21 +1,78 @@
-{"name": "Hypermedia Example",
+{"name": "ELM chatbot",
 	"data": {
 		"kb": {
 			"start": "Welcome on the ELM Corporation website, I am here to help you.",
-			"first_xor": "Do you want to proceed with a general guide trough the website or are you interested only in our contacts?",
-			"guide": "Welcome to the guide of our website, when you are ready tell me it.",
-			"home": "Welcome to the Homepage of the ELM Corporation website. Here you can find the main areas of the services offered by us.",
-			"about": "Welcome to the About Us page of the ELM Corporation website. Here you can find all the information about our company.",
-			"contact_xor": "Do you want to directly contact us through a form or are you interested only in our general contact information?",
-			"contact_form": "Welcome to the Contact Us page. Now you can fill this form and send it to the company.",
-			"contact_page": "Welcome to the Contact Us page. Here you can all our contacts.",
+			
+			"first_xor":{
+				"initials": "Do you want to proceed with a general guide trough the website or are you interested only in our contacts?",
+				"choices": [
+					{
+					  "id": "guide",
+					  "intents": ["Guide", "General guide"],
+					  "utterance": [
+						"Okay, so let's start with the general tour of the website"
+					  ],
+					  "payload": {
+						"guide": "/"
+					  }
+					},
+					{
+					  "id": "contact_xor",
+					  "intents": ["Contacts", "Only contacts"],
+					  "payload": {
+						"guide": "/contacts"
+					  }
+					}
+				  ],
+			    "unknown": "I have not understand. Options: Guide or Contacts."
+			},
+
+			"guide":{ "initials": "Welcome to the guide of our website, when you are ready tell me it."
+			},
+
+			"home": {
+				"initials": "Welcome to the Homepage of the ELM Corporation website. Here you can find the main areas of the services offered by us."
+			},
+			
+			"about": {
+				"initials":"Welcome to the About Us page of the ELM Corporation website. Here you can find all the information about our company."
+			},
+
+			"contact_xor":{
+				"initials": "Welcome to the Contact Us page. Do you want to directly contact us through a form or are you interested only in our general contact information?",
+				"choices": [
+					{
+					  "id": "contact_form",
+					  "intents": ["Form", "Contact form", "Contact", "Directly contact"],
+					  "payload": {
+						"popup": "true"
+					  }
+					},
+					{
+					  "id": "contact_page",
+					  "intents": ["General contact info", "Contact info"],
+					  "payload": {
+						"popup": "false"
+					  }
+					}
+				  ],
+				"unknown": "I have not understand. Options: Form or Contact info."
+			},
+			
+			"contact_form": {
+				"initials": "Now you can fill this form and send it to the company."
+			},
+			
+			"contact_page": {
+				"initials": "Here you can all our contacts."
+			},
+			
 			"end": "The process is completed. Thank you for your interest!",
 			"steps_v": ["/", "/about"],
 			"continue_v": ["continue", "ok", "go", "start", "yes"],
-			"guide_v": ["ready"],
-			"fist_xor_v": ["guide, contacts"],
-			"stay_message": "I don't understand. Do you want to continue?"
+			"stay_message": "I didn't understand. Do you want to continue?"
 		},
+
 		"process": {
 			"activities": [
 			{
@@ -60,13 +117,13 @@
 				"my_id": "contact_form",
 				"next_id": null,
 				"my_type": "TASK",
-				"callback": ""
+				"callback": "nothing"
 			},
 			{
 				"my_id": "contact_page",
 				"next_id": null,
 				"my_type": "TASK",
-				"callback": ""
+				"callback": "nothing"
 			},
 			{
 				"my_id": "end",

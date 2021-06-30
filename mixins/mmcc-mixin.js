@@ -31,6 +31,9 @@ export default {
         if (message.payload.guide) {
           this.$router.push(message.payload.guide)
         }
+        if (message.payload.popup){
+          // TODO Call the popup
+        }
       }
     })
   },
