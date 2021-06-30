@@ -58,6 +58,19 @@ export default {
       areas,
     }
   },
+  head: {
+    title: 'ELM-Homepage',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'The ELM corporation is one of the best Company in the field of Performance Engineering, Analytics, Security, IoT, Machine Learning & AI',
+      },
+    ],
+  },
 }
 </script>
 

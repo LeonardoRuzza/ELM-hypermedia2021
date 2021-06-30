@@ -33,7 +33,7 @@ li:after {
   content: ' » ';
   display: inline;
   font-size: 0.9em;
-  color: #aaa;
+  color: #999;
   padding: 0 0.0725em 0 0.15em;
 }
 li:last-child:after {
@@ -50,12 +50,13 @@ span {
 }
 @media screen and (max-width: 425px) {
   span {
-    font-size: 1rem;
+    font-size: 1.4rem;
+    min-height: 48px;
   }
 }
 @media screen and (min-width: 425px) and (max-width: 768px) {
   span {
-    font-size: 1.3em;
+    font-size: 1.6em;
   }
 }
 </style>

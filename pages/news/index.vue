@@ -81,6 +81,18 @@ export default {
       ],
     }
   },
+  head: {
+    title: `ELM-News`,
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: `This are all the news regarding the ELM Company`,
+      },
+    ],
+  },
   /*   async asyncData({ $axios }) {
     const { data } = await $axios.get(
       `${process.env.BASE_URL}/api/news/all_news`

@@ -145,6 +145,18 @@ export default {
       }
     })
   },
+  head: {
+    title: `ELM-Employees`,
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: `This one of the ELM Corporation Employee`,
+      },
+    ],
+  },
 }
 </script>
 

@@ -3,7 +3,7 @@
     <the-bread-crumbs :crumbs="crumbs"> </the-bread-crumbs>
     <header>
       <h1>CONTACT US</h1>
-      <h4>Get in touch with the team!</h4>
+      <div class="h4">Get in touch with the team!</div>
     </header>
     <img src="/contacts/contacts.png" alt="Contact image" />
     <section>
@@ -29,6 +29,7 @@
               <a
                 class="info-icons"
                 href="https://www.facebook.com/moviricompany"
+                aria-label="Office-address"
               >
                 <i class="fa fa-map-marker"></i
               ></a>
@@ -37,6 +38,7 @@
               <a
                 class="info-icons"
                 href="https://www.facebook.com/moviricompany"
+                aria-label="Telephone"
               >
                 <i class="fa fa-phone"></i
               ></a>
@@ -45,6 +47,7 @@
               <a
                 class="info-icons"
                 href="https://www.facebook.com/moviricompany"
+                aria-label="Mail"
               >
                 <i class="fa fa-envelope"></i
               ></a>
@@ -57,11 +60,15 @@
                   <a
                     class="facebook"
                     href="https://www.facebook.com/moviricompany"
+                    aria-label="Facebook"
                     ><i class="fa fa-facebook"></i
                   ></a>
                 </li>
                 <li>
-                  <a class="twitter" href="https://twitter.com/moviri"
+                  <a
+                    class="twitter"
+                    href="https://twitter.com/moviri"
+                    aria-label="Twitter"
                     ><i class="fa fa-twitter"></i
                   ></a>
                 </li>
@@ -69,12 +76,14 @@
                   <a
                     class="instagram"
                     href="https://www.instagram.com/moviricompany"
+                    aria-label="Instagram"
                     ><i class="fa fa-instagram"></i
                   ></a>
                 </li>
                 <li>
                   <a
                     class="linkedin"
+                    aria-label="Linkedin"
                     href="https://www.linkedin.com/company/moviri/"
                     ><i class="fa fa-linkedin"></i
                   ></a>
@@ -121,6 +130,18 @@ export default {
       highlightContacts: false,
     }
   },
+  head: {
+    title: 'ELM-Contacts',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Contact the ELM Corporation',
+      },
+    ],
+  },
   watch: {
     '$store.state.contactFormFocus'() {
       if (this.$store.state.contactFormFocus === 'true') {
@@ -160,7 +181,7 @@ export default {
 </script>
 
 <style scoped>
-h4 {
+.h4 {
   margin-bottom: 50px;
 }
 img {

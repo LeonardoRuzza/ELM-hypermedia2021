@@ -4,7 +4,7 @@
       <nav class="right">
         <div class="row">
           <div class="col">
-            <h6>ELM Corporation</h6>
+            <span class="h6">ELM Corporation</span>
             <p class="text-justify">
               © 2021 ELM S.p.A. Via Schiaffino 11 20158 Milano, Italy P. IVA
               IT13187610152
@@ -12,7 +12,7 @@
           </div>
           <div class="col">
             <!-- List of the areas (e.g., areas section of the footer)-->
-            <h6>Areas</h6>
+            <span class="h6">Areas</span>
             <ul class="footer-links">
               <li
                 v-for="(item, itemIndex) of areas"
@@ -27,7 +27,7 @@
           </div>
           <div class="col">
             <!-- List of links to other main pages related to general info about the company ((e.g., company section of the footer) -->
-            <h6>Company</h6>
+            <span class="h6">Company</span>
             <ul class="footer-links">
               <li
                 v-for="(item, itemIndex) of company"
@@ -42,16 +42,17 @@
           </div>
           <div class="col">
             <!-- Links of the helps section of the footer -->
-            <h6>Help?</h6>
+            <span class="h6">Help?</span>
             <ul class="footer-links">
               <li
                 v-for="(item, itemIndex) of help"
                 :key="'footer-item-' + itemIndex"
                 class="footer-item"
               >
-                <nuxt-link :to="item.path">
+                <nuxt-link v-if="item.name != 'Privacy'" :to="item.path">
                   {{ item.name }}
                 </nuxt-link>
+                <a v-else :href="item.path"> {{ item.name }} </a>
               </li>
             </ul>
           </div>
@@ -71,28 +72,40 @@
           <!-- List of the social icons -->
           <ul class="social-icons">
             <li>
-              <a class="facebook" href="https://www.facebook.com/moviricompany"
-                ><i class="fa fa-facebook"></i
-              ></a>
+              <a
+                class="facebook"
+                href="https://www.facebook.com/moviricompany"
+                aria-label="Facebook"
+              >
+                <i class="fa fa-facebook"></i>
+              </a>
             </li>
             <li>
-              <a class="twitter" href="https://twitter.com/moviri"
-                ><i class="fa fa-twitter"></i
-              ></a>
+              <a
+                class="twitter"
+                href="https://twitter.com/moviri"
+                aria-label="Twitter"
+              >
+                <i class="fa fa-twitter"></i>
+              </a>
             </li>
             <li>
               <a
                 class="instagram"
                 href="https://www.instagram.com/moviricompany"
-                ><i class="fa fa-instagram"></i
-              ></a>
+                aria-label="Instagram"
+              >
+                <i class="fa fa-instagram"></i>
+              </a>
             </li>
             <li>
               <a
                 class="linkedin"
                 href="https://www.linkedin.com/company/moviri/"
-                ><i class="fa fa-linkedin"></i
-              ></a>
+                aria-label="Linkedin"
+              >
+                <i class="fa fa-linkedin"></i>
+              </a>
             </li>
           </ul>
         </div>
@@ -109,23 +122,23 @@ export default {
       areas: [
         {
           name: 'Performance Engineering',
-          path: '/area1',
+          path: '/areas/1',
         },
         {
           name: 'Analytics',
-          path: '/area2',
+          path: '/areas/2',
         },
         {
           name: 'Security',
-          path: '/area3',
+          path: '/areas/3',
         },
         {
           name: 'Internet of Things',
-          path: '/area4',
+          path: '/areas/4',
         },
         {
           name: 'Machine Learning & AI',
-          path: '/area5',
+          path: '/areas/5',
         },
       ],
       company: [
@@ -149,7 +162,7 @@ export default {
         },
         {
           name: 'Privacy',
-          path: '/privacy',
+          path: 'https://www.iubenda.com/privacy-policy/61398075',
         },
       ],
     }
@@ -178,7 +191,7 @@ export default {
 .footer hr.small {
   margin: 20px 0;
 }
-.footer h6 {
+.footer .h6 {
   color: orange;
   font-size: 16px;
   text-transform: uppercase;
@@ -326,6 +339,13 @@ export default {
     display: block;
     margin-right: 0;
     font-weight: 600;
+  }
+  .footer-item {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  .footer-item a {
+    line-height: 48px;
   }
 }
 </style>

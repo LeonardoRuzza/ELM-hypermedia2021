@@ -15,12 +15,12 @@
       </the-side-bar>
       <!-- Use of v-if and v-else to show the reviews or the general info about the company -->
       <div v-if="visualize == link1" class="info-container">
-        <h4>A Global Technology Business</h4>
+        <span class="h4">A Global Technology Business</span>
         Founded in Italy in 2000, today ELM is a multinational group that
         focuses its consulting offering on hard technology challenges with
         large-scale business impact in performance engineering, analytics,
         security, IoT and Machine Learning.
-        <h4>Our DNA is rooted in data and engineering.</h4>
+        <span class="h4">Our DNA is rooted in data and engineering.</span>
         ELM started as a research spinoff at Politecnico of Milan and was
         incubated at its startup accelerator. Data and experimentation are part
         of our DNA. We believe that science and engineering need to be seen as
@@ -81,6 +81,21 @@ export default {
       ],
     }
   },
+  head: {
+    title: `ELM-About`,
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: `ELM is a multinational group that
+        focuses its consulting offering on hard technology challenges with
+        large-scale business impact in performance engineering, analytics,
+        security, IoT and Machine Learning.`,
+      },
+    ],
+  },
   // Method to manage the use of the sidebar and update with consistency the breadcrumbs.
   methods: {
     onUpdateVisualization(path) {
@@ -98,6 +113,7 @@ export default {
 <style scoped>
 .info-container {
   font-size: larger;
+  font-weight: normal;
 }
 .about-container {
   display: flex;
@@ -137,8 +153,10 @@ export default {
 h2 {
   margin-bottom: 30px;
 }
-h4 {
-  margin-bottom: 30px;
+.h4 {
+  margin: 1rem auto;
+  font-weight: bold;
+  display: block;
 }
 img {
   width: 1300px;
