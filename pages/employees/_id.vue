@@ -168,6 +168,7 @@ export default {
 }
 .column {
   max-width: 45%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -178,6 +179,7 @@ export default {
   }
   .column {
     max-width: 100%;
+    width: 100%;
     margin: auto;
   }
   .column img {

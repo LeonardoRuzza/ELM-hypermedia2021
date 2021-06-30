@@ -210,9 +210,12 @@ export default {
 .form {
   margin: auto;
   width: 500px;
+  max-width: 100%;
   background-color: white;
   border-radius: 1.5rem;
   z-index: 30001;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .form-container {
   position: relative;
@@ -243,6 +246,11 @@ export default {
   .product-information,
   .team {
     flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 573px) {
+  .form-container {
+    max-width: 90%;
   }
 }
 </style>

@@ -100,10 +100,6 @@ export default {
         path: '/news',
       })
     },
-    handleResize() {
-      // When resize reset the property width.
-      this.width = window.innerWidth
-    },
   },
 }
 </script>

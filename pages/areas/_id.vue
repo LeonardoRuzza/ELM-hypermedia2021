@@ -7,12 +7,12 @@
     <!-- Section for general info related to the area including: description, image -->
     <section class="introduction-container">
       <div class="intro-description">
+        <img
+          :src="'/areas/images/area-' + area.id + '.png'"
+          :alt="'Image of the area' + area.name"
+        />
         {{ area.description }}
       </div>
-      <img
-        :src="'/areas/images/area-' + area.id + '.png'"
-        :alt="'Image of the area' + area.name"
-      />
     </section>
     <!-- Section for the top product of the area -->
     <section class="top-product-container">
@@ -148,8 +148,8 @@ export default {
   align-items: center;
 }
 .introduction-container img {
-  max-height: 50%;
-  max-width: 40%;
+  max-width: 50%;
+  float: right;
 }
 .top-product-container a {
   margin: auto;
@@ -218,5 +218,34 @@ a:hover.not-link-style {
   line-height: 1.7rem;
   color: rgb(100, 100, 100);
   margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  .workers-container {
+    flex-direction: column;
+  }
+  .responsible-info {
+    flex-direction: column;
+  }
+  .responsible-info img {
+    width: 80%;
+  }
+  .working-team {
+    margin: 1rem;
+    width: 100%;
+  }
+  .top-product-info img {
+    max-width: 300px;
+    width: 90%;
+  }
+  .intro-description {
+    clear: right;
+  }
+  .introduction-container img {
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+    float: none;
+    display: block;
+  }
 }
 </style>
