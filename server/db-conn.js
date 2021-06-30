@@ -407,175 +407,175 @@ async function insertData() {
   const employee1 = await Employee.create({
     name: 'Paolo',
     surname: 'Bozzola',
-    role: '',
+    role: 'CEO & General business manager',
     email: 'paolo.bozzola@elmcorp.com'
   })
 
   const employee2 = await Employee.create({
     name: 'Paolo',
     surname: 'Cremonesi',
-    role: '',
+    role: 'Computer Science engineer senior',
     email: 'paolo.cremonesi@elmcorp.com'
   })
 
   const employee3 = await Employee.create({
     name: 'Claudio',
     surname: 'Bellia',
-    role: '',
+    role: 'Enginner junior and performance evalutation expert',
     email: 'claudio.bellia@elmcorp.com'
   })
 
   const employee4 = await Employee.create({
     name: 'Enrico',
     surname: 'Maini',
-    role: '',
+    role: 'Computer Science engineer senior',
     email: 'enrico.maini@elmcorp.com'
   })
 
   const employee5 = await Employee.create({
     name: 'Camilla',
     surname: 'Stefani',
-    role: '',
+    role: 'Computer Science engineer junior',
     email: 'camilla.stefani@elmcorp.com'
   })
 
   const employee6 = await Employee.create({
     name: 'Francesca',
     surname: 'Bogana',
-    role: '',
+    role: 'CFO & Electrical Engineer senior',
     email: 'francesca.bogana@elmcorp.it'
   })
 
   const employee7 = await Employee.create({
     name: 'Fabio',
     surname: 'Volante',
-    role: '',
+    role: 'Expert front-end developer',
     email: 'fabio.volante@elmcorp.com'
   })
 
   const employee8 = await Employee.create({
     name: 'Matteo',
     surname: 'Fabiano',
-    role: '',
+    role: 'Expert backend developer',
     email: 'matteo.fabiano@elmcorp.com'
   })
 
   const employee9 = await Employee.create({
     name: 'Sharon',
     surname: 'Smith',
-    role: '',
+    role: 'Expert backend developer',
     email: 'sharon.smith@elmcorp.com'
   })
 
   const employee10 = await Employee.create({
     name: 'Bruce',
     surname: 'Lam',
-    role: '',
+    role: 'Analytics expert & Engineer senior',
     email: 'bruce.lam@elmcorp.com'
   })
 
   const employee11 = await Employee.create({
     name: 'Katrina',
     surname: 'Ortiz',
-    role: '',
+    role: 'CMO & Head of sales administration',
     email: 'katrina.ortiz@elmcorp.com'
   })
 
   const employee12 = await Employee.create({
     name: 'James',
     surname: 'Hatch',
-    role: '',
+    role: 'Cyber security expert',
     email: 'james.hatch@elmcorp.com'
   })
 
   const employee13 = await Employee.create({
     name: 'Gijo',
     surname: 'Mathew',
-    role: '',
+    role: 'Computer Science engineer senior',
     email: 'gijo.mathew@elmcorp.com'
   })
 
   const employee14 = await Employee.create({
     name: 'Cristina',
     surname: 'Everett',
-    role: '',
+    role: 'Computer Science engineer junior',
     email: 'cristina.everett@elmcorp.com'
   })
 
   const employee15 = await Employee.create({
     name: 'Katie',
     surname: 'Clancy',
-    role: '',
+    role: 'Cyber security expert & frontend developer',
     email: 'katie.clancy@elmcorp.com'
   })
 
   const employee16 = await Employee.create({
     name: 'Karen',
     surname: 'Abbate',
-    role: '',
+    role: 'Head of Innovation department e ICT',
     email: 'karen.abbate@elmcorp.com'
   })
 
   const employee17 = await Employee.create({
     name: 'Abbi',
     surname: 'Whitaker',
-    role: '',
+    role: 'IoT expert & Telecommunication engineer',
     email: 'abbi.whitaker@elmcorp.com'
   })
 
   const employee18 = await Employee.create({
     name: 'Craig',
     surname: 'Japp',
-    role: '',
+    role: 'Expert backend developer',
     email: 'craig.japp@elm.corp'
   })
 
   const employee19 = await Employee.create({
     name: 'Thomas',
     surname: 'Jordan',
-    role: '',
+    role: 'Enginner senior & Iot expert',
     email: 'thomas.jordan@elm.corp'
   })
 
   const employee20 = await Employee.create({
     name: 'Rachel',
     surname: 'Fernandez',
-    role: '',
+    role: 'IoT expert & Telecommunication engineer',
     email: 'rachel.fernandez@elm.corp'
   })
 
   const employee21 = await Employee.create({
     name: 'Michael',
     surname: 'Brody',
-    role: '',
+    role: 'HR manager',
     email: 'michael.brody@elm.corp'
   })
 
   const employee22 = await Employee.create({
     name: 'Tommy',
     surname: 'Jhonson',
-    role: '',
+    role: 'Deep learning expert & Engineer junior',
     email: 'tommy.jhonson@elm.corp'
   })
 
   const employee23 = await Employee.create({
     name: 'Mary',
     surname: 'Luizon',
-    role: '',
+    role: 'Neural network expert & front-end developer',
     email: 'mary.luizon@elm.corp'
   })
 
   const employee24 = await Employee.create({
     name: 'Archie',
     surname: 'Bellman',
-    role: '',
+    role: 'Electrical engineer senior',
     email: 'archi.bellman@elm.corp'
   })
 
   const employee25 = await Employee.create({
     name: 'Christine',
     surname: 'Hopkins',
-    role: '',
+    role: 'Computer Science engineer junior',
     email: 'christine.hopkins@elm.corp'
   })
 

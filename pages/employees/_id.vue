@@ -16,10 +16,7 @@
         <div class="column">
           <div class="sub-row1">
             <p class="role">
-              <!--TODO modificare con role dinamico da database-->
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              scelerisque bibendum luctus. Praesent elementum posuere cursus.
-              Suspendisse iaculis et ligula ornare ultricies.
+              {{ employee.role }}
             </p>
           </div>
           <div id="area-of-work" class="cards-container-area">
