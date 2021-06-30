@@ -62,7 +62,7 @@
         </nuxt-link>
       </div>
       <div class="working-team">
-        <p>All our team member is important for us</p>
+        <p>All our team's members are important for us</p>
         <nuxt-link class="button" :to="'/team/area-' + area.id">
           Working Team
         </nuxt-link>
