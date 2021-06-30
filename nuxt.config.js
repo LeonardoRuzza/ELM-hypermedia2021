@@ -4,6 +4,7 @@ export default {
   env: {
     //BASE_URL: 'https://test-polimi.herokuapp.com', // Production URL
     BASE_URL: '', // Development URL
+    configurationId: 'acd95424-28c2-4f2a-afeb-47979087e5d2',
   },
   serverMiddleware: [
     {
@@ -36,7 +37,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/mmcc.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

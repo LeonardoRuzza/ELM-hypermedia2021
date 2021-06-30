@@ -3,6 +3,7 @@
     <!-- The tag clientOnly is necessary to avoid an SSR problem on the header -->
     <ClientOnly><the-header></the-header></ClientOnly>
     <Nuxt />
+    <chat :chat-list="list" />
     <the-footer></the-footer>
   </div>
 </template>
@@ -10,12 +11,17 @@
 <script>
 import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
+import Chat from '~/components/Chat'
+import MMCCMixin from '~/mixins/mmcc-mixin'
+
 
 export default {
   components: {
     TheHeader,
     TheFooter,
+    Chat,
   },
+  mixins: [MMCCMixin],
 }
 </script>
 
