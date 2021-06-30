@@ -45,12 +45,14 @@ export default {
 }
 .w3-sidebar {
   height: 100%;
-  width: 18%;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
   position: static;
   z-index: 1;
   padding: 1% 6% 1% 0.5%;
 }
+/*
 .w3-bar-block .w3-dropdown-hover,
 .w3-bar-block .w3-dropdown-click {
   width: 100%;
@@ -64,17 +66,25 @@ export default {
   width: 100%;
   text-align: left;
   padding: 8px 16px;
-}
+}*/
 .w3-bar-block .w3-bar-item {
   width: 100%;
   display: block;
-  padding: 15px 16px;
+  border-radius: 1.7rem;
+  padding: 1rem 1rem 1rem 1rem;
   text-align: left;
-  border: none;
-  white-space: normal;
-  float: none;
-  outline: 0;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  white-space: nowrap;
 }
+@media screen and (max-width: 768px) {
+  .w3-sidebar {
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
+}
+/*
 .w3-bar-block.w3-center .w3-bar-item {
   text-align: center;
 }
@@ -87,14 +97,13 @@ export default {
   display: inline-block;
   padding: 8px 16px;
   vertical-align: middle;
-  overflow: hidden;
   text-decoration: none;
   color: inherit;
   background-color: inherit;
   text-align: center;
   cursor: pointer;
-  white-space: nowrap;
-}
+  
+} /*
 .w3-button {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -111,6 +120,7 @@ export default {
 :disabled * {
   pointer-events: none;
 }
+/*
 .w3-dropdown-hover:hover > .w3-button:first-child,
 .w3-dropdown-click:hover > .w3-button:first-child {
   background-color: #ccc;
@@ -124,7 +134,7 @@ export default {
 }
 .w3-bar .w3-button {
   white-space: normal;
-}
+} /*
 .w3-dropdown-hover.w3-mobile,
 .w3-dropdown-hover.w3-mobile .w3-btn,
 .w3-dropdown-hover.w3-mobile .w3-button,
@@ -132,11 +142,11 @@ export default {
 .w3-dropdown-click.w3-mobile .w3-btn,
 .w3-dropdown-click.w3-mobile .w3-button {
   width: 100%;
-}
+}*/
 .w3-button:hover {
   color: #000;
   background-color: #ccc;
-}
+} /*
 .w3-bar .w3-bar-item {
   padding: 8px 16px;
   float: left;
@@ -147,11 +157,11 @@ export default {
 }
 .w3-bar-block.w3-center .w3-bar-item {
   text-align: center;
-}
+}*/
 .w3-block {
   display: block;
   width: 100%;
-}
+} /*
 .w3-bar-item.w3-mobile,
 .w3-dropdown-hover.w3-mobile,
 .w3-dropdown-click.w3-mobile {
@@ -186,5 +196,5 @@ export default {
 .w3-border-light-gray,
 .w3-hover-border-light-gray:hover {
   border-color: #f1f1f1;
-}
+}*/
 </style>

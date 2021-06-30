@@ -1,6 +1,15 @@
 <template>
   <!-- The contact form includes the fields for: name, surname, email, country, message.  -->
-  <form name="contact_form" action="" method="post">
+  <form
+    ref="contact_form"
+    name="contact_form"
+    action=""
+    method="post"
+    @submit.prevent="messageSent"
+  >
+    <div class="alert" :class="{ visible: isMessageVisible }">
+      Message Sent!
+    </div>
     <label class="form-label" for="fname"> First Name: </label>
     <input
       id="fname"
@@ -44,7 +53,7 @@
       placeholder="Write here your message.."
       :value="defaultMessage"
     ></textarea>
-    <input class="form-button" type="submit" value="Send Message" />
+    <input class="button" type="submit" value="Send Message" />
   </form>
 </template>
 
@@ -56,6 +65,7 @@ export default {
   // Set the values to show for the county selection of the form.
   data() {
     return {
+      isMessageVisible: false,
       countries: [
         {
           name: 'Afghanistan',
@@ -1056,76 +1066,70 @@ export default {
       ],
     }
   },
+  methods: {
+    messageSent() {
+      this.$refs.contact_form.reset()
+      this.isMessageVisible = true
+      setTimeout(() => (this.isMessageVisible = false), 5000)
+      setTimeout(() => this.$emit('sent'), 6000)
+    },
+  },
 }
 </script>
 
 <style scoped>
 form {
-  padding: 12px 20px 12px 20px;
-  margin: 8px 10px 8px 10px;
-  border: 5px solid black;
-  border-radius: 1.7rem;
-  -moz-box-shadow: 2px 2px 6px #888;
-  -webkit-box-shadow: 2px 2px 6px #888;
-  box-shadow: 2px 2px 6px #888;
+  position: relative;
 }
 .form-label {
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  width: 100%;
   display: block;
   color: white;
   background-color: #26272b;
-  -moz-box-shadow: 2px 2px 6px orange;
-  -webkit-box-shadow: 2px 2px 6px orange;
-  box-shadow: 2px 2px 6px orange;
-  border: 1px solid orange;
   border-radius: 1.7rem;
+  border: 1px solid orange;
 }
 .form-field,
 #countries {
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 25px;
-  width: 100%;
+  margin: 10px auto 25px auto;
+  width: 80%;
   display: block;
 }
-input[type='text'],
-select {
+input,
+select,
+textarea {
   width: 100%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 1.7rem;
-  box-sizing: border-box;
+  border: 1px solid #888;
 }
-
+textarea {
+  resize: vertical;
+}
 input[type='submit'] {
-  width: 100%;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 15px;
-  background-color: grey;
-  color: black;
-  padding: 14px 20px;
-  border: 1px solid orange;
-  border-radius: 1.7rem;
-  cursor: pointer;
-  -moz-box-shadow: 2px 2px 6px #888;
-  -webkit-box-shadow: 2px 2px 6px #888;
+  font-size: 1.5rem;
+  font-weight: bold;
   box-shadow: 2px 2px 6px #888;
 }
-
-input[type='submit']:hover {
-  background-color: orange;
-  color: black;
-}
-
 #message {
-  width: 100%;
+  width: 90%;
   height: 100%;
+}
+.alert {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 40%;
+  border: 1px solid green;
+  background-color: rgba(0, 255, 0, 0.3);
+  z-index: 100000;
+}
+.alert.visible {
+  display: block;
 }
 </style>
