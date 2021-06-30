@@ -11,10 +11,7 @@
 					  "intents": ["Guide", "General guide"],
 					  "utterance": [
 						"Okay, so let's start with the general tour of the website"
-					  ],
-					  "payload": {
-						"guide": "/"
-					  }
+					  ]
 					},
 					{
 					  "id": "contact_xor",
@@ -64,11 +61,14 @@
 			},
 			
 			"contact_page": {
-				"initials": "Here you can all our contacts."
+				"initials": "Here you can find all our contacts."
 			},
 			
-			"end": "The process is completed. Thank you for your interest!",
-			"steps_v": ["/", "/about"],
+			"end": { 
+				"initials": "The process is completed. Thank you for your interest!"
+			},
+
+			"steps_v": ["/", "/", "/about"],
 			"continue_v": ["continue", "ok", "go", "start", "yes"],
 			"stay_message": "I didn't understand. Do you want to continue?"
 		},

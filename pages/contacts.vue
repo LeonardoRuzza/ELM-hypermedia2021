@@ -121,6 +121,17 @@ export default {
       highlightContacts: false,
     }
   },
+  watch: {
+    '$store.state.contactFormFocus'() {
+      if (this.$store.state.contactFormFocus === 'true') {
+        this.showForm()
+        setTimeout(this.closeHighlight, 60000)
+      } else if (this.$store.state.contactFormFocus === 'false') {
+        this.showContacts()
+        setTimeout(this.closeHighlight, 20000)
+      }
+    },
+  },
   methods: {
     showForm() {
       const el = this.$refs.column2
