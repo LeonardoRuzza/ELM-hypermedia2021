@@ -68,7 +68,7 @@ export default {
           areaName = 'Internet of Things'
           break
         case '5':
-          areaName = 'Machine Learning'
+          areaName = 'Machine Learning & AI'
           break
       }
       crumbs = [

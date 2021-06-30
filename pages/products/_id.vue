@@ -31,7 +31,7 @@
           :subtitle="product.Manage.name + ' ' + product.Manage.surname"
         ></the-card>
         <span>
-          <p>All our team member is important for us</p>
+          <p>All our team's members are important for us</p>
           <nuxt-link :to="'/team/product-' + productId" class="button">
             Developing Team
           </nuxt-link>
@@ -40,7 +40,7 @@
     </section>
     <!-- Section for the contact button for the product -->
     <section class="contact">
-      <p>To get more information about our product:</p>
+      <p>To get more information about our product</p>
       <button class="button" @click="contactUs()">Contact Us</button>
     </section>
     <!-- Section for the "pop-up" contact form for the product -->
@@ -226,6 +226,15 @@ export default {
   font-size: 30px;
   font-weight: bolder;
   cursor: pointer;
+}
+.team p,
+.contact p {
+  font-size: 1.6rem;
+  font-weight: lighter;
+  text-align: center;
+  line-height: 1.7rem;
+  color: rgb(100, 100, 100);
+  margin-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
   .product-description p {
