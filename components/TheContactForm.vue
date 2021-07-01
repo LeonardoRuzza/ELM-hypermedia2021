@@ -1074,7 +1074,8 @@ export default {
       this.isMessageVisible = true
       // After 5 seconds hide the message again
       setTimeout(() => (this.isMessageVisible = false), 5000)
-      // After 6 second emit the event "sent" to  close the form if we are in the product/_id page
+      // After 6 second emit the event "sent" to close the form if we are in the product/_id page
+      // or close the highlight if it was open
       setTimeout(() => this.$emit('sent'), 6000)
     },
   },
