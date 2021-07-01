@@ -1,15 +1,19 @@
 <template>
   <nav class="header">
+    <!-- Header for the desktop devices -->
     <div v-if="width >= 1024" class="header-content">
+      <!-- Left options -->
       <div class="menu-item-group">
         <span
           v-for="(item, itemIndex) of menuOptions.left"
           :key="'menu-item-' + itemIndex"
           class="menu-item"
         >
+          <!-- If the item has no dropdown place the item as a nuxt-link -->
           <nuxt-link v-if="!item.hasDropdown" :to="item.path" class="underline">
             {{ item.name }}
           </nuxt-link>
+          <!-- Otherwise place a span and @mouseover open the relative dropdown -->
           <span
             v-else
             :class="'underline menu-item-a ' + childSelected()"
@@ -17,6 +21,7 @@
           >
             {{ item.name }}
           </span>
+          <!-- If the item has the dropdown place all the subelements as nuxt-link -->
           <div
             v-if="item.hasDropdown"
             class="dropdown"
@@ -34,6 +39,7 @@
           </div>
         </span>
       </div>
+      <!-- Logo with nuxt-link to the homepage -->
       <nuxt-link to="/">
         <span key="menu-item-logo">
           <img
@@ -43,6 +49,7 @@
           />
         </span>
       </nuxt-link>
+      <!-- Right elements without the check on the dropdown -->
       <div class="menu-item-group">
         <span
           v-for="(item, itemIndex) of menuOptions.right"
@@ -55,8 +62,10 @@
         </span>
       </div>
     </div>
+    <!-- Header for the mobile devices -->
     <div v-else>
       <div class="header-content mobile">
+        <!-- Logo with nuxt-link to the homepage -->
         <nuxt-link to="/">
           <span key="menu-item-logo">
             <img
@@ -66,6 +75,7 @@
             />
           </span>
         </nuxt-link>
+        <!-- Menu icon that open/collapse the menu @click -->
         <div
           id="menu-toggle"
           class="menu-icon"
@@ -77,15 +87,18 @@
           <div class="menu-bar3"></div>
         </div>
       </div>
+      <!-- If the menu is open show all the elements -->
       <div v-if="menuOpened" class="collapse-menu">
         <div
           v-for="(item, itemIndex) of menuOptions.all"
           :key="'menu-item-' + itemIndex"
           class="menu-item"
         >
+          <!-- If the element has NOT the dropdown, place a simple nuxt-link -->
           <nuxt-link v-if="!item.hasDropdown" :to="item.path">
             {{ item.name }}
           </nuxt-link>
+          <!-- Otherwise place a span and @click open/collapse the submenu -->
           <span
             v-else
             :class="'menu-item-a ' + childSelected()"
@@ -94,6 +107,7 @@
             {{ item.name }}
             <i class="dropdown-icon" :class="{ up: submenuOpened }"></i>
           </span>
+          <!-- Submenu visible if the item has the submenu and if the dropdown has been clicked -->
           <div v-if="item.hasDropdown && submenuOpened" class="sub-menu">
             <div
               v-for="(subItem, subIndex) of item.dropdown"
@@ -234,6 +248,7 @@ export default {
   beforeMount() {
     // Add an event listener on the event resize when the object is created.
     window.addEventListener('resize', this.handleResize)
+    // this is done to check at runtime the width of the window that is used to switch between mobile and desktop
     this.handleResize()
   },
   beforeDestroy() {
@@ -259,6 +274,7 @@ export default {
       this.submenuOpened = !this.submenuOpened
     },
     childSelected() {
+      // return with the class of the active link if the child of Areas menu-item is selected
       if (this.$route.name === 'areas-id') {
         return 'nuxt-link-exact-active nuxt-link-active'
       } else return ''

@@ -7,7 +7,9 @@
         :key="'slide-' + itemIndex"
         class="slide fade"
       >
-        <div class="index">{{ itemIndex + 1 }} / 3</div>
+        <div class="index">
+          {{ itemIndex + 1 }} / {{ productDetail.length }}
+        </div>
         <img :src="item" :alt="'slide product ' + (itemIndex + 1)" />
       </div>
       <!-- Next and previous buttons -->
@@ -21,7 +23,7 @@
         v-for="(item, itemIndex) of productDetail"
         :key="'dot-' + (itemIndex + 1)"
         class="dot"
-        @click="currentSlide(itemIndex)"
+        @click="currentSlide(itemIndex + 1)"
       >
       </span>
     </div>
@@ -40,6 +42,7 @@ export default {
     }
   },
   mounted() {
+    // initialize the slide show with the first index
     this.showSlides(this.slideIndex)
   },
   methods: {
@@ -55,19 +58,25 @@ export default {
       let i
       const slides = document.getElementsByClassName('slide')
       const dots = document.getElementsByClassName('dot')
+      // when overflows the max restart from index 1
       if (n > slides.length) {
         this.slideIndex = 1
       }
+      // when overflows the min restart from last index
       if (n < 1) {
         this.slideIndex = slides.length
       }
+      // hide all the slide
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none'
       }
+      // deactivate all the dots
       for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(' active', '')
       }
+      // show the slideIndex-th slide
       slides[this.slideIndex - 1].style.display = 'block'
+      // activate the slideIndex-th dot
       dots[this.slideIndex - 1].className += ' active'
     },
   },

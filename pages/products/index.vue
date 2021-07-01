@@ -113,14 +113,6 @@ export default {
   },
 }
 </script>
-<!--
-<style>
-#products_top_products .card-img,
-#products_standard_products .card-img {
-  background-color: white;
-}
-</style>
--->
 <style scoped>
 p {
   font-weight: 550;

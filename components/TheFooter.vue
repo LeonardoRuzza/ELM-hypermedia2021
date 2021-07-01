@@ -173,9 +173,6 @@ export default {
 <style scoped>
 .row {
   display: contents;
-  /* flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around; */
 }
 .footer {
   background-color: #26272b;

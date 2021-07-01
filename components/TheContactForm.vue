@@ -1068,9 +1068,13 @@ export default {
   },
   methods: {
     messageSent() {
+      // reset the form
       this.$refs.contact_form.reset()
+      // show the message "Message Sent"
       this.isMessageVisible = true
+      // After 5 seconds hide the message again
       setTimeout(() => (this.isMessageVisible = false), 5000)
+      // After 6 second emit the event "sent" to  close the form if we are in the product/_id page
       setTimeout(() => this.$emit('sent'), 6000)
     },
   },
@@ -1123,11 +1127,16 @@ input[type='submit'] {
 .alert {
   display: none;
   position: absolute;
-  top: 0;
-  left: 40%;
-  border: 1px solid green;
+  top: -50px;
+  border-radius: 1.7rem;
+  padding: 0.5rem;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin: auto;
+  border: 3px solid green;
   background-color: rgba(0, 255, 0, 0.3);
-  z-index: 100000;
+  z-index: 50;
 }
 .alert.visible {
   display: block;
