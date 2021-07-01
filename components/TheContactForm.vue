@@ -1071,7 +1071,7 @@ export default {
       this.$refs.contact_form.reset()
       this.isMessageVisible = true
       setTimeout(() => (this.isMessageVisible = false), 5000)
-      setTimeout(() => this.$emit('sent'), 6000)
+      this.$emit('sent')
     },
   },
 }
@@ -1122,7 +1122,7 @@ input[type='submit'] {
 }
 .alert {
   display: none;
-  position: absolute;
+  position: static;
   top: 0;
   left: 40%;
   border: 1px solid green;

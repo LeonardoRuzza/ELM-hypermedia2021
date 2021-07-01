@@ -4,14 +4,14 @@
     <a
       href="#"
       class="w3-bar-item w3-button bg-color"
-      @click="goToNews(`${link1}`, $event)"
+      @click="goToLink(`${link1}`, $event)"
     >
       {{ link1 }}
     </a>
     <a
       href="#"
       class="w3-bar-item w3-button"
-      @click="goToNews(`${link2}`, $event)"
+      @click="goToLink(`${link2}`, $event)"
     >
       {{ link2 }}
     </a>
@@ -26,7 +26,7 @@ export default {
   },
   // Method to manage the visualized info on the page when the sidebar is used (emit an event later managed by the page which exploit the sidebar component).
   methods: {
-    goToNews(path, event) {
+    goToLink(path, event) {
       event.target.classList.toggle('bg-color')
       if (path === this.link1) {
         event.target.nextElementSibling.classList.toggle('bg-color')

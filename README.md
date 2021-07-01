@@ -1,8 +1,73 @@
 # ELM-hypermedia2021
 Group Name: ELM
+
 Edoardo Venir 10570524 edoardo.venir@mail.polimi.it
+
 Leonardo Ruzza 10608001 leonardo.ruzza@mail.polimi.it
+
 Matteo Plona 10533085 matteo.plona@mail.polimi.it
+
+GitHub: https://github.com/LeonardoRuzza/ELM-hypermedia2021.git
+
+Website: ...TO ADD...
+
+## Implementation Contributions
+The following contributions are ONLY indicative of the workload distribution of the develope, we want to emphasize that ALL the team members evenly cooperated with diligence to develop the whole website. 
+
+
+
+## Server and DB
+Server-Side technology: NodeJS with Express.
+Database: PostgreSQL.
+Hosting on: Heroku.
+
+To implement the backend part, we followed the structure presented during the course. In particular, in the folder "server", "db-conn.js" is the implementation of the Postgres database that store all the information necessary to support the website (description of entities/relationships and population of the DB itself). In the sub-folder "rest", "api.js" provide the implementation of all the functionalities necessary to answer to all the requests coming from the client-side (i.e., make a query to the DB and send it as answer to a request) to support the dynamic pages of the website which needs to retrieve data from the database.
+
+## Components
+
+### TheHeader
+This component is the header present in all the pages of the website, in fact it contains all the main landmarks providing useful link for the navigation. It is setted also to be fixed on the top of the view during the scroll of the pages and provide basic orientation info underlining a specific landmark if the user is in the associated specific page. The landmark representing the Homepage is the logo of the company. Furthermore, for the landmark "Areas" is implemented a dropdown menu which appear when the user go on it, to show all the areas to navigate to them (thanks to a listener and some methods implemented in the script part of the component).
+Imported by: default.vue
+
+### TheFooter
+This component is the footer present in all the pages of the website, in fact  it contains all the main landmarks (except the Homepage) providing useful link for the navigation. It is setted to be position at the end of the page. It contains also the social icons of the company.
+Impoorted by: default.vue
+
+### TheBreadCrumbs
+This component provide, to the pages which import it, customized breadcrumps that are usefull to provide orientation info to the user and also, being clickable, to go up on the page navigation hierarchy. 
+Imported by: about/index.vue, areas/_id.vue, /employees/index.vue, /employees/_id.vue, news/index.vue, news/_id.vue, products/index.vue, products/_id.vue, team/_id.vue, contacts.vue (e.g., all the pages except the Homepage)
+
+### TheCarousel
+This component provide the implementation of a carousel, customizable with n images indicated by the page that import it. It provides next/previous functionalities to see respectively the previous or the next image in the carousel and also dotted points on the bottom to make appear a specific image in the carousel. In the top the component show the number identifier of the current showed image.
+Imported by: products/_id.vue
+
+### TheSideBar
+This component provide the implementation of a sidebar with two "items" that are useful in the pages where there are two different "views" (e.g., different exclusive contents to show in the same web page). It also highlight the item which is currently selected. In particular, this component exploit the use of an event to inform the page when an item is clicked (e.g., the sidebar it is not directly responsible on what happens then).
+Imported by: news/index.vue, about/index.vue
+
+### TheContactForm
+This component provide a form with some field to be filled/selected (e.g., name, surname, email, country, message). It allow to set a default message provided by the page which import it (useful in the case of the page of a product to pre-fill a part of the message). For our purposes it "fake" the send of the message printing a "Message Sent" on the top when the form is submitted, preventing any other "real" action.
+Imported by: contacts.vue, products/_id.vue
+
+### TheCard
+This component implement a customizable "card". In particular it can be filled by the page which import it with (not necessary all): a title, a subtitle, an image, a description, a link (to make che card clickable in order to navigate to the represented element). 
+Imported by: areas/_id.vue, employees/index.vue, employees/_id.vue, news/index.vue, products/index.vue, products/_id.vue, team/_id.vue
+
+### Chat
+This component is like the one presented during the course for the chatbot implementation part, except for some new style and the autoscroll implementation. It is present in all the pages and allow the interaction between the user and the chatbot itself.
+Imported by: default.vue
+
+## Plugins
+* We have exploited the use of the "mmcc" plugin for the chatbot implementation. 
+* We have exploited the use of the "store" for the chatbot implementation. In fact, the state and the mutations are implementend in the file "index.js" in the folder "store". In particular, the state is represented by two variables: the list of messages and a sort of discriminant variable to use in a diramation of the process (e.g., what to visualize highlighted in the Contact Us page). Moreover, the mutations are two: one to add a message coming from the chatbot or from the user to the list of all the messages of the chat, the other to set the variable to distinguish in the branch of the chatbot what to visualize highlighted in the Contact Us page.  
+* We have exploited the use of the "routing" provided by the framework, in order to better manage the navigation in the website (e.g., between the various pages in the folder "pages").
+* We have exploited the use of "Babel" for transpiling modern JavaScript.
+* We have exploited the use of "ESLint" for ensuring code quality.
+* Also, any other present plugin was automatically included in the project when creating it like explained us during the course.
+
+
+## Framework Comments
+
 
 ## Build Setup
 
