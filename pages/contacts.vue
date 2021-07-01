@@ -96,7 +96,10 @@
             class="column2"
             :class="{ highlight: highlightForm }"
           >
-            <the-contact-form class="form"></the-contact-form>
+            <the-contact-form
+              class="form"
+              @sent="closeHighlight"
+            ></the-contact-form>
           </div>
         </div>
       </div>

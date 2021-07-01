@@ -1,5 +1,5 @@
 <template>
-  <!-- The nuxt link implementing a card include a title, an image, a subtitle (facultative, e.g. v-if) and a description (facultative, e.g. v-if)  -->
+  <!-- The nuxt link implementing a card include a title, an image, a subtitle (facultative, i.e. v-if) and a description (facultative, i.e. v-if)  -->
   <nuxt-link :to="link">
     <div class="card">
       <div class="card-content">

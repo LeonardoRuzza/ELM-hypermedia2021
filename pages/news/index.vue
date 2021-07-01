@@ -93,15 +93,6 @@ export default {
       },
     ],
   },
-  /*   async asyncData({ $axios }) {
-    const { data } = await $axios.get(
-      `${process.env.BASE_URL}/api/news/all_news`
-    )
-    const allNews = data
-    return {
-      allNews,
-    }
-  }, */
   // Method to manage correctly the interaction with the sidebar and update with coerence the breadcrumbs.
   methods: {
     onUpdateVisualization(path) {
