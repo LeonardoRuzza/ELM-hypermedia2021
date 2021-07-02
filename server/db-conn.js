@@ -1,14 +1,14 @@
 const { Sequelize, DataTypes } = require('sequelize')
 
 // Development
-const db = new Sequelize('postgres://postgres:Sql1080@localhost:5432/test') //////////////////
+// const db = new Sequelize('postgres://postgres:fuckpg98@localhost:5432/test') //////////////////
 // Production
-/*  const pg = require('pg')
+  const pg = require('pg')
 pg.defaults.ssl = true
 const db = new Sequelize(process.env.DATABASE_URL, {
   ssl: true,
   dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
-}) */
+})
 
 /**
  * Function to define the structure of the database

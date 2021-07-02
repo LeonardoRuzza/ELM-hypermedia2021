@@ -2,8 +2,8 @@ export default {
   ssr: true,
   target: 'server',
   env: {
-    //BASE_URL: 'https://test-polimi.herokuapp.com', // Production URL
-    BASE_URL: '', // Development URL
+    BASE_URL: 'https://elm-hypermedia2021.herokuapp.com', // Production URL
+    //BASE_URL: '', // Development URL
     configurationId: 'acd95424-28c2-4f2a-afeb-47979087e5d2',
   },
   serverMiddleware: [
