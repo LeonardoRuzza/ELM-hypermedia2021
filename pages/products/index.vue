@@ -90,7 +90,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `This are all our products in the various IT-fields`,
+        content: `This are all the Products in the various IT-fields of the ELM Corporation`,
       },
     ],
   },

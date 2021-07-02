@@ -21,7 +21,7 @@
       />
     </div>
     <div class="button" @click="isOpen = !isOpen">
-      <img src="https://img.icons8.com/ios-filled/452/chat--v1.png" alt="" />
+      <img src="https://img.icons8.com/ios-filled/452/chat--v1.png" alt="Chat Logo" />
     </div>
   </div>
 </template>

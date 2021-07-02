@@ -89,7 +89,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `This are all the news regarding the ELM Company`,
+        content: `This are all the News regarding the ELM Corporation`,
       },
     ],
   },

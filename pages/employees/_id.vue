@@ -153,7 +153,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `This one of the ELM Corporation Employee`,
+        content: `This is an Employee of the ELM Corporation`,
       },
     ],
   },

@@ -53,7 +53,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `This is a news regarding the ELM corporation`,
+        content: `This is a News regarding the ELM Corporation`,
       },
     ],
   },

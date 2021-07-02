@@ -67,7 +67,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'The ELM corporation is one of the best Company in the field of Performance Engineering, Analytics, Security, IoT, Machine Learning & AI',
+          'The ELM Corporation is one of the best Company in the fields of Performance Engineering, Analytics, Security, IoT, Machine Learning & AI',
       },
     ],
   },

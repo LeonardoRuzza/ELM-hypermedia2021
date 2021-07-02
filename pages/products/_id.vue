@@ -111,7 +111,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `This one of the ELM Corporation Product`,
+        content: `This is one of the ELM Corporation Product`,
       },
     ],
   },
