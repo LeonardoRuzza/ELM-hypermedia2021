@@ -81,7 +81,7 @@ Imported by: default.vue
 * We have took into account the instances lifecycle, for example, we have implemented the "beforeMount()" and "beforeDestroy()" methods to manage a listener in the component "TheHeader.vue".
 * Our pages and components are "adaptive" to different end user device to strongly augment the responsiveness. A simple example of it is the component "TheSideBar.vue" which become de facto a top bar when the user screen is too little. Another good example is our "TheHeader.vue" which completely change aspect (obviously mantaining the same core functionalities and objectives) between a desktop version and a mobile version.
 * We also have directly considered to well satisfies standard accessibility requirements (i.e., "alt" specification). In particular we have developed our project also following the "P-O-U-R" principles explained during the course, to achive high perceivable interface (e.g., visually in our case), easely operable interface (e.g., for buttons and other interactive elements), well understandable interface (users will be able to comprehend the content, and learn and remember how to use it), and robust (to be standards-compliant, and designed to function on all appropriate technologies).
-* The website pattern follow the "SSR" pattern (server side rendering) and we have contributed directly to SEO optimization, for example, including meta description globally and locally (e.g., "head" specifications of the pages with "title", "initial-scale" etc.).
+* The website follow the "SSR" pattern (server side rendering) and we have contributed directly to SEO optimization, for example, including meta description globally and locally (e.g., "head" specifications of the pages with "title", "initial-scale" etc.).
 
 ## Build Setup
 
