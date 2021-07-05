@@ -9,12 +9,12 @@ Matteo Plona 10533085 matteo.plona@mail.polimi.it
 
 GitHub: https://github.com/LeonardoRuzza/ELM-hypermedia2021.git
 
-Website: ...TO ADD...
+Website: https://elm-hypermedia2021.herokuapp.com/
 
 ## Implementation Contributions
-The following contributions are ONLY indicative of the workload distribution of the develope, we want to emphasize that ALL the team members evenly cooperated with diligence to develop the whole website. 
-
-
+The following contributions are ONLY indicative of the workload distribution of the develop, we want to emphasize that ALL the team members evenly cooperated with diligence to develop the whole website. 
+Slightly more in detail, initially we have started splitting the components between us, Matteo has focused on the core funtionalities of the more interactive once, Leonardo has defined the main structure of most of them, Edoardo has cooperated to put the foundations on some of them, but principally started implementing the main server-side features and then has been reached by the others to conclude some critical parts of it (and populate the DB more late). Then we have parallelized the basic implementation of the pages, evenly splitting them between us and following the previous made design choices. At the end we have converged to agree on the more critical implementation parts of the various pages and widely cooperated to output a semi-final version. Finally, with the same "modus operandi", Edoardo and Leonardo have focused on the chatbot integration in the website while Matteo has placed attentions to achive the great possible responsiveness, cooperating continuously in case of decision-making needs, and all continuing to update more the style of the website and upgrading the previously implemented components and pages. 
+Finally, we want to re-emphasize, that there is no parts where some of us didn't directly get in touch with, in fact all of us cooperate to write or double-check everything which is implemented in this website. 
 
 ## Server and DB
 Server-Side technology: NodeJS with Express.
