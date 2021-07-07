@@ -8,14 +8,17 @@
 				"choices": [
 					{
 					  "id": "guide",
-					  "intents": ["Guide", "General guide"],
+					  "intents": ["Guide", "General guide", "guide", "general guide", "guide me", "Guide Me"],
 					  "utterance": [
 						"Okay, so let's start with the general tour of the website"
-					  ]
+					  ],
+					  "payload": {
+						"guide": "/"
+					  }
 					},
 					{
 					  "id": "contact_xor",
-					  "intents": ["Contacts", "Only contacts"],
+					  "intents": ["Contacts", "Only contacts", "contacts", "only contacts"],
 					  "payload": {
 						"guide": "/contacts"
 					  }
@@ -28,7 +31,7 @@
 			},
 
 			"home": {
-				"initials": "Welcome to the Homepage of the ELM Corporation website. Here you can find the main areas of the services offered by us."
+				"initials": "Welcome to the Homepage of the ELM Corporation website. Here you can find the main areas of the services offered by us.",
 			},
 			
 			"about": {
@@ -57,19 +60,16 @@
 			},
 			
 			"contact_form": {
-				"initials": "Now you can fill this form and send it to the company."
+				"initials": "Now you can fill this form and send it to the company.",
 			},
 			
 			"contact_page": {
-				"initials": "Here you can find all our contacts."
+				"initials": "Here you can all our contacts.",
 			},
 			
-			"end": { 
-				"initials": "The process is completed. Thank you for your interest!"
-			},
-
-			"steps_v": ["/", "/", "/about"],
-			"continue_v": ["continue", "ok", "go", "start", "yes"],
+			"end": "The process is completed. Thank you for your interest!",
+			"steps_v": ["/", "/about"],
+			"continue_v": ["continue", "ok", "go", "start", "yes", "ready", "Continue", "Ok", "Go", "Start", "Yes", "Ready"],
 			"stay_message": "I didn't understand. Do you want to continue?"
 		},
 
@@ -117,13 +117,13 @@
 				"my_id": "contact_form",
 				"next_id": null,
 				"my_type": "TASK",
-				"callback": "nothing"
+				"callback": ""
 			},
 			{
 				"my_id": "contact_page",
 				"next_id": null,
 				"my_type": "TASK",
-				"callback": "nothing"
+				"callback": ""
 			},
 			{
 				"my_id": "end",
