@@ -31,7 +31,7 @@
 			},
 
 			"home": {
-				"initials": "Welcome to the Homepage of the ELM Corporation website. Here you can find the main areas of the services offered by us.",
+				"initials": "Welcome to the Homepage of the ELM Corporation website. Here you can find the main areas of the services offered by us."
 			},
 			
 			"about": {
@@ -43,14 +43,14 @@
 				"choices": [
 					{
 					  "id": "contact_form",
-					  "intents": ["Form", "Contact form", "Contact", "Directly contact"],
+					  "intents": ["Form", "Contact form", "Contact", "Directly contact", "form", "contact"],
 					  "payload": {
 						"popup": "true"
 					  }
 					},
 					{
 					  "id": "contact_page",
-					  "intents": ["General contact info", "Contact info"],
+					  "intents": ["General contact info", "Contact info", "contact info"],
 					  "payload": {
 						"popup": "false"
 					  }
@@ -60,11 +60,11 @@
 			},
 			
 			"contact_form": {
-				"initials": "Now you can fill this form and send it to the company.",
+				"initials": "Now you can fill this form and send it to the company."
 			},
 			
 			"contact_page": {
-				"initials": "Here you can all our contacts.",
+				"initials": "Here you can all our contacts."
 			},
 			
 			"end": "The process is completed. Thank you for your interest!",
@@ -117,13 +117,13 @@
 				"my_id": "contact_form",
 				"next_id": null,
 				"my_type": "TASK",
-				"callback": ""
+				"callback": "nothing"
 			},
 			{
 				"my_id": "contact_page",
 				"next_id": null,
 				"my_type": "TASK",
-				"callback": ""
+				"callback": "nothing"
 			},
 			{
 				"my_id": "end",
