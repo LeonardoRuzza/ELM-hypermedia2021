@@ -68,7 +68,7 @@
 			},
 			
 			"end": "The process is completed. Thank you for your interest!",
-			"steps_v": ["/", "/about"],
+			"steps_v": ["/", "/", "/about"],
 			"continue_v": ["continue", "ok", "go", "start", "yes", "ready", "Continue", "Ok", "Go", "Start", "Yes", "Ready"],
 			"stay_message": "I didn't understand. Do you want to continue?"
 		},
