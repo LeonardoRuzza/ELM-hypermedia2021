@@ -1,11 +1,11 @@
 # ELM-hypermedia2021
 Group Name: ELM
 
-Edoardo Venir 10570524 edoardo.venir@mail.polimi.it
+Edoardo Venir - edoardo.venir@mail.polimi.it
 
-Leonardo Ruzza 10608001 leonardo.ruzza@mail.polimi.it
+Leonardo Ruzza - leonardo.ruzza@mail.polimi.it
 
-Matteo Plona 10533085 matteo.plona@mail.polimi.it
+Matteo Plona - matteo.plona@mail.polimi.it
 
 GitHub: https://github.com/LeonardoRuzza/ELM-hypermedia2021.git
 
